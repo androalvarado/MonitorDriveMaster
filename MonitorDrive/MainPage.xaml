@@ -15,7 +15,7 @@
             <Label
                 SemanticProperties.HeadingLevel="Level1"
                 Style="{StaticResource Headline}"
-                Text="Hello, World 1.0!" />
+                Text="Hello, World 2.0!" />
 
             <Label
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I"
