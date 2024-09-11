@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MonitorDrive.Pages.DashboardPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{StaticResource Primary}">
+
+    <Grid Margin="25,25,25,25" RowDefinitions=".05*,.1*, .05*, .6*, .05*, .1*, .05*">
+        <Grid ColumnDefinitions=" *,*">
+            <VerticalStackLayout Grid.Row="1" VerticalOptions="Start">
+                <Label
+                    Margin="-8,0,0,0"
+                    FontFamily="InterB24"
+                    FontSize="25"
+                    Text="Welcome"
+                    TextColor="#FDFDFD" />
+            </VerticalStackLayout>
+            <!--  Imagen de perfil  -->
+            <Border
+                Grid.Column="1"
+                HeightRequest=" 60"
+                HorizontalOptions="End"
+                StrokeShape="RoundRectangle 80,80,80,80"
+                VerticalOptions="Center"
+                WidthRequest="60">
+                <Image
+                    Aspect="AspectFit"
+                    HeightRequest="70"
+                    HorizontalOptions="Center"
+                    Source="profile.png"
+                    WidthRequest="70" />
+            </Border>
+        </Grid>
+
+        <!--  Menu de pesta;as que modiifca el indicador y la grafica.  -->
+        <StackLayout
+            Grid.Row="1"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <StackLayout
+                HorizontalOptions="Center"
+                Orientation="Horizontal"
+                Spacing="20"
+                WidthRequest="350">
+                <Label
+                    x:Name="word1"
+                    FontSize="15"
+                    Text="Profitability">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnWordTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label
+                    x:Name="word2"
+                    FontSize="15"
+                    Text="Hours">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnWordTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label
+                    x:Name="word3"
+                    FontSize="15"
+                    Text="Miles">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnWordTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label
+                    x:Name="word4"
+                    FontSize="15"
+                    Text="Travels">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnWordTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label
+                    x:Name="word5"
+                    FontSize="15"
+                    Text="Tips">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnWordTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </StackLayout>
+
+        <!--  Indicador del menud e pestañas  -->
+        <Border
+            Grid.Row="2"
+            BackgroundColor="#E8E6ED"
+            HeightRequest="50"
+            HorizontalOptions="Center"
+            Stroke="#9E7BF7"
+            StrokeShape="RoundRectangle 10,10,10,10"
+            WidthRequest="350">
+            <HorizontalStackLayout
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                Spacing="60"
+                VerticalOptions="Center">
+                <Image
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    Source="profile.png"
+                    VerticalOptions="Center"
+                    WidthRequest="40" />
+                <Label
+                    Grid.Column="2"
+                    FontFamily="InterR"
+                    FontSize="18"
+                    HorizontalTextAlignment="Center"
+                    Text="Profitability"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center" />
+                <Label
+                    Grid.Column="2"
+                    FontFamily="NexaHeavy"
+                    FontSize="18"
+                    HorizontalOptions="End"
+                    Text="74%"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+            </HorizontalStackLayout>
+        </Border>
+
+        <!--  Grafica  -->
+        <Border
+            Grid.Row="3"
+            BackgroundColor="#E8E6ED"
+            HeightRequest="350"
+            HorizontalOptions="Center"
+            Stroke="#9E7BF7"
+            StrokeShape="RoundRectangle 10,10,10,10"
+            WidthRequest="350">
+            <Image Aspect="Fill" Source="grafica.png" />
+        </Border>
+
+        <!--  Subtitulod el resumend e las ganancias  -->
+        <VerticalStackLayout Grid.Row="4" VerticalOptions="Start">
+            <Label
+                FontFamily="InterB18"
+                FontSize="20"
+                Text="Stats"
+                TextColor="#424242" />
+        </VerticalStackLayout>
+
+        <!--  Resumen de las ganancias totales y ganancias reales  -->
+        <Grid Grid.Row="5" ColumnDefinitions="*,*">
+            <VerticalStackLayout>
+                <Label
+                    FontFamily="Inter"
+                    FontSize="15"
+                    Text="Total Earnings"
+                    TextColor="#424242" />
+                <Label
+                    FontFamily="InterB24"
+                    FontSize="20"
+                    Text="$2500"
+                    TextColor="#424242" />
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="1" HorizontalOptions="End">
+                <Label
+                    FontFamily="Inter"
+                    FontSize="15"
+                    Text="True Earnings"
+                    TextColor="#424242" />
+                <Label
+                    FontFamily="InterB24"
+                    FontSize="20"
+                    Text="$1875"
+                    TextColor="#424242" />
+            </VerticalStackLayout>
+
+        </Grid>
+
+        <!--  Boton para agragar la info  -->
+        <Button
+            Grid.Row="6"
+            Margin="15,0"
+            BackgroundColor="{StaticResource PrimaryDark}"
+            BorderColor="#9E7BF7"
+            BorderWidth="1"
+            Clicked="OnNavigateButtonClicked"
+            CornerRadius="30"
+            FontAttributes="Bold"
+            FontFamily="RobotoR"
+            FontSize="18"
+            HeightRequest="50"
+            Text=" Add Info"
+            TextColor="Black" />
+
+    </Grid>
+
+</ContentPage>

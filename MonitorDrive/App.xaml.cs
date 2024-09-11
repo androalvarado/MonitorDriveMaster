@@ -1,4 +1,6 @@
-﻿namespace MonitorDrive
+﻿using MonitorDrive.Pages;
+
+namespace MonitorDrive
 {
     public partial class App : Application
     {

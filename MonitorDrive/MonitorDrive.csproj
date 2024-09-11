@@ -57,9 +57,31 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\Inter_18pt-Black.ttf" />
+	  <None Remove="Resources\Fonts\Inter_18pt-Bold.ttf" />
+	  <None Remove="Resources\Fonts\Inter_18pt-Light.ttf" />
+	  <None Remove="Resources\Fonts\Inter_18pt-Regular.ttf" />
+	  <None Remove="Resources\Fonts\Inter_24pt-Bold.ttf" />
+	  <None Remove="Resources\Images\grafica.png" />
+	  <None Remove="Resources\Images\profile.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Pages\AddDayWorkInfoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\DashboardPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\ListInfoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

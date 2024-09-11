@@ -13,6 +13,11 @@ namespace MonitorDrive
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");                    
+                    fonts.AddFont("Inter_18pt-Light.ttf", "InterL");
+                    fonts.AddFont("Inter_18pt-Regular.ttf", "InterR");
+                    fonts.AddFont("Inter_24pt-Bold.ttf", "InterB24");
+                    fonts.AddFont("Inter_18pt-Bold.ttf", "InterB18p");
                 });
 
 #if DEBUG
@@ -20,6 +25,8 @@ namespace MonitorDrive
 #endif
 
             return builder.Build();
+
         }
+
     }
 }
