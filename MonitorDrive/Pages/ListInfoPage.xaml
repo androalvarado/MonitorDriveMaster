@@ -25,7 +25,10 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
-                        <Label Grid.Column="0" Text="Date" />
+                        <Label
+                            Grid.Column="0"
+                            Text="Date"
+                            TextColor="Black" />
                         <Label Grid.Column="1" Text="Distance" />
                         <Label Grid.Column="2" Text="Start Time" />
                         <Label Grid.Column="3" Text="End Time" />

@@ -11,11 +11,11 @@
             FontSize="Subtitle"
             Text="Time"
             TextColor="#703FF3" />
-        <Border Stroke="#703FF3">
+        <Border Padding="10,0,0,0" Stroke="#703FF3">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="40,40,40,40" />
             </Border.StrokeShape>
-            <DatePicker x:Name="fechaPicker" />
+            <DatePicker x:Name="fechaPicker" TextColor="{StaticResource Primary}" />
         </Border>
 
 
@@ -23,7 +23,7 @@
             FontSize="Subtitle"
             Text="Total Distance (km)"
             TextColor="#703FF3" />
-        <Border Stroke="#703FF3">
+        <Border Padding="10,0,0,0" Stroke="#703FF3">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="40,40,40,40" />
             </Border.StrokeShape>
@@ -38,11 +38,11 @@
             FontSize="Subtitle"
             Text="Start Time"
             TextColor="#703FF3" />
-        <Border Stroke="#703FF3">
+        <Border Padding="10,0,0,0" Stroke="#703FF3">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="40,40,40,40" />
             </Border.StrokeShape>
-            <TimePicker x:Name="horaInicioPicker" />
+            <TimePicker x:Name="horaInicioPicker" TextColor="{StaticResource Primary}" />
         </Border>
 
 
@@ -50,11 +50,11 @@
             FontSize="Subtitle"
             Text="Time Finished"
             TextColor="#703FF3" />
-        <Border Stroke="#703FF3">
+        <Border Padding="10,0,0,0" Stroke="#703FF3">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="40,40,40,40" />
             </Border.StrokeShape>
-            <TimePicker x:Name="horaFinPicker" />
+            <TimePicker x:Name="horaFinPicker" TextColor="{StaticResource Primary}" />
         </Border>
 
 
@@ -62,7 +62,7 @@
             FontSize="Subtitle"
             Text="Total Amount Generated"
             TextColor="#703FF3" />
-        <Border Stroke="#703FF3">
+        <Border Padding="10,0,0,0" Stroke="#703FF3">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="40,40,40,40" />
             </Border.StrokeShape>
@@ -77,7 +77,7 @@
             FontSize="Subtitle"
             Text="Tips"
             TextColor="#703FF3" />
-        <Border Stroke="#703FF3">
+        <Border Padding="10,0,0,0" Stroke="#703FF3">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="40,40,40,40" />
             </Border.StrokeShape>
@@ -92,7 +92,7 @@
             FontSize="Subtitle"
             Text="Number of Passengers"
             TextColor="#703FF3" />
-        <Border Stroke="#703FF3">
+        <Border Padding="10,0,0,0" Stroke="#703FF3">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="40,40,40,40" />
             </Border.StrokeShape>
@@ -104,6 +104,7 @@
 
 
         <Button
+            Margin="0,20,0,0"
             BackgroundColor="#703FF3"
             Clicked="OnNavigateButtonClicked"
             HeightRequest="50"

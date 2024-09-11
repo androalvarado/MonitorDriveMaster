@@ -106,6 +106,7 @@
                     VerticalOptions="Center"
                     WidthRequest="40" />
                 <Label
+                    x:Name="labelIndicator"
                     Grid.Column="2"
                     FontFamily="InterR"
                     FontSize="18"
@@ -146,7 +147,10 @@
         </VerticalStackLayout>
 
         <!--  Resumen de las ganancias totales y ganancias reales  -->
-        <Grid Grid.Row="5" ColumnDefinitions="*,*">
+        <Grid
+            x:Name="labelStats"
+            Grid.Row="5"
+            ColumnDefinitions="*,*">
             <VerticalStackLayout>
                 <Label
                     FontFamily="Inter"

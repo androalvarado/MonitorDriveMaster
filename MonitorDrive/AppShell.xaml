@@ -8,8 +8,7 @@
     Title="MonitorDrive"
     BackgroundColor="#703FF3"
     Shell.BackgroundColor="#703FF3"
-    Shell.FlyoutBehavior="Flyout"
-    Shell.ForegroundColor="Azure">
+    Shell.FlyoutBehavior="Flyout">
 
     <ShellContent Title="Dashboard" ContentTemplate="{DataTemplate page:DashboardPage}" />
     <ShellContent Title="Add Info" ContentTemplate="{DataTemplate page:AddDayWorkInfoPage}" />

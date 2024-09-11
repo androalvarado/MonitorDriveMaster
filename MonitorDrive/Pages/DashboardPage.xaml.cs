@@ -13,7 +13,10 @@ public partial class DashboardPage : ContentPage
         if (label != null)
         {
             label.FontAttributes = label.FontAttributes == FontAttributes.Bold ? FontAttributes.None : FontAttributes.Bold;
+            labelIndicator.Text = label.Text;            
         }
+            labelStats.IsVisible = !labelStats.IsVisible;
+        
     }
 
     private async void OnNavigateButtonClicked(object sender, EventArgs e)
