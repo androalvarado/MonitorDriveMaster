@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MonitorDrive"
     xmlns:page="clr-namespace:MonitorDrive.Pages"
+    xmlns:profile="clr-namespace:MonitorDrive.Pages.ProfilePages"
     Title="MonitorDrive"
     BackgroundColor="#703FF3"
     Shell.BackgroundColor="#703FF3"
@@ -12,6 +13,7 @@
 
     <ShellContent Title="Dashboard" ContentTemplate="{DataTemplate page:DashboardPage}" />
     <ShellContent Title="Add Info" ContentTemplate="{DataTemplate page:AddDayWorkInfoPage}" />
+    <ShellContent Title="Profile" ContentTemplate="{DataTemplate profile:ProfilePage}" />
 
     <ShellItem>
         <ShellSection Title="Home">
@@ -23,12 +25,14 @@
         <ShellSection Title="More">
             <ShellContent ContentTemplate="{DataTemplate page:DashboardPage}" />
             <ShellContent ContentTemplate="{DataTemplate page:AddDayWorkInfoPage}" />
+            <ShellContent ContentTemplate="{DataTemplate profile:ProfilePage}" />
         </ShellSection>
     </ShellItem>
 
     <TabBar>
         <ShellContent Title="Home" ContentTemplate="{DataTemplate page:DashboardPage}" />
         <ShellContent Title="Add Info" ContentTemplate="{DataTemplate page:AddDayWorkInfoPage}" />
+        <ShellContent Title="Profile" ContentTemplate="{DataTemplate profile:ProfilePage}" />
     </TabBar>
 
 </Shell>
