@@ -3,19 +3,46 @@
     x:Class="MonitorDrive.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:auth="clr-namespace:MonitorDrive.Pages.Auth"
     xmlns:local="clr-namespace:MonitorDrive"
+    xmlns:manage="clr-namespace:MonitorDrive.Pages.Management"
     xmlns:page="clr-namespace:MonitorDrive.Pages"
     xmlns:profile="clr-namespace:MonitorDrive.Pages.ProfilePages"
     Title="MonitorDrive"
-    BackgroundColor="#703FF3"
-    Shell.BackgroundColor="#703FF3"
-    Shell.FlyoutBehavior="Flyout">
+    Shell.BackgroundColor="{StaticResource Tertiary}"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.TabBarBackgroundColor="{StaticResource Tertiary}"
+    Shell.TabBarIsVisible="True"
+    Shell.TabBarUnselectedColor="White">
 
-    <ShellContent Title="Dashboard" ContentTemplate="{DataTemplate page:DashboardPage}" />
-    <ShellContent Title="Add Info" ContentTemplate="{DataTemplate page:AddDayWorkInfoPage}" />
-    <ShellContent Title="Profile" ContentTemplate="{DataTemplate profile:ProfilePage}" />
 
-    <ShellItem>
+
+    <!--<ShellContent
+        Title="Dashboard"
+        ContentTemplate="{DataTemplate page:DashboardPage}"
+        Route="DashboardPage" />
+    <ShellContent
+        Title="Add Info"
+        ContentTemplate="{DataTemplate page:AddDayWorkInfoPage}"
+        Route="AddDayWorkInfoPage" />
+    <ShellContent
+        Title="Profile"
+        ContentTemplate="{DataTemplate profile:ProfilePage}"
+        Route="ProfilePage" />
+    <ShellContent
+        Title="Ranking View"
+        ContentTemplate="{DataTemplate profile:RankingPage}"
+        Route="RankingPage" />
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate auth:LoginPage}"
+        Route="LoginPage" />
+    <ShellContent
+        Title="RegisterPage"
+        ContentTemplate="{DataTemplate auth:RegisterPage}"
+        Route="RegisterPage" />-->
+
+    <!--<ShellItem>
         <ShellSection Title="Home">
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
         </ShellSection>
@@ -23,16 +50,49 @@
 
     <ShellItem>
         <ShellSection Title="More">
-            <ShellContent ContentTemplate="{DataTemplate page:DashboardPage}" />
-            <ShellContent ContentTemplate="{DataTemplate page:AddDayWorkInfoPage}" />
-            <ShellContent ContentTemplate="{DataTemplate profile:ProfilePage}" />
+            <ShellContent
+                Title="Dashboard"
+                ContentTemplate="{DataTemplate page:DashboardPage}"
+                Route="DashboardPage" />
+            <ShellContent
+                Title="Add Info"
+                ContentTemplate="{DataTemplate page:AddDayWorkInfoPage}"
+                Route="AddDayWorkInfoPage" />
+            <ShellContent
+                Title="Profile"
+                ContentTemplate="{DataTemplate profile:ProfilePage}"
+                Route="ProfilePage" />
+            <ShellContent
+                Title="Ranking View"
+                ContentTemplate="{DataTemplate profile:RankingPage}"
+                Route="RankingPage" />
+            <ShellContent
+                Title="Login"
+                ContentTemplate="{DataTemplate auth:LoginPage}"
+                Route="LoginPage" />
+            <ShellContent
+                Title="RegisterPage"
+                ContentTemplate="{DataTemplate auth:RegisterPage}"
+                Route="RegisterPage" />
         </ShellSection>
-    </ShellItem>
+    </ShellItem>-->
 
     <TabBar>
-        <ShellContent Title="Home" ContentTemplate="{DataTemplate page:DashboardPage}" />
-        <ShellContent Title="Add Info" ContentTemplate="{DataTemplate page:AddDayWorkInfoPage}" />
-        <ShellContent Title="Profile" ContentTemplate="{DataTemplate profile:ProfilePage}" />
+        <ShellContent
+            Title="Dashboard"
+            ContentTemplate="{DataTemplate page:DashboardPage}"
+            Route="DashboardPage" />
+        <ShellContent
+            Title="Add Info"
+            ContentTemplate="{DataTemplate manage:AddDayWorkInfoPage}"
+            Route="AddDayWorkInfoPage" />
+        <ShellContent
+            Title="Registered"
+            ContentTemplate="{DataTemplate manage:ListInfoPage}"
+            Route="ListInfoPage" />
+        <ShellContent
+            Title="Profile"
+            ContentTemplate="{DataTemplate profile:ProfilePage}"
+            Route="ProfilePage" />
     </TabBar>
-
 </Shell>

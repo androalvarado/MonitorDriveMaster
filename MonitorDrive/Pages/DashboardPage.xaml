@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     BackgroundColor="{StaticResource Primary}">
 
-    <Grid Margin="25,25,25,25" RowDefinitions=".05*,.1*, .05*, .6*, .05*, .1*, .05*">
+    <Grid Margin="25,25,25,25" RowDefinitions=".05*,.1*, .04*, .55*, .05*, .1*, .05*">
         <Grid ColumnDefinitions=" *,*">
             <VerticalStackLayout Grid.Row="1" VerticalOptions="Start">
                 <Label
@@ -70,7 +70,11 @@
                     FontFamily="InterM"
                     FontSize="16"
                     Text="Log Out"
-                    TextColor="#703FF3" />
+                    TextColor="#703FF3">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLogOutTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
             </StackLayout>
         </Frame>
 
@@ -224,9 +228,9 @@
         <!--  Boton para agragar la info  -->
         <Button
             Grid.Row="6"
-            Margin="15,0"
+            Margin="15"
             BackgroundColor="{StaticResource PrimaryDark}"
-            BorderColor="#9E7BF7"
+            BorderColor="{StaticResource SecondaryDarkText}"
             BorderWidth="1"
             Clicked="OnNavigateButtonClicked"
             CornerRadius="30"
@@ -235,7 +239,8 @@
             FontSize="18"
             HeightRequest="50"
             Text=" Add Info"
-            TextColor="Black" />
+            TextColor="Black"
+            WidthRequest="200" />
 
     </Grid>
 

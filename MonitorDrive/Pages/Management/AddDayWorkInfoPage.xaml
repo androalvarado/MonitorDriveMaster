@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MonitorDrive.Pages.Management.AddDayWorkInfoPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Add Info"
+    BackgroundColor="{StaticResource White}">
+
+    <ScrollView>
+        <Border
+            Margin="10"
+            Padding="5"
+            BackgroundColor="White"
+            Stroke="#F3F3F3"
+            StrokeShape="RoundRectangle 40,40,40,40"
+            StrokeThickness="10">
+            <VerticalStackLayout Margin="15,15,15,25" Spacing="10">
+                <Label Text="Time" TextColor="{StaticResource Tertiary}" />
+                <Border Padding="10,0,0,0" Stroke="{StaticResource Tertiary}">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="40,40,40,40" />
+                    </Border.StrokeShape>
+                    <DatePicker x:Name="fechaPicker" TextColor="{StaticResource Primary}" />
+                </Border>
+                <Label Text="Total Distance (km)" TextColor="{StaticResource Tertiary}" />
+                <Border Padding="10,0,0,0" Stroke="{StaticResource Tertiary}">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="40,40,40,40" />
+                    </Border.StrokeShape>
+                    <Entry
+                        x:Name="distanciaEntry"
+                        Keyboard="Numeric"
+                        Placeholder="Enter the distance traveled" />
+                </Border>
+                <Label Text="Start Time" TextColor="{StaticResource Tertiary}" />
+                <Border Padding="10,0,0,0" Stroke="{StaticResource Tertiary}">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="40,40,40,40" />
+                    </Border.StrokeShape>
+                    <TimePicker x:Name="horaInicioPicker" TextColor="{StaticResource Primary}" />
+                </Border>
+
+
+                <Label Text="Time Finished" TextColor="{StaticResource Tertiary}" />
+                <Border Padding="10,0,0,0" Stroke="{StaticResource Tertiary}">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="40,40,40,40" />
+                    </Border.StrokeShape>
+                    <TimePicker x:Name="horaFinPicker" TextColor="{StaticResource Primary}" />
+                </Border>
+
+
+                <Label Text="Total Amount Generated" TextColor="{StaticResource Tertiary}" />
+                <Border Padding="10,0,0,0" Stroke="{StaticResource Tertiary}">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="40,40,40,40" />
+                    </Border.StrokeShape>
+                    <Entry
+                        x:Name="montoTotalEntry"
+                        Keyboard="Numeric"
+                        Placeholder="Amount generated" />
+                </Border>
+                <Label Text="Tips" TextColor="{StaticResource Tertiary}" />
+                <Border Padding="10,0,0,0" Stroke="{StaticResource Tertiary}">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="40,40,40,40" />
+                    </Border.StrokeShape>
+                    <Entry
+                        x:Name="propinaEntry"
+                        Keyboard="Numeric"
+                        Placeholder="Tip received" />
+                </Border>
+                <Label Text="Number of Passengers" TextColor="{StaticResource Tertiary}" />
+                <Border Padding="10,0,0,0" Stroke="{StaticResource Tertiary}">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="40,40,40,40" />
+                    </Border.StrokeShape>
+                    <Entry
+                        x:Name="cantidadPasajerosEntry"
+                        Keyboard="Numeric"
+                        Placeholder="Number of passengers transported" />
+                </Border>
+
+                <Button
+                    Margin="0,20,0,0"
+                    BackgroundColor="{StaticResource Tertiary}"
+                    Clicked="OnNavigateButtonClicked"
+                    HeightRequest="50"
+                    Text="Add"
+                    TextColor="White"
+                    VerticalOptions="End"
+                    WidthRequest="260" />
+            </VerticalStackLayout>
+        </Border>
+    </ScrollView>
+</ContentPage>

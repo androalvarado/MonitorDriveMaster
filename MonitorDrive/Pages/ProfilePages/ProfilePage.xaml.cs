@@ -18,7 +18,13 @@ public partial class ProfilePage : ContentPage
     private async void OnNavigateButtonClicked(object sender, EventArgs e)
     {
         //await Navigation.PushAsync(new AddDayWorkInfoPage());
-        await Shell.Current.GoToAsync("DashboardPage");
+        //await Shell.Current.GoToAsync(nameof(DashboardPage));
+    }
+
+    private async void OnRankTapped(object sender, EventArgs e)
+    {
+        // Navegar a RankingPage
+        await Shell.Current.GoToAsync(nameof(RankingPage));
     }
 
     private void OnLanguageChanged(object sender, EventArgs e)

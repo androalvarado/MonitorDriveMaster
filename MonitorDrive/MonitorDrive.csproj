@@ -43,7 +43,7 @@
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Splash\brain.png" Color="#703FF3" BaseSize="100,100" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -63,33 +63,52 @@
 	  <None Remove="Resources\Fonts\Inter_18pt-Regular.ttf" />
 	  <None Remove="Resources\Fonts\Inter_24pt-Bold.ttf" />
 	  <None Remove="Resources\Fonts\Inter_24pt-Medium.ttf" />
+	  <None Remove="Resources\Fonts\Inter_24pt-SemiBold.ttf" />
+	  <None Remove="Resources\Images\brain.png" />
+	  <None Remove="Resources\Images\brainBG.png" />
 	  <None Remove="Resources\Images\grafica.png" />
+	  <None Remove="Resources\Images\nameandlogo.png" />
+	  <None Remove="Resources\Images\podio1.png" />
+	  <None Remove="Resources\Images\podio2.svg" />
 	  <None Remove="Resources\Images\profile.png" />
+	  <None Remove="Resources\Images\profileranking.jfif" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="9.0.3" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Pages\AddDayWorkInfoPage.xaml">
+	  <MauiXaml Update="MauiSplashScreen.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Management\AddDayWorkInfoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Auth\LoginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Auth\RegisterPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\DashboardPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\ListInfoPage.xaml">
+	  <MauiXaml Update="Pages\Management\ListInfoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\ProfilePages\ProfilePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\ProfilePages\RankingPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Pages\Auth\" />
-	</ItemGroup>
+	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionMonitorDriveHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>

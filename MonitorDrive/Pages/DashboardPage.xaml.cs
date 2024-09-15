@@ -50,4 +50,10 @@ public partial class DashboardPage : ContentPage
         //await Navigation.PushAsync(new ProfilePage());
         await Shell.Current.GoToAsync("ProfilePage");
     }
+
+    private async void OnLogOutTapped(object sender, EventArgs e)
+    {
+        TooltipFrame.IsVisible = false;
+        await Shell.Current.GoToAsync("LoginPage");
+    }
 }

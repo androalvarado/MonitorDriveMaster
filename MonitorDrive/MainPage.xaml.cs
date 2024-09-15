@@ -1,4 +1,6 @@
-﻿namespace MonitorDrive
+﻿using  MonitorDrive.Pages.Auth;
+
+namespace MonitorDrive
 {
     public partial class MainPage : ContentPage
     {
@@ -7,19 +9,46 @@
         public MainPage()
         {
             InitializeComponent();
+
+            // Deshabilitar el TabBar
+            Shell.SetTabBarIsVisible(this, false);
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        async private void GoToRegister(object sender, EventArgs e)
         {
-            count++;
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+            // Desactivar el botón para evitar múltiples clics
+            //((Button)sender).IsEnabled = false;
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            // Animación de salida
+            //await this.FadeTo(0, 200);
+
+            // Preparar AppShell
+            //App.AppShellInstance.Opacity = 0;
+            //Application.Current.MainPage = App.AppShellInstance;
+
+            //// Animar la aparición del AppShell
+            //await App.AppShellInstance.FadeTo(1, 200);
+
+            // Navegar explícitamente a Register
+            await Shell.Current.GoToAsync(nameof(RegisterPage));
+            await Task.Delay(100);
         }
+        async private void GoToLogin(object sender, EventArgs e)
+        {
+
+            // Desactivar el botón para evitar múltiples clics
+            //((Button)sender).IsEnabled = false;
+
+            // Preparar AppShell
+            //App.AppShellInstance.Opacity = 0;
+            //Application.Current.MainPage = App.AppShellInstance;
+
+            // Navegar explícitamente a Register
+            await Shell.Current.GoToAsync(nameof(LoginPage));
+
+        }
+
     }
 
 }

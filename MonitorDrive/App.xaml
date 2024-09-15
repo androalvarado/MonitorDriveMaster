@@ -9,6 +9,14 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+                <ResourceDictionary>
+                    <Color x:Key="TransitionColor">#703FF3</Color>
+                    <Style x:Key="TransitionOverlay" TargetType="BoxView">
+                        <Setter Property="Color" Value="{StaticResource TransitionColor}" />
+                        <Setter Property="Opacity" Value="0" />
+                        <Setter Property="InputTransparent" Value="True" />
+                    </Style>
+                </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 
