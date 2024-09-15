@@ -4,7 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Profile"
-    BackgroundColor="#FFFFFF">
+    BackgroundColor="{StaticResource Gray90}">
 
     <ScrollView>
         <Grid
@@ -37,6 +37,7 @@
 
                     <Label
                         Grid.Column="1"
+                        Margin="0,0,25,0"
                         FontFamily="InterB24"
                         FontSize="20"
                         HorizontalOptions="End"
@@ -70,7 +71,11 @@
                             FontFamily="InterR"
                             HorizontalOptions="Center"
                             Text="65"
-                            TextColor="#FFFFFF" />
+                            TextColor="#FFFFFF">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnRankTapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
                         <BoxView
                             Grid.RowSpan="2"
                             Grid.Column="1"
@@ -96,175 +101,160 @@
             <!--  Segunda fila: Información Personal  -->
 
             <!--  Tercera fila: Ajustes  -->
-            <Border
+
+            <ScrollView
                 Grid.Row="1"
-                Margin="0,0,0,5"
-                Padding="0,5,0,0"
-                BackgroundColor="#F3F3F3"
-                Stroke="Transparent"
-                StrokeShape="RoundRectangle 10">
-                <ScrollView BackgroundColor="#F3F3F3">
-                    <Grid RowDefinitions="*,*">
-                        <StackLayout Spacing="15">
-                            <Frame
-                                Padding="15,15,15,0"
-                                BackgroundColor="#F3F3F3"
-                                BorderColor="#F3F3F3"
-                                CornerRadius="10">
-                                <Frame
-                                    Padding="10"
-                                    BackgroundColor="#FFFFFF"
-                                    BorderColor="White"
-                                    CornerRadius="10"
-                                    HasShadow="True">
-                                    <StackLayout Spacing="10">
-                                        <Label
-                                            Margin="20,0,0,0"
-                                            FontAttributes="Bold"
-                                            FontSize="18"
-                                            Text="Personal Info"
-                                            TextColor="#D8CBFA" />
-                                        <Grid
-                                            ColumnDefinitions="Auto,*"
-                                            RowDefinitions="Auto,Auto,Auto,Auto,Auto"
-                                            RowSpacing="10">
-                                            <Label
-                                                Margin="20,0,0,0"
-                                                FontAttributes="Bold"
-                                                Text="Email:"
-                                                TextColor="Black" />
-                                            <Label
-                                                Grid.Column="1"
-                                                Margin="20,0,0,0"
-                                                HorizontalOptions="End"
-                                                Text="andrewsmith@gmail.com"
-                                                TextColor="#703FF3" />
-                                            <BoxView
-                                                Grid.Row="1"
-                                                Grid.ColumnSpan="2"
-                                                Margin="10,10"
-                                                HeightRequest="1"
-                                                Color="#d0d0d0" />
-                                            <Label
-                                                Grid.Row="2"
-                                                Margin="20,0,0,0"
-                                                FontAttributes="Bold"
-                                                Text="Country:"
-                                                TextColor="Black" />
-                                            <Label
-                                                Grid.Row="2"
-                                                Grid.Column="1"
-                                                Margin="20,0,0,0"
-                                                HorizontalOptions="Center"
-                                                Text="United States"
-                                                TextColor="#703FF3" />
-                                            <BoxView
-                                                Grid.Row="3"
-                                                Grid.ColumnSpan="2"
-                                                Margin="10,10"
-                                                HeightRequest="1"
-                                                Color="#d0d0d0" />
+                Margin="0,5"
+                BackgroundColor="#F3F3F3">
+                <Grid RowDefinitions="*,*" RowSpacing="20">
+                    <StackLayout Spacing="15">
+                        <Frame
+                            Padding="10,20,20,20"
+                            BackgroundColor="{StaticResource CardBG}"
+                            BorderColor="Transparent"
+                            CornerRadius="10"
+                            HasShadow="True">
+                            <StackLayout Spacing="10">
+                                <Label
+                                    Margin="20,0,0,0"
+                                    FontAttributes="Bold"
+                                    FontSize="18"
+                                    Text="Personal Info"
+                                    TextColor="#D8CBFA" />
+                                <Grid
+                                    ColumnDefinitions="Auto,*"
+                                    RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                                    RowSpacing="10">
+                                    <Label
+                                        Margin="20,0,0,0"
+                                        FontAttributes="Bold"
+                                        Text="Email:"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Column="1"
+                                        Margin="20,0,0,0"
+                                        HorizontalOptions="End"
+                                        Text="andrewsmith@gmail.com"
+                                        TextColor="#703FF3" />
+                                    <BoxView
+                                        Grid.Row="1"
+                                        Grid.ColumnSpan="2"
+                                        Margin="10,10"
+                                        HeightRequest="1"
+                                        Color="#d0d0d0" />
+                                    <Label
+                                        Grid.Row="2"
+                                        Margin="20,0,0,0"
+                                        FontAttributes="Bold"
+                                        Text="Country:"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Row="2"
+                                        Grid.Column="1"
+                                        Margin="20,0,0,0"
+                                        HorizontalOptions="Center"
+                                        Text="United States"
+                                        TextColor="#703FF3" />
+                                    <BoxView
+                                        Grid.Row="3"
+                                        Grid.ColumnSpan="2"
+                                        Margin="10,10"
+                                        HeightRequest="1"
+                                        Color="#d0d0d0" />
 
-                                            <Label
-                                                Grid.Row="4"
-                                                Margin="20,0,0,0"
-                                                FontAttributes="Bold"
-                                                Text="Cars:"
-                                                TextColor="Black" />
-                                            <Label
-                                                Grid.Row="4"
-                                                Grid.Column="1"
-                                                HorizontalOptions="End"
-                                                Text="Toyota 2021, Audi 2020"
-                                                TextColor="#703FF3" />
-                                        </Grid>
-                                    </StackLayout>
-                                </Frame>
-                            </Frame>
-                        </StackLayout>
-                        <StackLayout Grid.Row="1" Spacing="10">
-                            <Frame
-                                Padding="15"
-                                BackgroundColor="#F3F3F3"
-                                BorderColor="#F3F3F3"
-                                CornerRadius="10">
-                                <Frame
-                                    Padding="10"
-                                    BackgroundColor="#FFFFFF"
-                                    BorderColor="White"
-                                    CornerRadius="10"
-                                    HasShadow="True">
-                                    <StackLayout Spacing="10">
-                                        <Label
-                                            Margin="20,0,0,0"
-                                            FontAttributes="Bold"
-                                            FontSize="18"
-                                            Text="Preferences"
-                                            TextColor="#D8CBFA" />
-                                        <Grid
-                                            ColumnDefinitions="Auto,*"
-                                            RowDefinitions="Auto,Auto,Auto"
-                                            RowSpacing="10">
-                                            <Label
-                                                Margin="20,0,0,0"
-                                                FontAttributes="Bold"
-                                                Text="Language:"
-                                                TextColor="Black" />
-                                            <Border
-                                                Grid.Column="1"
-                                                Margin="0,0,20,0"
-                                                BackgroundColor="#D9D9D9"
-                                                HorizontalOptions="End"
-                                                Stroke="#D9D9D9"
-                                                StrokeShape="RoundRectangle 10,10,10,10"
-                                                StrokeThickness="4"
-                                                WidthRequest="60" />
-                                            <Picker
-                                                x:Name="LanguagePicker"
-                                                Grid.Column="1"
-                                                Margin="0,0,20,0"
-                                                HorizontalOptions="End"
-                                                HorizontalTextAlignment="Center"
-                                                SelectedIndexChanged="OnLanguageChanged"
-                                                TextColor="#703FF3"
-                                                WidthRequest="60">
-                                                <Picker.ItemsSource>
-                                                    <x:Array Type="{x:Type x:String}">
-                                                        <x:String>ES</x:String>
-                                                        <x:String>EN</x:String>
-                                                        <x:String>FR</x:String>
-                                                    </x:Array>
-                                                </Picker.ItemsSource>
-                                            </Picker>
-                                            <BoxView
-                                                Grid.Row="1"
-                                                Grid.ColumnSpan="2"
-                                                Margin="10,10"
-                                                HeightRequest="1"
-                                                Color="#d0d0d0" />
-                                            <Label
-                                                Grid.Row="2"
-                                                Margin="20,0,0,0"
-                                                FontAttributes="Bold"
-                                                Text="Settings:"
-                                                TextColor="Black" />
-                                            <Label
-                                                Grid.Row="2"
-                                                Grid.Column="1"
-                                                Margin="0,0,50,0"
-                                                HorizontalOptions="End"
-                                                Text="&gt;"
-                                                TextColor="#703FF3" />
-                                        </Grid>
-                                    </StackLayout>
-                                </Frame>
-                            </Frame>
-                        </StackLayout>
-                    </Grid>
+                                    <Label
+                                        Grid.Row="4"
+                                        Margin="20,0,0,0"
+                                        FontAttributes="Bold"
+                                        Text="Cars:"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Row="4"
+                                        Grid.Column="1"
+                                        HorizontalOptions="End"
+                                        Text="Toyota 2021, Audi 2020"
+                                        TextColor="#703FF3" />
+                                </Grid>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1" Spacing="10">
+                        <Frame
+                            Padding="10"
+                            BackgroundColor="{StaticResource CardBG}"
+                            BorderColor="Transparent"
+                            CornerRadius="10"
+                            HasShadow="True">
+                            <StackLayout Spacing="10">
+                                <Label
+                                    Margin="20,0,0,0"
+                                    FontAttributes="Bold"
+                                    FontSize="18"
+                                    Text="Preferences"
+                                    TextColor="#D8CBFA" />
+                                <Grid
+                                    ColumnDefinitions="Auto,*"
+                                    RowDefinitions="Auto,Auto,Auto"
+                                    RowSpacing="10">
+                                    <Label
+                                        Margin="20,15,0,0"
+                                        FontAttributes="Bold"
+                                        HorizontalOptions="End"
+                                        Text="Language:"
+                                        TextColor="Black" />
+                                    <Border
+                                        Grid.Column="1"
+                                        Margin="0,0,20,0"
+                                        BackgroundColor="#D9D9D9"
+                                        HorizontalOptions="End"
+                                        Stroke="#D9D9D9"
+                                        StrokeShape="RoundRectangle 10,10,10,10"
+                                        StrokeThickness="4"
+                                        WidthRequest="60" />
+                                    <Picker
+                                        x:Name="LanguagePicker"
+                                        Grid.Column="1"
+                                        Margin="0,0,20,0"
+                                        HorizontalOptions="End"
+                                        HorizontalTextAlignment="Center"
+                                        SelectedIndexChanged="OnLanguageChanged"
+                                        TextColor="#703FF3"
+                                        WidthRequest="60">
+                                        <Picker.ItemsSource>
+                                            <x:Array Type="{x:Type x:String}">
+                                                <x:String>ES</x:String>
+                                                <x:String>EN</x:String>
+                                                <x:String>FR</x:String>
+                                            </x:Array>
+                                        </Picker.ItemsSource>
+                                    </Picker>
+                                    <BoxView
+                                        Grid.Row="1"
+                                        Grid.ColumnSpan="2"
+                                        Margin="10,10"
+                                        HeightRequest="1"
+                                        Color="#d0d0d0" />
+                                    <Label
+                                        Grid.Row="2"
+                                        Margin="20,0,0,0"
+                                        FontAttributes="Bold"
+                                        Text="Settings:"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Row="2"
+                                        Grid.Column="1"
+                                        Margin="0,0,50,0"
+                                        HorizontalOptions="End"
+                                        Text="&gt;"
+                                        TextColor="#703FF3" />
+                                </Grid>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </Grid>
 
 
-                </ScrollView>
-            </Border>
+            </ScrollView>
 
             <!--  Boton para agragar la info  -->
             <Frame

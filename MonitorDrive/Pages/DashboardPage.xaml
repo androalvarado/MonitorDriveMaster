@@ -3,9 +3,9 @@
     x:Class="MonitorDrive.Pages.DashboardPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    BackgroundColor="{StaticResource Primary}">
+    BackgroundColor="{StaticResource Gray90}">
 
-    <Grid Margin="25,25,25,25" RowDefinitions=".05*,.1*, .04*, .55*, .05*, .1*, .05*">
+    <Grid Margin="20,20,20,20" RowDefinitions=".05*,.1*, .04*, .55*, .05*, .1*, .05*">
         <Grid ColumnDefinitions=" *,*">
             <VerticalStackLayout Grid.Row="1" VerticalOptions="Start">
                 <Label
@@ -13,7 +13,7 @@
                     FontFamily="InterB24"
                     FontSize="25"
                     Text="Welcome"
-                    TextColor="#FDFDFD" />
+                    TextColor="{StaticResource SecondaryDarkText}" />
             </VerticalStackLayout>
             <!--  Imagen de perfil  -->
             <Border
@@ -90,41 +90,50 @@
                 WidthRequest="350">
                 <Label
                     x:Name="word1"
-                    FontAttributes="Bold"
+                    FontFamily="InterR"
                     FontSize="15"
-                    Text="Profitability">
+                    Text="Profitability"
+                    TextColor="{StaticResource SecondaryDarkText}">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnWordTapped" />
                     </Label.GestureRecognizers>
                 </Label>
                 <Label
                     x:Name="word2"
+                    FontFamily="InterR"
                     FontSize="15"
-                    Text="Hours">
+                    Text="Hours"
+                    TextColor="{StaticResource SecondaryDarkText}">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnWordTapped" />
                     </Label.GestureRecognizers>
                 </Label>
                 <Label
                     x:Name="word3"
+                    FontFamily="InterR"
                     FontSize="15"
-                    Text="Miles">
+                    Text="Miles"
+                    TextColor="{StaticResource SecondaryDarkText}">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnWordTapped" />
                     </Label.GestureRecognizers>
                 </Label>
                 <Label
                     x:Name="word4"
+                    FontFamily="InterR"
                     FontSize="15"
-                    Text="Travels">
+                    Text="Travels"
+                    TextColor="{StaticResource SecondaryDarkText}">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnWordTapped" />
                     </Label.GestureRecognizers>
                 </Label>
                 <Label
                     x:Name="word5"
+                    FontFamily="InterR"
                     FontSize="15"
-                    Text="Tips">
+                    Text="Tips"
+                    TextColor="{StaticResource SecondaryDarkText}">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnWordTapped" />
                     </Label.GestureRecognizers>
@@ -133,19 +142,24 @@
         </StackLayout>
 
         <!--  Indicador del menud e pestañas  -->
-        <Border
+        <Frame
             Grid.Row="2"
+            Padding="0"
             BackgroundColor="#E8E6ED"
+            BorderColor="{StaticResource CardBG}"
+            CornerRadius="10"
+            HasShadow="True"
             HeightRequest="50"
             HorizontalOptions="Center"
-            Stroke="#9E7BF7"
-            StrokeShape="RoundRectangle 10,10,10,10"
             WidthRequest="350">
             <HorizontalStackLayout
                 Grid.Column="1"
+                Margin="20,0,0,0"
+                HeightRequest="60"
                 HorizontalOptions="Center"
                 Spacing="60"
-                VerticalOptions="Center">
+                VerticalOptions="Center"
+                WidthRequest="310">
                 <Image
                     HeightRequest="40"
                     HorizontalOptions="Start"
@@ -160,9 +174,11 @@
                     HorizontalTextAlignment="Center"
                     Text="Profitability"
                     TextColor="Black"
-                    VerticalTextAlignment="Center" />
+                    VerticalTextAlignment="Center"
+                    WidthRequest="105" />
                 <Label
                     Grid.Column="2"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
                     FontFamily="NexaHeavy"
                     FontSize="18"
                     HorizontalOptions="End"
@@ -170,23 +186,26 @@
                     TextColor="Black"
                     VerticalOptions="Center" />
             </HorizontalStackLayout>
-        </Border>
+        </Frame>
 
         <!--  Grafica  -->
-        <Border
+        <Frame
             Grid.Row="3"
-            BackgroundColor="#E8E6ED"
+            Padding="0"
+            BackgroundColor="{StaticResource Gray90}"
+            BorderColor="{StaticResource SecondaryDarkText}"
+            CornerRadius="10"
+            HasShadow="True"
             HeightRequest="350"
             HorizontalOptions="Center"
-            Stroke="#9E7BF7"
-            StrokeShape="RoundRectangle 10,10,10,10"
             WidthRequest="350">
             <Image Aspect="Fill" Source="grafica.png" />
-        </Border>
+        </Frame>
 
-        <!--  Subtitulod el resumend e las ganancias  -->
+        <!--  Subtitulo del resumen de las ganancias  -->
         <VerticalStackLayout Grid.Row="4" VerticalOptions="Start">
             <Label
+                Margin="10,0,10,0"
                 FontFamily="InterB18"
                 FontSize="20"
                 Text="Stats"
@@ -197,6 +216,7 @@
         <Grid
             x:Name="labelStats"
             Grid.Row="5"
+            Margin="10,0,10,0"
             ColumnDefinitions="*,*">
             <VerticalStackLayout>
                 <Label
@@ -239,9 +259,8 @@
             FontSize="18"
             HeightRequest="50"
             Text=" Add Info"
-            TextColor="Black"
+            TextColor="White"
             WidthRequest="200" />
-
     </Grid>
 
 </ContentPage>
