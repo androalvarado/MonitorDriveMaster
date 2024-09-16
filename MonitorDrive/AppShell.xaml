@@ -83,10 +83,6 @@
             ContentTemplate="{DataTemplate page:DashboardPage}"
             Route="DashboardPage" />
         <ShellContent
-            Title="Add Info"
-            ContentTemplate="{DataTemplate manage:AddDayWorkInfoPage}"
-            Route="AddDayWorkInfoPage" />
-        <ShellContent
             Title="Registered"
             ContentTemplate="{DataTemplate manage:ListInfoPage}"
             Route="ListInfoPage" />

@@ -6,38 +6,75 @@
     Title="Data Display"
     BackgroundColor="{StaticResource Gray90}">
 
-    <VerticalStackLayout Margin="15,25,15,0" Spacing="10">
+    <Grid
+        Margin="15,25,15,0"
+        RowDefinitions=".05*,.85*,.1*"
+        RowSpacing="10">
         <Label
             FontSize="Title"
-            Text="Data List"
-            TextColor="#703FF3" />
+            Text="Travels List"
+            TextColor="{StaticResource Tertiary}"
+            FontFamily="InterSB"/>
 
-        <CollectionView x:Name="dataCollectionView">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Grid Padding="10">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
+        <Frame
+            Grid.Row="1"
+            Padding="0"
+            BackgroundColor="{StaticResource CardBG}"
+            BorderColor="{StaticResource CardBG}"
+            HasShadow="True">
+            <CollectionView x:Name="dataCollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
 
-                        <Label
-                            Grid.Column="0"
-                            Text="Date"
-                            TextColor="Black" />
-                        <Label Grid.Column="1" Text="Distance" />
-                        <Label Grid.Column="2" Text="Start Time" />
-                        <Label Grid.Column="3" Text="End Time" />
-                        <Label Grid.Column="4" Text="Total Amount" />
-                        <Label Grid.Column="5" Text="Tips" />
-                        <Label Grid.Column="6" Text="Number of Passengers" />
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </VerticalStackLayout>
+                            <Label
+                                Grid.Column="0"
+                                Text="Date"
+                                TextColor="Black" />
+                            <Label Grid.Column="1" Text="Distance" />
+                            <Label Grid.Column="2" Text="Start Time" />
+                            <Label Grid.Column="3" Text="End Time" />
+                            <Label Grid.Column="4" Text="Total Amount" />
+                            <Label Grid.Column="5" Text="Tips" />
+                            <Label Grid.Column="6" Text="Number of Passengers" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Frame>
+
+        <!--  Botón circular con símbolo +  -->
+        <Frame
+            x:Name="CircularButton"
+            Grid.Row="2"
+            Margin="20"
+            Padding="0"
+            BackgroundColor="{StaticResource Tertiary}"
+            CornerRadius="10"
+            HasShadow="True"
+            HeightRequest="60"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="250">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnCircularButtonTapped" />
+            </Frame.GestureRecognizers>
+            <Label
+                FontAttributes="Bold"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="+ Add New Travel"
+                TextColor="White"
+                VerticalOptions="Center" />
+        </Frame>
+    </Grid>
+
 </ContentPage>
