@@ -8,6 +8,7 @@
     xmlns:manage="clr-namespace:MonitorDrive.Pages.Management"
     xmlns:page="clr-namespace:MonitorDrive.Pages"
     xmlns:profile="clr-namespace:MonitorDrive.Pages.ProfilePages"
+    xmlns:tutorial="clr-namespace:MonitorDrive.Pages.Masters"
     Title="MonitorDrive"
     Shell.BackgroundColor="{StaticResource Tertiary}"
     Shell.FlyoutBehavior="Disabled"
@@ -77,18 +78,62 @@
         </ShellSection>
     </ShellItem>-->
 
+    <Shell.Resources>
+        <Style x:Key="BaseStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="IconsFont" />
+            <Setter Property="FontSize" Value="24" />
+        </Style>
+    </Shell.Resources>
+
     <TabBar>
+        <ShellContent
+            x:Name="MainPageTab"
+            Title="MainPage"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
         <ShellContent
             Title="Dashboard"
             ContentTemplate="{DataTemplate page:DashboardPage}"
-            Route="DashboardPage" />
+            Route="DashboardPage">
+            <ShellContent.Icon>
+                <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="&#xE800;"
+                    Size="24" />
+            </ShellContent.Icon>
+        </ShellContent>
         <ShellContent
-            Title="Registered"
+            Title="Travels"
             ContentTemplate="{DataTemplate manage:ListInfoPage}"
-            Route="ListInfoPage" />
+            Route="ListInfoPage">
+            <ShellContent.Icon>
+                <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="&#xE807;"
+                    Size="24" />
+            </ShellContent.Icon>
+        </ShellContent>
+        <ShellContent
+            Title="Masters"
+            ContentTemplate="{DataTemplate tutorial:MonitorMasterPage}"
+            Route="MonitorMasterPage">
+            <ShellContent.Icon>
+                <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="&#xF16A;"
+                    Size="24" />
+            </ShellContent.Icon>
+        </ShellContent>
         <ShellContent
             Title="Profile"
             ContentTemplate="{DataTemplate profile:ProfilePage}"
-            Route="ProfilePage" />
+            Route="ProfilePage">
+            <ShellContent.Icon>
+                <FontImageSource
+                    FontFamily="Icons"
+                    Glyph="&#xE802;"
+                    Size="24" />
+            </ShellContent.Icon>
+        </ShellContent>
     </TabBar>
 </Shell>

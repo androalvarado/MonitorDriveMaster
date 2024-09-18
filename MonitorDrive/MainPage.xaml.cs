@@ -4,8 +4,6 @@ namespace MonitorDrive
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
         public MainPage()
         {
             InitializeComponent();
@@ -45,7 +43,7 @@ namespace MonitorDrive
             //Application.Current.MainPage = App.AppShellInstance;
 
             // Navegar explícitamente a Register
-            await Shell.Current.GoToAsync(nameof(LoginPage));
+            await Shell.Current.GoToAsync($"{nameof(LoginPage)}");
 
         }
 

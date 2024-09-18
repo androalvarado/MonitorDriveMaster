@@ -15,7 +15,7 @@
             CornerRadius="20"
             HasShadow="True">
             <VerticalStackLayout Margin="15,15,15,10" Spacing="10">
-                <Label
+                <!--<Label
                     FontFamily="InterSB"
                     Text="Time"
                     TextColor="{StaticResource Tertiary}" />
@@ -27,7 +27,7 @@
                         x:Name="fechaPicker"
                         FontFamily="InterSB"
                         TextColor="{StaticResource Primary}" />
-                </Border>
+                </Border>-->
                 <Label
                     FontFamily="InterSB"
                     Text="Total Distance (km)"
@@ -99,7 +99,7 @@
                 </Border>
                 <Label
                     FontFamily="InterSB"
-                    Text="Number of Passengers"
+                    Text="Number of Travels"
                     TextColor="{StaticResource Tertiary}" />
                 <Border Padding="10,0,0,0" Stroke="{StaticResource Tertiary}">
                     <Border.StrokeShape>
@@ -108,15 +108,16 @@
                     <Entry
                         x:Name="cantidadPasajerosEntry"
                         Keyboard="Numeric"
-                        Placeholder="Number of passengers transported" />
+                        Placeholder="Number of trips completed" />
                 </Border>
 
                 <Frame
-                    Margin="0,10"
+                    Margin="0,60"
                     Padding="0,-2"
                     BackgroundColor="Transparent"
                     CornerRadius="20"
-                    HasShadow="True">
+                    HasShadow="True"
+                    VerticalOptions="End">
                     <Button
                         BackgroundColor="{StaticResource Tertiary}"
                         BorderColor="{StaticResource Tertiary}"

@@ -19,6 +19,7 @@ namespace MonitorDrive
                 fonts.AddFont("Inter_24pt-Bold.ttf", "InterB24");
                 fonts.AddFont("Inter_18pt-Bold.ttf", "InterB18");
                 fonts.AddFont("Inter_24pt-SemiBold.ttf", "InterSB");
+                fonts.AddFont("fontello.ttf", "Icons");
             }).UseMauiCommunityToolkit();
             // Configurar el ícono de la pantalla de carga
             builder.ConfigureFonts(fonts =>

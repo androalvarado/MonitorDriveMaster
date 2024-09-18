@@ -57,6 +57,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\fontello.ttf" />
 	  <None Remove="Resources\Fonts\Inter_18pt-Black.ttf" />
 	  <None Remove="Resources\Fonts\Inter_18pt-Bold.ttf" />
 	  <None Remove="Resources\Fonts\Inter_18pt-Light.ttf" />
@@ -83,6 +84,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Pages\Masters\MonitorMasterPage.xaml.cs">
+	    <DependentUpon>MonitorMasterPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="MauiSplashScreen.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -99,6 +106,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Management\ListInfoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Masters\MonitorMasterPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\ProfilePages\ProfilePage.xaml">

@@ -210,7 +210,6 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-
         </Frame>
     </Grid>
 

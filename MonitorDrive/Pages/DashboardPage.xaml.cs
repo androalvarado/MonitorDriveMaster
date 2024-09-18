@@ -4,10 +4,10 @@ using MonitorDrive.Pages.ProfilePages;
 
 public partial class DashboardPage : ContentPage
 {
-	public DashboardPage()
+    public DashboardPage()
 	{
 		InitializeComponent();
-	}
+    }
     private void OnWordTapped(object sender, EventArgs e)
     {
         if (sender is Label tappedLabel)
@@ -42,18 +42,12 @@ public partial class DashboardPage : ContentPage
     private void OnProfileImageTapped(object sender, EventArgs e)
     {
         TooltipFrame.IsVisible = !TooltipFrame.IsVisible;
-    }
-
-    private async void OnProfileTapped(object sender, EventArgs e)
-    {
-        TooltipFrame.IsVisible = false;
-        //await Navigation.PushAsync(new ProfilePage());
-        await Shell.Current.GoToAsync("ProfilePage");
+        //await Shell.Current.GoToAsync("LoginPage");
     }
 
     private async void OnLogOutTapped(object sender, EventArgs e)
     {
-        TooltipFrame.IsVisible = false;
+        //TooltipFrame.IsVisible = false;
         await Shell.Current.GoToAsync("LoginPage");
     }
 }

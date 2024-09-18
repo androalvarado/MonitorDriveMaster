@@ -3,11 +3,13 @@
     x:Class="MonitorDrive.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    BackgroundColor="{StaticResource Tertiary}">
+    BackgroundColor="{StaticResource Tertiary}"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
 
     <Grid RowDefinitions=".5*,.5*">
 
-        <Image Margin="20,0,20,0" Source="nameandlogo.png" />
+        <!--<Image Margin="20,0,20,0" Source="nameandlogo.png" />-->
 
         <Border
             Grid.Row="1"
@@ -18,7 +20,7 @@
                     FontFamily="InterSB"
                     FontSize="35"
                     HorizontalOptions="Center"
-                    Text="Hi, welcome to&#10;Capra Monitor!"
+                    Text="Hi, welcome to&#10;Monitor Drive!"
                     TextColor="{StaticResource Tertiary}"
                     VerticalOptions="Center" />
                 <Grid
@@ -70,7 +72,7 @@
                     Margin="10"
                     FontFamily="InterB18"
                     HorizontalOptions="Center"
-                    Text="@ Copyright by Capra Monitors"
+                    Text="@ Copyright by Monitor Drive"
                     TextColor="{StaticResource Tertiary}"
                     VerticalOptions="EndAndExpand" />
             </Grid>

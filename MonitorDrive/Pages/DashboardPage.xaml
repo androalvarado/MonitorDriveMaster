@@ -3,20 +3,23 @@
     x:Class="MonitorDrive.Pages.DashboardPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     BackgroundColor="{StaticResource Gray90}">
 
     <Grid Margin="20,20,20,20" RowDefinitions=".05*,.1*, .04*, .55*, .05*, .1*, .05*">
-        <Grid ColumnDefinitions=" *,*">
-            <VerticalStackLayout Grid.Row="1" VerticalOptions="Start">
+        <Grid ColumnDefinitions=" *,*" RowDefinitions="*,*,*">
+            <VerticalStackLayout VerticalOptions="Start">
                 <Label
                     Margin="-8,0,0,0"
                     FontFamily="InterB24"
                     FontSize="25"
                     Text="Welcome"
-                    TextColor="{StaticResource SecondaryDarkText}" />
+                    TextColor="{StaticResource SecondaryDarkText}"
+                    VerticalTextAlignment="Center" />
             </VerticalStackLayout>
             <!--  Imagen de perfil  -->
             <Border
+                Grid.Row="1"
                 Grid.Column="1"
                 HeightRequest=" 60"
                 HorizontalOptions="End"
@@ -28,7 +31,7 @@
                     Aspect="AspectFit"
                     HeightRequest="70"
                     HorizontalOptions="Center"
-                    Source="profile.png"
+                    Source="https://picsum.photos/200/200?random=1"
                     WidthRequest="70">
                     <Image.Clip>
                         <EllipseGeometry
@@ -46,100 +49,91 @@
         <!--  Tooltip for profile Image  -->
         <Frame
             x:Name="TooltipFrame"
-            Margin="0,60,10,0"
-            Padding="10"
-            BackgroundColor="#f0f0f0"
+            Grid.Row="1"
+            Margin="0,60"
+            Padding="0"
+            BackgroundColor="{StaticResource CardBG}"
+            BorderColor="{StaticResource Tertiary}"
             CornerRadius="10"
             HasShadow="True"
-            HeightRequest="100"
+            HeightRequest="50"
             HorizontalOptions="End"
             IsVisible="false"
-            VerticalOptions="Start">
-            <StackLayout Spacing="10">
-                <Label
-                    FontFamily="InterM"
-                    FontSize="16"
-                    Text="Profile"
-                    TextColor="#703FF3">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnProfileTapped" />
-                    </Label.GestureRecognizers>
-                </Label>
-                <BoxView HeightRequest="1" Color="Black" />
-                <Label
-                    FontFamily="InterM"
-                    FontSize="16"
-                    Text="Log Out"
-                    TextColor="#703FF3">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnLogOutTapped" />
-                    </Label.GestureRecognizers>
-                </Label>
-            </StackLayout>
+            VerticalOptions="Center"
+            ZIndex="999">
+            <Button
+                Clicked="OnLogOutTapped"
+                ContentLayout="Right,10"
+                FontFamily="InterB18"
+                HeightRequest="50"
+                ImageSource="{FontImage FontFamily=Icons,
+                                        Glyph='&#xF02D;',
+                                        Size=18,
+                                        Color=White}"
+                Text="Log Out"
+                TextColor="White" />
         </Frame>
 
         <!--  Menu de pestañas que modiifca el indicador y la grafica.  -->
+
         <StackLayout
             Grid.Row="1"
             HorizontalOptions="Center"
+            Orientation="Horizontal"
+            Spacing="20"
             VerticalOptions="Center">
-            <StackLayout
-                HorizontalOptions="Center"
-                Orientation="Horizontal"
-                Spacing="20"
-                WidthRequest="350">
-                <Label
-                    x:Name="word1"
-                    FontFamily="InterR"
-                    FontSize="15"
-                    Text="Profitability"
-                    TextColor="{StaticResource SecondaryDarkText}">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnWordTapped" />
-                    </Label.GestureRecognizers>
-                </Label>
-                <Label
-                    x:Name="word2"
-                    FontFamily="InterR"
-                    FontSize="15"
-                    Text="Hours"
-                    TextColor="{StaticResource SecondaryDarkText}">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnWordTapped" />
-                    </Label.GestureRecognizers>
-                </Label>
-                <Label
-                    x:Name="word3"
-                    FontFamily="InterR"
-                    FontSize="15"
-                    Text="Miles"
-                    TextColor="{StaticResource SecondaryDarkText}">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnWordTapped" />
-                    </Label.GestureRecognizers>
-                </Label>
-                <Label
-                    x:Name="word4"
-                    FontFamily="InterR"
-                    FontSize="15"
-                    Text="Travels"
-                    TextColor="{StaticResource SecondaryDarkText}">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnWordTapped" />
-                    </Label.GestureRecognizers>
-                </Label>
-                <Label
-                    x:Name="word5"
-                    FontFamily="InterR"
-                    FontSize="15"
-                    Text="Tips"
-                    TextColor="{StaticResource SecondaryDarkText}">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnWordTapped" />
-                    </Label.GestureRecognizers>
-                </Label>
-            </StackLayout>
+            <Label
+                x:Name="word1"
+                FontFamily="InterR"
+                FontSize="15"
+                Text="Profitability"
+                TextColor="{StaticResource SecondaryDarkText}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnWordTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label
+                x:Name="word2"
+                FontFamily="InterR"
+                FontSize="15"
+                Text="Hours"
+                TextColor="{StaticResource SecondaryDarkText}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnWordTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label
+                x:Name="word3"
+                FontFamily="InterR"
+                FontSize="15"
+                Text="Miles"
+                TextColor="{StaticResource SecondaryDarkText}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnWordTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label
+                x:Name="word4"
+                FontFamily="InterR"
+                FontSize="15"
+                Text="Travels"
+                TextColor="{StaticResource SecondaryDarkText}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnWordTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label
+                x:Name="word5"
+                FontFamily="InterR"
+                FontSize="15"
+                Text="Tips"
+                TextColor="{StaticResource SecondaryDarkText}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnWordTapped" />
+                </Label.GestureRecognizers>
+            </Label>
         </StackLayout>
+
 
         <!--  Indicador del menud e pestañas  -->
         <Frame
@@ -158,14 +152,16 @@
                 HeightRequest="60"
                 HorizontalOptions="Center"
                 Spacing="60"
-                VerticalOptions="Center"
-                WidthRequest="310">
-                <Image
+                VerticalOptions="Center">
+                <Border
                     HeightRequest="40"
-                    HorizontalOptions="Start"
-                    Source="profile.png"
-                    VerticalOptions="Center"
-                    WidthRequest="40" />
+                    StrokeShape="RoundRectangle 80"
+                    WidthRequest="40">
+                    <Image
+                        HorizontalOptions="Start"
+                        Source="https://picsum.photos/200/200?random=1"
+                        VerticalOptions="Center" />
+                </Border>
                 <Label
                     x:Name="labelIndicator"
                     Grid.Column="2"
@@ -258,9 +254,13 @@
             FontFamily="RobotoR"
             FontSize="18"
             HeightRequest="50"
+            ImageSource="{FontImage FontFamily=Icons,
+                                    Glyph='&#xE804;',
+                                    Size=24,
+                                    Color=White}"
             Text=" Add Info"
             TextColor="White"
-            WidthRequest="200" />
+            WidthRequest="150" />
     </Grid>
 
 </ContentPage>

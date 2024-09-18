@@ -4,7 +4,8 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Login"
-    BackgroundColor="White">
+    BackgroundColor="White"
+    Shell.FlyoutBehavior="Disabled">
 
     <StackLayout Padding="30,20,30,5">
 
@@ -110,9 +111,14 @@
                         <Button
                             BackgroundColor="{StaticResource Tertiary}"
                             Clicked="OnLogin"
+                            ContentLayout="Right,10"
                             FontFamily="InterB18"
                             FontSize="20"
                             HorizontalOptions="FillAndExpand"
+                            ImageSource="{FontImage FontFamily=Icons,
+                                                    Glyph='&#xF02C;',
+                                                    Size=24,
+                                                    Color=White}"
                             Text="Login"
                             TextColor="White"
                             VerticalOptions="FillAndExpand" />
@@ -126,7 +132,7 @@
         <Label
             FontFamily="InterB18"
             HorizontalOptions="Center"
-            Text="@ Copyright by Capra Monitors"
+            Text="@ Copyright by Monitor Drive"
             TextColor="{StaticResource Tertiary}"
             VerticalOptions="EndAndExpand" />
     </StackLayout>

@@ -168,7 +168,7 @@
             <Label
                 FontFamily="InterB18"
                 HorizontalOptions="Center"
-                Text="@ Copyright by Capra Monitors"
+                Text="@ Copyright by Monitor Drive"
                 TextColor="{StaticResource Tertiary}"
                 VerticalOptions="EndAndExpand" />
         </StackLayout>

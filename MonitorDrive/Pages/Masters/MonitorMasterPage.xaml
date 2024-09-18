@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MonitorDrive.Pages.Masters.MonitorMasterPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Monitor Master"
+    BackgroundColor="{StaticResource Gray90}">
+
+    <Grid
+        Margin="10"
+        RowDefinitions=".4*,.6*"
+        RowSpacing="10">
+        <Frame
+            Padding="0"
+            BackgroundColor="{StaticResource FontOP}"
+            BorderColor="Transparent"
+            CornerRadius="20"
+            HasShadow="True"
+            HeightRequest="250">
+            <WebView
+                x:Name="VideoWebView"
+                Grid.Row="1"
+                Navigated="OnWebViewNavigated"
+                Navigating="OnWebViewNavigating" />
+        </Frame>
+        <Frame
+            Padding="0"
+            BackgroundColor="Transparent"
+            BorderColor="Transparent"
+            CornerRadius="20"
+            HasShadow="True">
+            <ActivityIndicator
+                x:Name="LoadingIndicator"
+                Grid.Row="1"
+                HorizontalOptions="Center"
+                IsRunning="False"
+                IsVisible="False"
+                VerticalOptions="Center" />
+        </Frame>
+        <Frame
+            Grid.Row="1"
+            BackgroundColor="{StaticResource CardBG}"
+            BorderColor="{StaticResource FontOP}"
+            CornerRadius="20"
+            HasShadow="True">
+            <CollectionView
+                x:Name="VideosCollectionView"
+                BackgroundColor="{StaticResource CardBG}"
+                SelectionChanged="OnVideoSelected"
+                SelectionMode="Single"
+                VerticalOptions="FillAndExpand">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Stroke="{StaticResource FontOP}" StrokeShape="RoundRectangle 20">
+                            <StackLayout Padding="10">
+                                <Label
+                                    FontSize="20"
+                                    Text="{Binding Titulo}"
+                                    TextColor="{StaticResource Tertiary}" />
+                                <Label
+                                    FontSize="14"
+                                    Text="{Binding Duracion}"
+                                    TextColor="{StaticResource FontOP}" />
+                            </StackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Frame>
+
+    </Grid>
+
+</ContentPage>

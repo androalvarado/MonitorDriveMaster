@@ -11,10 +11,10 @@
         RowDefinitions=".05*,.85*,.1*"
         RowSpacing="10">
         <Label
+            FontFamily="InterSB"
             FontSize="Title"
             Text="Travels List"
-            TextColor="{StaticResource Tertiary}"
-            FontFamily="InterSB"/>
+            TextColor="{StaticResource Tertiary}" />
 
         <Frame
             Grid.Row="1"
