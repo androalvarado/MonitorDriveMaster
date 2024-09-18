@@ -6,6 +6,28 @@
     Title="Monitor Master"
     BackgroundColor="{StaticResource Gray90}">
 
+    <!--  Dicicionario de recursos que define el color de los elemntos de un collectionview cuando su estado cambia de normal a selected  -->
+    <ContentPage.Resources>
+        <Style TargetType="Border">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="{StaticResource Gray90}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="{StaticResource FontOP}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
     <Grid
         Margin="10"
         RowDefinitions=".4*,.6*"
@@ -51,17 +73,25 @@
                 VerticalOptions="FillAndExpand">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Border Stroke="{StaticResource FontOP}" StrokeShape="RoundRectangle 20">
-                            <StackLayout Padding="10">
+                        <Border
+                            Margin="0,0,0,10"
+                            Stroke="{StaticResource FontOP}"
+                            StrokeShape="RoundRectangle 20">
+                            <Grid Margin="10" ColumnDefinitions=".8*,.2*">
                                 <Label
-                                    FontSize="20"
+                                    FontFamily="InterM"
+                                    FontSize="15"
                                     Text="{Binding Titulo}"
                                     TextColor="{StaticResource Tertiary}" />
                                 <Label
+                                    Grid.Column="1"
+                                    FontFamily="InterM"
                                     FontSize="14"
+                                    HorizontalOptions="End"
                                     Text="{Binding Duracion}"
-                                    TextColor="{StaticResource FontOP}" />
-                            </StackLayout>
+                                    TextColor="{StaticResource Gray500}"
+                                    VerticalOptions="Center" />
+                            </Grid>
                         </Border>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
