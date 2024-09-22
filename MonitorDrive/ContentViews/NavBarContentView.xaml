@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="MonitorDrive.ContentViews.NavBarContentView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Grid
+        BackgroundColor="{StaticResource Tertiary}"
+        ColumnDefinitions="*,*,*,*"
+        HeightRequest="60">
+        <Grid RowDefinitions="*,*" RowSpacing="-15">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnHomeGridTapped" />
+            </Grid.GestureRecognizers>
+            <Label
+                FontFamily="Icons"
+                FontSize="24"
+                HorizontalOptions="Center"
+                Text="&#xE800;"
+                TextColor="White"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="1"
+                FontFamily="InterSB"
+                HorizontalOptions="Center"
+                Text="Home"
+                TextColor="White"
+                VerticalOptions="Center" />
+        </Grid>
+        <Grid
+            Grid.Column="1"
+            RowDefinitions="*,*"
+            RowSpacing="-15">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTravelsGridTapped" />
+            </Grid.GestureRecognizers>
+            <Label
+                FontFamily="Icons"
+                FontSize="24"
+                HorizontalOptions="Center"
+                Text="&#xE807;"
+                TextColor="White"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="1"
+                FontFamily="InterSB"
+                HorizontalOptions="Center"
+                Text="Travels"
+                TextColor="White"
+                VerticalOptions="Center" />
+        </Grid>
+        <Grid
+            Grid.Column="2"
+            RowDefinitions="*,*"
+            RowSpacing="-15">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnMastersGridTapped" />
+            </Grid.GestureRecognizers>
+            <Label
+                FontFamily="Icons"
+                FontSize="24"
+                HorizontalOptions="Center"
+                Text="&#xF16A;"
+                TextColor="White"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="1"
+                FontFamily="InterSB"
+                HorizontalOptions="Center"
+                Text="Masters"
+                TextColor="White"
+                VerticalOptions="Center" />
+        </Grid>
+        <Grid
+            Grid.Column="3"
+            RowDefinitions="*,*"
+            RowSpacing="-15">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnProfileGridTapped" />
+            </Grid.GestureRecognizers>
+            <Label
+                FontFamily="Icons"
+                FontSize="24"
+                HorizontalOptions="Center"
+                Text="&#xE802;"
+                TextColor="White"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="1"
+                FontFamily="InterSB"
+                HorizontalOptions="Center"
+                Text="Profile"
+                TextColor="White"
+                VerticalOptions="Center" />
+        </Grid>
+    </Grid>
+
+</ContentView>

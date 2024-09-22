@@ -1,5 +1,7 @@
 namespace MonitorDrive.Pages;
 using Microsoft.Maui.Controls;
+using MonitorDrive.Pages.Auth;
+using MonitorDrive.Pages.Management;
 using MonitorDrive.Pages.ProfilePages;
 
 public partial class DashboardPage : ContentPage
@@ -7,6 +9,8 @@ public partial class DashboardPage : ContentPage
     public DashboardPage()
 	{
 		InitializeComponent();
+
+        BindingContext = this;
     }
     private void OnWordTapped(object sender, EventArgs e)
     {
@@ -33,10 +37,22 @@ public partial class DashboardPage : ContentPage
 
     }
 
-    private async void OnNavigateButtonClicked(object sender, EventArgs e)
+    private async void OnAddInfoButtonClicked(object sender, EventArgs e)
     {
-        //await Navigation.PushAsync(new AddDayWorkInfoPage());
-        await Shell.Current.GoToAsync("AddDayWorkInfoPage");
+        // Animación de escala al tocar el botón
+        await AddInfoButton.ScaleTo(0.9, 50, Easing.Linear);
+        await AddInfoButton.ScaleTo(1, 50, Easing.Linear);
+
+        //await Shell.Current.GoToAsync("AddDayWorkInfoPage");
+        await Navigation.PushAsync(new AddDayWorkInfoPage());
+    }
+
+    private async void OnAddExpensiveButtonClicked(object sender, EventArgs e)
+    {
+        await AddExpensiveButton.ScaleTo(0.9, 50, Easing.Linear);
+        await AddExpensiveButton.ScaleTo(1, 50, Easing.Linear);
+
+        await Navigation.PushAsync(new AddDayWorkInfoPage());
     }
 
     private void OnProfileImageTapped(object sender, EventArgs e)
@@ -48,6 +64,9 @@ public partial class DashboardPage : ContentPage
     private async void OnLogOutTapped(object sender, EventArgs e)
     {
         //TooltipFrame.IsVisible = false;
-        await Shell.Current.GoToAsync("LoginPage");
+        await Navigation.PushAsync(new LoginPage());
+
+        // Eliminar la página anterior de la pila de navegación
+        Navigation.RemovePage(this);
     }
 }

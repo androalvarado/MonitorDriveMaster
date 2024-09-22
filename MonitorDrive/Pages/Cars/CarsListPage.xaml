@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MonitorDrive.Pages.Cars.CarsListPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodels="clr-namespace:MonitorDrive.ViewModels"
+    Title="Cars List"
+    BackgroundColor="{StaticResource Gray90}"
+    NavigationPage.IconColor="{StaticResource White}">
+
+    <ContentPage.BindingContext>
+        <viewmodels:CarViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid RowDefinitions=".1*,.7*,.1*" RowSpacing="10">
+        <!--  Titulo de la Pagina  -->
+        <StackLayout>
+            <Label
+                Margin="0,20,0,0"
+                FontFamily="InterB24"
+                FontSize="30"
+                HorizontalOptions="Center"
+                Text="Your Cars List"
+                TextColor="{StaticResource Tertiary}"
+                VerticalOptions="Center" />
+        </StackLayout>
+
+        <!--  Conjunto de Frames donde se mostraran los Autos del Usuario  -->
+
+        <Grid Grid.Row="1" RowSpacing="20">
+            <CollectionView ItemsSource="{Binding Cars}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame
+                            Margin="20,10,20,5"
+                            BackgroundColor="{StaticResource CardBG}"
+                            BorderColor="{StaticResource CardBG}"
+                            HasShadow="True"
+                            HeightRequest="150">
+                            <Grid RowDefinitions=".25*,.2*,.55*">
+                                <Label
+                                    FontFamily="InterB24"
+                                    FontSize="18"
+                                    Text="{Binding FullDescription}"
+                                    TextColor="{StaticResource Tertiary}" />
+                                <Label
+                                    Grid.Row="1"
+                                    FontFamily="InterM"
+                                    Text="{Binding Miles, StringFormat='Miles: {0}'}"
+                                    TextColor="{StaticResource Tertiary}" />
+                                <Grid
+                                    Grid.Row="2"
+                                    ColumnDefinitions="*,*"
+                                    ColumnSpacing="20">
+                                    <Border
+                                        Margin="2,7,0,0"
+                                        BackgroundColor="{StaticResource Gray300}"
+                                        HeightRequest="40"
+                                        HorizontalOptions="Start"
+                                        Stroke="{StaticResource Gray300}"
+                                        StrokeShape="RoundRectangle 30"
+                                        WidthRequest="120">
+                                        <BoxView CornerRadius="20" Opacity="0.3" />
+                                    </Border>
+
+                                    <Frame
+                                        Padding="0"
+                                        BackgroundColor="Transparent"
+                                        BorderColor="Transparent"
+                                        CornerRadius="40"
+                                        HasShadow="True"
+                                        HeightRequest="40"
+                                        HorizontalOptions="Start"
+                                        WidthRequest="120">
+                                        <Button
+                                            BackgroundColor="{StaticResource Tertiary}"
+                                            BorderColor="{StaticResource Tertiary}"
+                                            Clicked="OnDetailsButtonClicked"
+                                            CommandParameter="{Binding .}"
+                                            FontFamily="InterB24"
+                                            FontSize="14"
+                                            HeightRequest="40"
+                                            Text="Details"
+                                            TextColor="{StaticResource CardBG}"
+                                            WidthRequest="120" />
+                                    </Frame>
+                                    <Border
+                                        Grid.Column="1"
+                                        Stroke="{StaticResource CardBG}"
+                                        StrokeShape="RoundRectangle 20">
+                                        <Image HeightRequest="150" Source="toyota_corolla_car" />
+                                    </Border>
+
+                                </Grid>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+
+        <!--  Botones continuar y regresar  -->
+        <Grid
+            Grid.Row="2"
+            Margin="20,10,20,20"
+            BackgroundColor="Transparent"
+            ColumnDefinitions="*,*"
+            ColumnSpacing="80"
+            VerticalOptions="End">
+            <Border
+                Margin="5,10,0,0"
+                BackgroundColor="{StaticResource Gray300}"
+                HeightRequest="60"
+                HorizontalOptions="Start"
+                Stroke="{StaticResource Gray300}"
+                StrokeShape="RoundRectangle 20"
+                WidthRequest="130">
+                <BoxView CornerRadius="20" Opacity="0.3" />
+            </Border>
+
+            <Frame
+                Padding="0"
+                BackgroundColor="Transparent"
+                BorderColor="Transparent"
+                CornerRadius="20"
+                HasShadow="True"
+                HeightRequest="60">
+                <Button
+                    BackgroundColor="{StaticResource CardBG}"
+                    BorderColor="{StaticResource Tertiary}"
+                    Clicked="OnCancelClicked"
+                    FontFamily="InterB24"
+                    FontSize="20"
+                    Text="Back"
+                    TextColor="{StaticResource Tertiary}" />
+            </Frame>
+
+            <Border
+                Grid.Column="1"
+                Margin="5,10,0,0"
+                BackgroundColor="{StaticResource Gray300}"
+                HeightRequest="60"
+                HorizontalOptions="Start"
+                Stroke="{StaticResource Gray300}"
+                StrokeShape="RoundRectangle 20"
+                WidthRequest="130">
+                <BoxView CornerRadius="20" Opacity="0.3" />
+            </Border>
+            <Frame
+                Grid.Column="1"
+                Padding="0"
+                BackgroundColor="{StaticResource Tertiary}"
+                CornerRadius="20"
+                HasShadow="True"
+                HeightRequest="60">
+                <Button
+                    BackgroundColor="{StaticResource Tertiary}"
+                    BorderColor="{StaticResource Tertiary}"
+                    Clicked="OnAddClicked"
+                    FontFamily="InterB24"
+                    FontSize="20"
+                    Text="Add New"
+                    TextColor="White" />
+            </Frame>
+        </Grid>
+    </Grid>
+</ContentPage>

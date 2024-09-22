@@ -16,15 +16,13 @@
     Shell.TabBarIsVisible="True"
     Shell.TabBarUnselectedColor="White">
 
-
-
     <!--<ShellContent
         Title="Dashboard"
         ContentTemplate="{DataTemplate page:DashboardPage}"
         Route="DashboardPage" />
     <ShellContent
         Title="Add Info"
-        ContentTemplate="{DataTemplate page:AddDayWorkInfoPage}"
+        ContentTemplate="{DataTemplate manage:AddDayWorkInfoPage}"
         Route="AddDayWorkInfoPage" />
     <ShellContent
         Title="Profile"
@@ -43,42 +41,8 @@
         ContentTemplate="{DataTemplate auth:RegisterPage}"
         Route="RegisterPage" />-->
 
-    <!--<ShellItem>
-        <ShellSection Title="Home">
-            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
-        </ShellSection>
-    </ShellItem>
 
-    <ShellItem>
-        <ShellSection Title="More">
-            <ShellContent
-                Title="Dashboard"
-                ContentTemplate="{DataTemplate page:DashboardPage}"
-                Route="DashboardPage" />
-            <ShellContent
-                Title="Add Info"
-                ContentTemplate="{DataTemplate page:AddDayWorkInfoPage}"
-                Route="AddDayWorkInfoPage" />
-            <ShellContent
-                Title="Profile"
-                ContentTemplate="{DataTemplate profile:ProfilePage}"
-                Route="ProfilePage" />
-            <ShellContent
-                Title="Ranking View"
-                ContentTemplate="{DataTemplate profile:RankingPage}"
-                Route="RankingPage" />
-            <ShellContent
-                Title="Login"
-                ContentTemplate="{DataTemplate auth:LoginPage}"
-                Route="LoginPage" />
-            <ShellContent
-                Title="RegisterPage"
-                ContentTemplate="{DataTemplate auth:RegisterPage}"
-                Route="RegisterPage" />
-        </ShellSection>
-    </ShellItem>-->
-
-    <Shell.Resources>
+    <!--<Shell.Resources>
         <Style x:Key="BaseStyle" TargetType="Label">
             <Setter Property="FontFamily" Value="IconsFont" />
             <Setter Property="FontSize" Value="24" />
@@ -135,5 +99,5 @@
                     Size="24" />
             </ShellContent.Icon>
         </ShellContent>
-    </TabBar>
+    </TabBar>-->
 </Shell>

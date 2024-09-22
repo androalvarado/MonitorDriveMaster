@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MonitorDrive.Pages.Cars.CarDetailsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodels="clr-namespace:MonitorDrive.ViewModels"
+    Title="Car Details"
+    BackgroundColor="{StaticResource Gray90}"
+    NavigationPage.IconColor="{StaticResource White}">
+
+
+    <Grid RowDefinitions=".1*,.3*,.15*,.3*,.2*" RowSpacing="10">
+        <!--  Titulo de la Pagina  -->
+        <StackLayout>
+            <Label
+                Margin="0,20,0,10"
+                FontFamily="InterB24"
+                FontSize="30"
+                HorizontalOptions="Center"
+                Text="{Binding Title}"
+                TextColor="{StaticResource Tertiary}"
+                VerticalOptions="Center" />
+        </StackLayout>
+
+        <!--  Frame que muestra modelo, millas e imagen  -->
+        <Frame
+            Grid.Row="1"
+            Margin="20,0,20,0"
+            BackgroundColor="{StaticResource CardBG}"
+            BorderColor="{StaticResource CardBG}"
+            CornerRadius="20"
+            HasShadow="True">
+            <Grid RowDefinitions=".25*,.2*,.55*">
+                <Label
+                    FontFamily="InterB24"
+                    FontSize="18"
+                    Text="{Binding FullDescription}"
+                    TextColor="{StaticResource Tertiary}" />
+                <StackLayout
+                    Grid.Row="1"
+                    Orientation="Horizontal"
+                    Spacing="5">
+                    <Label
+                        FontFamily="InterM"
+                        Text="Miles:"
+                        TextColor="{StaticResource Tertiary}" />
+                    <Label
+                        FontFamily="InterM"
+                        Text="{Binding Miles}"
+                        TextColor="{StaticResource Tertiary}" />
+                </StackLayout>
+
+                <Border
+                    Grid.Row="2"
+                    Stroke="{StaticResource CardBG}"
+                    StrokeShape="RoundRectangle 20">
+                    <Image Source="audi_a3_car" />
+                </Border>
+            </Grid>
+
+        </Frame>
+
+
+        <!--  Fila 1: Botones de filtro  -->
+        <Border
+            Grid.Row="2"
+            Margin="20,0,20,0"
+            BackgroundColor="{StaticResource Tertiary}"
+            HeightRequest="60"
+            Stroke="{StaticResource Tertiary}"
+            StrokeShape="RoundRectangle 20,20,0,0"
+            StrokeThickness="2">
+            <Grid Grid.Row="0" ColumnDefinitions="*,.01*,*,.01*,*">
+                <Border
+                    Margin="0,5,0,0"
+                    HeightRequest="40"
+                    Stroke="{StaticResource Tertiary}"
+                    StrokeShape="RoundRectangle 20,20,20,20"
+                    StrokeThickness="1"
+                    VerticalOptions="Start">
+                    <Button
+                        x:Name="DetailsButton"
+                        BackgroundColor="{StaticResource Primary}"
+                        BorderColor="{StaticResource Tertiary}"
+                        Clicked="OnFilterButtonClicked"
+                        FontFamily="InterM"
+                        FontSize="12"
+                        Text="Details"
+                        TextColor="{StaticResource CardBG}" />
+                </Border>
+                <BoxView
+                    Grid.Column="1"
+                    Margin="5,0"
+                    HeightRequest="30"
+                    WidthRequest="1"
+                    Color="#FFFFFF" />
+                <Border
+                    Grid.Column="2"
+                    Margin="0,5,0,0"
+                    HeightRequest="40"
+                    Stroke="#703FF3"
+                    StrokeShape="RoundRectangle 20,20,20,20"
+                    StrokeThickness="1"
+                    VerticalOptions="Start">
+                    <Button
+                        x:Name="MaintenanceButton"
+                        BackgroundColor="Transparent"
+                        Clicked="OnFilterButtonClicked"
+                        FontFamily="InterM"
+                        FontSize="12"
+                        Text="Maintenances"
+                        TextColor="White" />
+                </Border>
+                <BoxView
+                    Grid.Column="3"
+                    Margin="5,0"
+                    HeightRequest="30"
+                    WidthRequest="1"
+                    Color="#FFFFFF" />
+                <Border
+                    Grid.Column="4"
+                    Margin="0,5,0,0"
+                    HeightRequest="40"
+                    Stroke="#703FF3"
+                    StrokeShape="RoundRectangle 20,20,20,20"
+                    StrokeThickness="1"
+                    VerticalOptions="Start">
+                    <Button
+                        x:Name="ExpensivesButton"
+                        BackgroundColor="Transparent"
+                        BorderColor="#703FF3"
+                        Clicked="OnFilterButtonClicked"
+                        FontFamily="InterM"
+                        FontSize="12"
+                        Text="Expensives"
+                        TextColor="White" />
+                </Border>
+            </Grid>
+        </Border>
+
+        <!--  Fila 2: Frame 1 que muestra los detalles del auto  -->
+        <Frame
+            x:Name="CarDetailsFrame"
+            Grid.Row="3"
+            Margin="20,-10,20,15"
+            BackgroundColor="{StaticResource CardBG}"
+            BorderColor="{StaticResource CardBG}"
+            CornerRadius="10"
+            HasShadow="True"
+            HeightRequest="250"
+            IsVisible="True">
+            <Grid RowDefinitions=".1*,.1*,.1*,.1*,.1*,.1*,.15*">
+                <Grid
+                    Margin="20,0,0,0"
+                    ColumnDefinitions=".4*,.4*"
+                    ColumnSpacing="50">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Value"
+                        TextColor="Black" />
+                    <Label
+                        Grid.Column="1"
+                        FontSize="16"
+                        Text="$19,800"
+                        TextColor="{StaticResource Tertiary}" />
+                </Grid>
+
+                <BoxView
+                    Grid.Row="1"
+                    HeightRequest="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    Color="{StaticResource Tertiary}" />
+
+                <Grid
+                    Grid.Row="2"
+                    Margin="20,0,0,0"
+                    ColumnDefinitions=".4*,.4*"
+                    ColumnSpacing="50">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="MPG"
+                        TextColor="Black" />
+                    <Label
+                        Grid.Column="1"
+                        FontSize="16"
+                        Text="{Binding Mpg}"
+                        TextColor="{StaticResource Tertiary}" />
+                </Grid>
+
+                <BoxView
+                    Grid.Row="3"
+                    HeightRequest="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    Color="{StaticResource Tertiary}" />
+
+                <Grid
+                    Grid.Row="4"
+                    Margin="20,0,0,0"
+                    ColumnDefinitions=".4*,.4*"
+                    ColumnSpacing="50">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Usage (%)"
+                        TextColor="Black" />
+                    <Label
+                        Grid.Column="1"
+                        FontSize="16"
+                        Text="{Binding UsagePercentage}"
+                        TextColor="{StaticResource Tertiary}" />
+                </Grid>
+
+                <BoxView
+                    Grid.Row="5"
+                    HeightRequest="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    Color="{StaticResource Tertiary}" />
+
+                <Grid
+                    Grid.Row="6"
+                    Margin="20,0,0,0"
+                    ColumnDefinitions=".7*,.7*">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Tires"
+                        TextColor="Black" />
+                    <Border
+                        Grid.Column="1"
+                        HeightRequest="40"
+                        StrokeShape="RoundRectangle 20"
+                        VerticalOptions="Start"
+                        WidthRequest="100">
+                        <Button
+                            BackgroundColor="{StaticResource Tertiary}"
+                            Clicked="OnTiresDetailsCliked"
+                            FontFamily="InterB24"
+                            FontSize="12"
+                            Text="Details &gt;"
+                            TextColor="White" />
+                    </Border>
+                </Grid>
+            </Grid>
+        </Frame>
+
+        <!--  Fila 2: Frame 2 que muestra los Mantenimeintos realizados al auto del auto  -->
+        <Frame
+            x:Name="CarMaintenanceFrame"
+            Grid.Row="3"
+            Margin="20,-10,20,15"
+            BackgroundColor="{StaticResource CardBG}"
+            BorderColor="{StaticResource CardBG}"
+            CornerRadius="10"
+            HasShadow="True"
+            HeightRequest="250"
+            IsVisible="False">
+            <Grid RowDefinitions=".1*,.1*,.1*,.1*,.1*">
+                <Grid
+                    Margin="20,0,0,0"
+                    ColumnDefinitions=".4*,.4*"
+                    ColumnSpacing="50">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Costo"
+                        TextColor="Black" />
+                    <Label
+                        Grid.Column="1"
+                        FontSize="16"
+                        Text="$800"
+                        TextColor="{StaticResource Tertiary}" />
+                </Grid>
+
+                <BoxView
+                    Grid.Row="1"
+                    HeightRequest="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    Color="{StaticResource Tertiary}" />
+
+                <Grid
+                    Grid.Row="2"
+                    Margin="20,0,0,0"
+                    ColumnDefinitions=".4*,.4*"
+                    ColumnSpacing="50">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Miles"
+                        TextColor="Black" />
+                    <Label
+                        Grid.Column="1"
+                        FontSize="16"
+                        Text="{Binding Miles}"
+                        TextColor="{StaticResource Tertiary}" />
+                </Grid>
+
+                <BoxView
+                    Grid.Row="3"
+                    HeightRequest="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    Color="{StaticResource Tertiary}" />
+
+                <Grid
+                    Grid.Row="4"
+                    Margin="20,0,0,0"
+                    ColumnDefinitions=".4*,.4*"
+                    ColumnSpacing="50">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Date"
+                        TextColor="Black" />
+                    <Label
+                        Grid.Column="1"
+                        FontSize="16"
+                        Text="00/00/00"
+                        TextColor="{StaticResource Tertiary}" />
+                </Grid>
+            </Grid>
+        </Frame>
+
+        <!--  Fila 2: Frame 2 que muestra los Gastos extras realizados al auto del auto  -->
+        <Frame
+            x:Name="CarExpensivesFrame"
+            Grid.Row="3"
+            Margin="20,-10,20,15"
+            BackgroundColor="{StaticResource CardBG}"
+            BorderColor="{StaticResource CardBG}"
+            CornerRadius="10"
+            HasShadow="True"
+            HeightRequest="250"
+            IsVisible="False">
+            <Grid RowDefinitions=".1*,.1*,.1*,.1*,.1*">
+                <Grid
+                    Margin="20,0,0,0"
+                    ColumnDefinitions=".4*,.4*"
+                    ColumnSpacing="50">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Bill"
+                        TextColor="Black" />
+                    <Label
+                        Grid.Column="1"
+                        FontSize="16"
+                        Text="$1900"
+                        TextColor="{StaticResource Tertiary}" />
+                </Grid>
+
+                <BoxView
+                    Grid.Row="1"
+                    HeightRequest="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    Color="{StaticResource Tertiary}" />
+
+                <Grid
+                    Grid.Row="2"
+                    Margin="20,0,0,0"
+                    ColumnDefinitions=".4*,.4*"
+                    ColumnSpacing="50">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Month to Pay"
+                        TextColor="Black" />
+                    <Label
+                        Grid.Column="1"
+                        FontSize="16"
+                        Text="{Binding Mpg}"
+                        TextColor="{StaticResource Tertiary}" />
+                </Grid>
+
+                <BoxView
+                    Grid.Row="3"
+                    HeightRequest="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    Color="{StaticResource Tertiary}" />
+
+                <Grid
+                    Grid.Row="4"
+                    Margin="20,0,0,0"
+                    ColumnDefinitions=".4*,.4*"
+                    ColumnSpacing="50">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Usage (%)"
+                        TextColor="{StaticResource CardBG}" />
+                    <Label
+                        Grid.Column="1"
+                        FontSize="16"
+                        Text="{Binding UsagePercentage}"
+                        TextColor="{StaticResource CardBG}" />
+                </Grid>
+            </Grid>
+        </Frame>
+
+
+
+        <!--  Botones continuar y regresar  -->
+        <Grid
+            Grid.Row="4"
+            Margin="20,10,20,20"
+            BackgroundColor="Transparent"
+            ColumnDefinitions="*,*"
+            ColumnSpacing="80"
+            VerticalOptions="End">
+            <Border
+                Margin="5,10,0,0"
+                BackgroundColor="{StaticResource Gray300}"
+                HeightRequest="60"
+                HorizontalOptions="Start"
+                Stroke="{StaticResource Gray300}"
+                StrokeShape="RoundRectangle 20"
+                WidthRequest="130">
+                <BoxView CornerRadius="20" Opacity="0.3" />
+            </Border>
+
+            <Frame
+                Padding="0"
+                BackgroundColor="Transparent"
+                BorderColor="Transparent"
+                CornerRadius="20"
+                HasShadow="True"
+                HeightRequest="60">
+                <Button
+                    BackgroundColor="{StaticResource CardBG}"
+                    BorderColor="{StaticResource Tertiary}"
+                    Clicked="OnCancelClicked"
+                    FontFamily="InterB24"
+                    FontSize="20"
+                    Text="Back"
+                    TextColor="{StaticResource Tertiary}" />
+            </Frame>
+
+            <Border
+                Grid.Column="1"
+                Margin="5,10,0,0"
+                BackgroundColor="{StaticResource Gray300}"
+                HeightRequest="60"
+                HorizontalOptions="Start"
+                Stroke="{StaticResource Gray300}"
+                StrokeShape="RoundRectangle 20"
+                WidthRequest="130">
+                <BoxView CornerRadius="20" Opacity="0.3" />
+            </Border>
+            <Frame
+                Grid.Column="1"
+                Padding="0"
+                BackgroundColor="{StaticResource Tertiary}"
+                CornerRadius="20"
+                HasShadow="True"
+                HeightRequest="60">
+                <Button
+                    BackgroundColor="{StaticResource Tertiary}"
+                    BorderColor="{StaticResource Tertiary}"
+                    Clicked="OnEditClicked"
+                    FontFamily="InterB24"
+                    FontSize="20"
+                    Text="Edit"
+                    TextColor="White" />
+            </Frame>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -3,8 +3,9 @@
     x:Class="MonitorDrive.Pages.Masters.MonitorMasterPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Monitor Master"
-    BackgroundColor="{StaticResource Gray90}">
+    xmlns:contentview="clr-namespace:MonitorDrive.ContentViews"
+    BackgroundColor="{StaticResource Gray90}"
+    NavigationPage.IconColor="{StaticResource Tertiary}">
 
     <!--  Dicicionario de recursos que define el color de los elemntos de un collectionview cuando su estado cambia de normal a selected  -->
     <ContentPage.Resources>
@@ -28,76 +29,79 @@
         </Style>
     </ContentPage.Resources>
 
-    <Grid
-        Margin="10"
-        RowDefinitions=".4*,.6*"
-        RowSpacing="10">
-        <Frame
-            Padding="0"
-            BackgroundColor="{StaticResource FontOP}"
-            BorderColor="Transparent"
-            CornerRadius="20"
-            HasShadow="True"
-            HeightRequest="250">
-            <WebView
-                x:Name="VideoWebView"
+    <Grid RowDefinitions=".93*,.07*">
+        <Grid
+            Margin="10"
+            RowDefinitions=".4*,.6*"
+            RowSpacing="10">
+            <Frame
+                Padding="0"
+                BackgroundColor="{StaticResource FontOP}"
+                BorderColor="Transparent"
+                CornerRadius="20"
+                HasShadow="True"
+                HeightRequest="250">
+                <WebView
+                    x:Name="VideoWebView"
+                    Grid.Row="1"
+                    Navigated="OnWebViewNavigated"
+                    Navigating="OnWebViewNavigating" />
+            </Frame>
+            <Frame
+                Padding="0"
+                BackgroundColor="Transparent"
+                BorderColor="Transparent"
+                CornerRadius="20"
+                HasShadow="True">
+                <ActivityIndicator
+                    x:Name="LoadingIndicator"
+                    Grid.Row="1"
+                    HorizontalOptions="Center"
+                    IsRunning="False"
+                    IsVisible="False"
+                    VerticalOptions="Center" />
+            </Frame>
+            <Frame
                 Grid.Row="1"
-                Navigated="OnWebViewNavigated"
-                Navigating="OnWebViewNavigating" />
-        </Frame>
-        <Frame
-            Padding="0"
-            BackgroundColor="Transparent"
-            BorderColor="Transparent"
-            CornerRadius="20"
-            HasShadow="True">
-            <ActivityIndicator
-                x:Name="LoadingIndicator"
-                Grid.Row="1"
-                HorizontalOptions="Center"
-                IsRunning="False"
-                IsVisible="False"
-                VerticalOptions="Center" />
-        </Frame>
-        <Frame
-            Grid.Row="1"
-            BackgroundColor="{StaticResource CardBG}"
-            BorderColor="{StaticResource FontOP}"
-            CornerRadius="20"
-            HasShadow="True">
-            <CollectionView
-                x:Name="VideosCollectionView"
                 BackgroundColor="{StaticResource CardBG}"
-                SelectionChanged="OnVideoSelected"
-                SelectionMode="Single"
-                VerticalOptions="FillAndExpand">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Border
-                            Margin="0,0,0,10"
-                            Stroke="{StaticResource FontOP}"
-                            StrokeShape="RoundRectangle 20">
-                            <Grid Margin="10" ColumnDefinitions=".8*,.2*">
-                                <Label
-                                    FontFamily="InterM"
-                                    FontSize="15"
-                                    Text="{Binding Titulo}"
-                                    TextColor="{StaticResource Tertiary}" />
-                                <Label
-                                    Grid.Column="1"
-                                    FontFamily="InterM"
-                                    FontSize="14"
-                                    HorizontalOptions="End"
-                                    Text="{Binding Duracion}"
-                                    TextColor="{StaticResource Gray500}"
-                                    VerticalOptions="Center" />
-                            </Grid>
-                        </Border>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </Frame>
+                BorderColor="{StaticResource FontOP}"
+                CornerRadius="20"
+                HasShadow="True">
+                <CollectionView
+                    x:Name="VideosCollectionView"
+                    BackgroundColor="{StaticResource CardBG}"
+                    SelectionChanged="OnVideoSelected"
+                    SelectionMode="Single"
+                    VerticalOptions="FillAndExpand">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border
+                                Margin="0,0,0,10"
+                                Stroke="{StaticResource FontOP}"
+                                StrokeShape="RoundRectangle 20">
+                                <Grid Margin="10" ColumnDefinitions=".8*,.2*">
+                                    <Label
+                                        FontFamily="InterM"
+                                        FontSize="15"
+                                        Text="{Binding Titulo}"
+                                        TextColor="{StaticResource Tertiary}" />
+                                    <Label
+                                        Grid.Column="1"
+                                        FontFamily="InterM"
+                                        FontSize="14"
+                                        HorizontalOptions="End"
+                                        Text="{Binding Duracion}"
+                                        TextColor="{StaticResource Gray500}"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
 
+        </Grid>
+        <contentview:NavBarContentView Grid.Row="1" />
     </Grid>
 
 </ContentPage>

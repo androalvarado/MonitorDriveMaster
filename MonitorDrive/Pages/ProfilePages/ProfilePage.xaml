@@ -3,110 +3,106 @@
     x:Class="MonitorDrive.Pages.ProfilePages.ProfilePage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Profile"
-    BackgroundColor="{StaticResource Gray90}">
+    xmlns:contentview="clr-namespace:MonitorDrive.ContentViews"
+    xmlns:viewmodels="clr-namespace:MonitorDrive.ViewModels"
+    BackgroundColor="{StaticResource Gray90}"
+    NavigationPage.IconColor="{StaticResource Tertiary}">
 
-    <ScrollView>
-        <Grid
-            Padding="20"
-            RowDefinitions=".3*,.65*,.05*"
-            RowSpacing="10">
+    <ContentPage.BindingContext>
+        <viewmodels:UserProfileViewModel />
+    </ContentPage.BindingContext>
 
-            <!--  Primera fila: Información del perfil  -->
-            <Frame
-                Grid.Row="0"
-                Padding="10"
-                BackgroundColor="{StaticResource Primary}"
-                BorderColor="{StaticResource Secondary}"
-                CornerRadius="15"
-                HasShadow="True">
-                <Grid ColumnDefinitions="*,*" RowDefinitions="*,*,*">
-                    <Image
-                        Grid.RowSpan="1"
-                        Aspect="AspectFill"
-                        HeightRequest="100"
-                        Source="https://picsum.photos/200"
-                        WidthRequest="100">
-                        <Image.Clip>
-                            <EllipseGeometry
-                                Center="50,50"
-                                RadiusX="50"
-                                RadiusY="50" />
-                        </Image.Clip>
-                    </Image>
+    <Grid RowDefinitions=".93*,.07*">
+        <ScrollView>
+            <Grid
+                Margin="0,0,0,10"
+                Padding="20"
+                RowDefinitions=".3*,.55*,.1*"
+                RowSpacing="15">
 
-                    <Label
-                        Grid.Column="1"
-                        Margin="0,0,25,0"
-                        FontFamily="InterB24"
-                        FontSize="20"
-                        HorizontalOptions="End"
-                        Text="Andrew Smith"
-                        TextColor="#FFFFFF"
-                        VerticalOptions="Center" />
+                <!--  Primera fila: Información del perfil  -->
+                <Frame
+                    Grid.Row="0"
+                    Padding="10"
+                    BackgroundColor="{StaticResource Tertiary}"
+                    BorderColor="{StaticResource Secondary}"
+                    CornerRadius="15"
+                    HasShadow="True">
+                    <Grid ColumnDefinitions=".4*,.6*" RowDefinitions="*,*,*">
+                        <Image
+                            Grid.RowSpan="1"
+                            Aspect="AspectFill"
+                            HeightRequest="100"
+                            Source="https://picsum.photos/200"
+                            WidthRequest="100">
+                            <Image.Clip>
+                                <EllipseGeometry
+                                    Center="50,50"
+                                    RadiusX="50"
+                                    RadiusY="50" />
+                            </Image.Clip>
+                        </Image>
 
-                    <BoxView
-                        Grid.Row="1"
-                        Grid.ColumnSpan="2"
-                        Margin="0,10"
-                        HeightRequest="2"
-                        Color="#FFFFFF" />
-
-                    <Grid
-                        Grid.Row="2"
-                        Grid.ColumnSpan="2"
-                        ColumnDefinitions="*,Auto,*"
-                        RowDefinitions="*,*">
                         <Label
-                            FontFamily="InterB24"
-                            HorizontalOptions="Center"
-                            Text="Rank"
-                            TextColor="#FFFFFF">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnRankTapped" />
-                            </Label.GestureRecognizers>
-                        </Label>
-                        <Label
-                            Grid.Row="1"
-                            FontFamily="InterR"
-                            HorizontalOptions="Center"
-                            Text="65"
-                            TextColor="#FFFFFF">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnRankTapped" />
-                            </Label.GestureRecognizers>
-                        </Label>
-                        <BoxView
-                            Grid.RowSpan="2"
                             Grid.Column="1"
-                            Margin="10,0"
-                            HeightRequest="45"
-                            WidthRequest="2"
-                            Color="#FFFFFF" />
-                        <Label
-                            Grid.Column="2"
+                            Margin="0,0,25,0"
                             FontFamily="InterB24"
-                            HorizontalOptions="Center"
-                            Text="Goals" />
-                        <Label
+                            FontSize="20"
+                            HorizontalOptions="End"
+                            Text="Andrew Smith"
+                            TextColor="#FFFFFF"
+                            VerticalOptions="Center" />
+
+                        <BoxView
                             Grid.Row="1"
-                            Grid.Column="2"
-                            FontFamily="InterR"
-                            HorizontalOptions="Center"
-                            Text="37" />
+                            Grid.ColumnSpan="2"
+                            Margin="0,10"
+                            HeightRequest="2"
+                            Color="#FFFFFF" />
+
+                        <Grid
+                            Grid.Row="2"
+                            Grid.ColumnSpan="2"
+                            ColumnDefinitions="*,Auto,*"
+                            RowDefinitions="*,*">
+                            <Label
+                                FontFamily="InterB24"
+                                HorizontalOptions="Center"
+                                Text="Starts"
+                                TextColor="#FFFFFF" />
+                            <Label
+                                Grid.Row="1"
+                                FontFamily="InterR"
+                                HorizontalOptions="Center"
+                                Text="5"
+                                TextColor="#FFFFFF" />
+                            <BoxView
+                                Grid.RowSpan="2"
+                                Grid.Column="1"
+                                Margin="10,0"
+                                HeightRequest="45"
+                                WidthRequest="2"
+                                Color="#FFFFFF" />
+                            <Label
+                                Grid.Column="2"
+                                FontFamily="InterB24"
+                                HorizontalOptions="Center"
+                                Text="Goals" />
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                FontFamily="InterR"
+                                HorizontalOptions="Center"
+                                Text="37" />
+                        </Grid>
                     </Grid>
-                </Grid>
-            </Frame>
+                </Frame>
 
-            <!--  Segunda fila: Información Personal  -->
-
-            <!--  Tercera fila: Ajustes  -->
-
-            <ScrollView
-                Grid.Row="1"
-                Margin="0,5"
-                BackgroundColor="#F3F3F3">
-                <Grid RowDefinitions="*,*" RowSpacing="20">
+                <!--  Segunda y Tercera fila: Info y Ajustes  -->
+                <Grid
+                    Grid.Row="1"
+                    RowDefinitions="*,*"
+                    RowSpacing="10">
                     <StackLayout Spacing="15">
                         <Frame
                             Padding="10,20,20,20"
@@ -115,15 +111,64 @@
                             CornerRadius="10"
                             HasShadow="True">
                             <StackLayout Spacing="10">
-                                <Label
-                                    Margin="20,0,0,0"
-                                    FontAttributes="Bold"
-                                    FontSize="18"
-                                    Text="Personal Info"
-                                    TextColor="#D8CBFA" />
+                                <Grid Margin="0,0,0,20" ColumnDefinitions=".42*,.2*,.4*">
+                                    <Border
+                                        BackgroundColor="Transparent"
+                                        HeightRequest="45"
+                                        Stroke="{StaticResource CardBG}">
+                                        <Border.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnInfoLabelTapped" />
+                                        </Border.GestureRecognizers>
+                                        <Label
+                                            x:Name="InfoLabel"
+                                            Margin="20,0,0,0"
+                                            FontAttributes="Bold"
+                                            FontSize="18"
+                                            HorizontalOptions="Center"
+                                            Text="Info"
+                                            TextColor="{StaticResource FontOP}">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnInfoLabelTapped" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                    </Border>
+
+                                    <BoxView
+                                        Grid.Column="1"
+                                        Margin="11,0"
+                                        HeightRequest="30"
+                                        VerticalOptions="Start"
+                                        WidthRequest="2"
+                                        Color="{StaticResource FontOP}" />
+
+                                    <Border
+                                        Grid.Column="2"
+                                        BackgroundColor="Transparent"
+                                        HeightRequest="45"
+                                        Stroke="{StaticResource CardBG}">
+                                        <Border.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnInfoLabelTapped" />
+                                        </Border.GestureRecognizers>
+                                        <Label
+                                            x:Name="SettingsLabel"
+                                            Grid.Column="2"
+                                            FontAttributes="Bold"
+                                            FontSize="18"
+                                            HorizontalOptions="Center"
+                                            Text="Settings"
+                                            TextColor="#D8CBFA">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnSettingsLabelTapped" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                    </Border>
+                                </Grid>
+
                                 <Grid
+                                    x:Name="InfoSection"
                                     ColumnDefinitions="Auto,*"
-                                    RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                                    IsVisible="True"
+                                    RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto, Auto"
                                     RowSpacing="10">
                                     <Label
                                         Margin="20,0,0,0"
@@ -132,9 +177,10 @@
                                         TextColor="Black" />
                                     <Label
                                         Grid.Column="1"
-                                        Margin="20,0,0,0"
-                                        HorizontalOptions="End"
-                                        Text="andrewsmith@gmail.com"
+                                        Margin="50,0,0,0"
+                                        FontFamily="InterSB"
+                                        HorizontalOptions="Center"
+                                        Text="{Binding User.Email}"
                                         TextColor="#703FF3" />
                                     <BoxView
                                         Grid.Row="1"
@@ -152,8 +198,9 @@
                                         Grid.Row="2"
                                         Grid.Column="1"
                                         Margin="20,0,0,0"
+                                        FontFamily="InterSB"
                                         HorizontalOptions="Center"
-                                        Text="United States"
+                                        Text="{Binding User.SelectedCountry}"
                                         TextColor="#703FF3" />
                                     <BoxView
                                         Grid.Row="3"
@@ -161,73 +208,112 @@
                                         Margin="10,10"
                                         HeightRequest="1"
                                         Color="#d0d0d0" />
-
                                     <Label
                                         Grid.Row="4"
                                         Margin="20,0,0,0"
                                         FontAttributes="Bold"
-                                        Text="Cars:"
+                                        Text="Phones:"
                                         TextColor="Black" />
-                                    <Label
+                                    <Frame
                                         Grid.Row="4"
                                         Grid.Column="1"
+                                        Padding="5"
+                                        BackgroundColor="{StaticResource Tertiary}"
+                                        BorderColor="{StaticResource Tertiary}"
+                                        WidthRequest="100">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnPhonesLabelTapped" />
+                                        </Frame.GestureRecognizers>
+                                        <Label
+                                            FontFamily="InterB24"
+                                            HorizontalOptions="Center"
+                                            Text="{Binding User.Cellphone}"
+                                            TextColor="{StaticResource CardBG}" />
+                                    </Frame>
+                                    <BoxView
+                                        Grid.Row="5"
+                                        Grid.ColumnSpan="2"
+                                        Margin="10,10"
+                                        HeightRequest="1"
+                                        Color="#d0d0d0" />
+                                    <Label
+                                        Grid.Row="6"
+                                        Margin="20,0,0,0"
+                                        FontAttributes="Bold"
+                                        Text="Cars:"
+                                        TextColor="Black" />
+                                    <HorizontalStackLayout
+                                        Grid.Row="7"
+                                        Grid.Column="1"
                                         HorizontalOptions="End"
-                                        Text="Toyota 2021, Audi 2020"
-                                        TextColor="#703FF3" />
+                                        Spacing="10">
+                                        <Frame
+                                            Padding="5"
+                                            BackgroundColor="{StaticResource Tertiary}"
+                                            BorderColor="{StaticResource Tertiary}">
+                                            <Frame.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnCarsTapped" />
+                                            </Frame.GestureRecognizers>
+                                            <Label
+                                                FontFamily="InterB24"
+                                                Text="{Binding User.SelectedVehicles[0]}"
+                                                TextColor="{StaticResource CardBG}" />
+                                        </Frame>
+                                        <Frame
+                                            Padding="5"
+                                            BackgroundColor="{StaticResource Tertiary}"
+                                            BorderColor="{StaticResource Tertiary}">
+                                            <Frame.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnCarsTapped" />
+                                            </Frame.GestureRecognizers>
+                                            <Label
+                                                FontFamily="InterB24"
+                                                Text="{Binding User.SelectedVehicles[1]}"
+                                                TextColor="{StaticResource CardBG}" />
+                                        </Frame>
+                                    </HorizontalStackLayout>
                                 </Grid>
-                            </StackLayout>
-                        </Frame>
-                    </StackLayout>
-                    <StackLayout Grid.Row="1" Spacing="10">
-                        <Frame
-                            Padding="10"
-                            BackgroundColor="{StaticResource CardBG}"
-                            BorderColor="Transparent"
-                            CornerRadius="10"
-                            HasShadow="True">
-                            <StackLayout Spacing="10">
-                                <Label
-                                    Margin="20,0,0,0"
-                                    FontAttributes="Bold"
-                                    FontSize="18"
-                                    Text="Preferences"
-                                    TextColor="#D8CBFA" />
+
                                 <Grid
-                                    ColumnDefinitions="Auto,*"
-                                    RowDefinitions="Auto,Auto,Auto"
+                                    x:Name="SettingsSection"
+                                    ColumnDefinitions="*,*"
+                                    IsVisible="False"
+                                    RowDefinitions="*,*,*"
                                     RowSpacing="10">
                                     <Label
                                         Margin="20,15,0,0"
                                         FontAttributes="Bold"
-                                        HorizontalOptions="End"
                                         Text="Language:"
                                         TextColor="Black" />
                                     <Border
                                         Grid.Column="1"
                                         Margin="0,0,20,0"
-                                        BackgroundColor="#D9D9D9"
+                                        BackgroundColor="{StaticResource Tertiary}"
+                                        HeightRequest="40"
                                         HorizontalOptions="End"
-                                        Stroke="#D9D9D9"
-                                        StrokeShape="RoundRectangle 10,10,10,10"
+                                        Stroke="{StaticResource Tertiary}"
+                                        StrokeShape="RoundRectangle 20,20,20,20"
                                         StrokeThickness="4"
-                                        WidthRequest="60" />
-                                    <Picker
-                                        x:Name="LanguagePicker"
-                                        Grid.Column="1"
-                                        Margin="0,0,20,0"
-                                        HorizontalOptions="End"
-                                        HorizontalTextAlignment="Center"
-                                        SelectedIndexChanged="OnLanguageChanged"
-                                        TextColor="#703FF3"
-                                        WidthRequest="60">
-                                        <Picker.ItemsSource>
-                                            <x:Array Type="{x:Type x:String}">
-                                                <x:String>ES</x:String>
-                                                <x:String>EN</x:String>
-                                                <x:String>FR</x:String>
-                                            </x:Array>
-                                        </Picker.ItemsSource>
-                                    </Picker>
+                                        WidthRequest="70">
+                                        <Picker
+                                            x:Name="LanguagePicker"
+                                            BackgroundColor="{StaticResource Tertiary}"
+                                            FontFamily="InterB24"
+                                            HeightRequest="50"
+                                            HorizontalTextAlignment="Center"
+                                            SelectedIndexChanged="OnLanguageChanged"
+                                            TextColor="{StaticResource CardBG}"
+                                            WidthRequest="70">
+                                            <Picker.ItemsSource>
+                                                <x:Array Type="{x:Type x:String}">
+                                                    <x:String>ES</x:String>
+                                                    <x:String>EN</x:String>
+                                                    <x:String>FR</x:String>
+                                                </x:Array>
+                                            </Picker.ItemsSource>
+                                        </Picker>
+                                    </Border>
+
                                     <BoxView
                                         Grid.Row="1"
                                         Grid.ColumnSpan="2"
@@ -238,49 +324,81 @@
                                         Grid.Row="2"
                                         Margin="20,0,0,0"
                                         FontAttributes="Bold"
-                                        Text="Settings:"
-                                        TextColor="Black" />
-                                    <Label
+                                        Text="Profile Details:"
+                                        TextColor="Black"
+                                        VerticalOptions="Center" />
+                                    <Border
                                         Grid.Row="2"
                                         Grid.Column="1"
-                                        Margin="0,0,50,0"
+                                        Margin="0,0,20,0"
+                                        BackgroundColor="{StaticResource Tertiary}"
+                                        HeightRequest="40"
                                         HorizontalOptions="End"
-                                        Text="&gt;"
-                                        TextColor="#703FF3" />
+                                        Stroke="{StaticResource PrimaryDark}"
+                                        StrokeShape="RoundRectangle 20,20,20,20"
+                                        StrokeThickness="1"
+                                        VerticalOptions="Center"
+                                        WidthRequest="70">
+                                        <Button
+                                            BackgroundColor="{StaticResource Tertiary}"
+                                            BorderColor="{StaticResource Tertiary}"
+                                            BorderWidth="1"
+                                            CornerRadius="30"
+                                            FontAttributes="Bold"
+                                            FontFamily="RobotoR"
+                                            FontSize="14"
+                                            HeightRequest="40"
+                                            Text="{Binding User.SelectedCurrency}"
+                                            TextColor="{StaticResource CardBG}"
+                                            WidthRequest="70"
+                                            ZIndex="999" />
+                                    </Border>
                                 </Grid>
                             </StackLayout>
                         </Frame>
                     </StackLayout>
                 </Grid>
 
+                <!--  Boton para ir al modal y editar los datos del usuario  -->
+                <Grid Grid.Row="2" VerticalOptions="Center">
+                    <!--  Botón con sombreado  -->
+                    <Border
+                        Margin="5,10,0,0"
+                        BackgroundColor="{StaticResource Gray300}"
+                        HeightRequest="60"
+                        HorizontalOptions="Center"
+                        Stroke="{StaticResource Gray300}"
+                        StrokeShape="RoundRectangle 10"
+                        WidthRequest="200">
+                        <BoxView CornerRadius="20" Opacity="0.3" />
+                    </Border>
+                    <Frame
+                        x:Name="EditButton"
+                        Margin="20"
+                        Padding="0"
+                        BackgroundColor="{StaticResource Tertiary}"
+                        BorderColor="Transparent"
+                        CornerRadius="10"
+                        HasShadow="True"
+                        HeightRequest="60"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="200">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnEditProfileTapped" />
+                        </Frame.GestureRecognizers>
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            HorizontalOptions="Center"
+                            Text="Edit Profile"
+                            TextColor="{StaticResource CardBG}"
+                            VerticalOptions="Center" />
+                    </Frame>
+                </Grid>
 
-            </ScrollView>
-
-            <!--  Boton para agragar la info  -->
-            <Frame
-                Grid.Row="3"
-                CornerRadius="30"
-                HasShadow="True"
-                HeightRequest="50"
-                WidthRequest="250">
-                <Button
-                    BackgroundColor="{StaticResource PrimaryDark}"
-                    BorderColor="#9E7BF7"
-                    BorderWidth="1"
-                    Clicked="OnNavigateButtonClicked"
-                    CornerRadius="30"
-                    FontAttributes="Bold"
-                    FontFamily="RobotoR"
-                    FontSize="18"
-                    HeightRequest="70"
-                    Text=" Edit Profile"
-                    TextColor="#FFFFFF"
-                    WidthRequest="320" />
-            </Frame>
-
-        </Grid>
-
-    </ScrollView>
-
-
+            </Grid>
+        </ScrollView>
+        <contentview:NavBarContentView Grid.Row="1" />
+    </Grid>
 </ContentPage>

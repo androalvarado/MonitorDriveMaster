@@ -19,7 +19,9 @@ namespace MonitorDrive.Pages.Management
 
             // Aquí puedes agregar la lógica que deseas ejecutar cuando se toca el botón
             // Navegar a la siguiente página
-            await Shell.Current.GoToAsync(nameof(AddDayWorkInfoPage));
+            //await Shell.Current.GoToAsync(nameof(AddDayWorkInfoPage));
+            await Navigation.PushAsync(new AddDayWorkInfoPage());
+
         }
 
     }

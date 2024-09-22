@@ -15,12 +15,14 @@ public partial class RegisterPage : ContentPage
     async private void OnRegister(object sender, EventArgs e)
     {
         // Navegar a la siguiente página
-        await Shell.Current.GoToAsync(nameof(LoginPage));
+        //await Shell.Current.GoToAsync(nameof(LoginPage));
+        await Navigation.PushAsync(new LoginPage());
     }
     async private void GoToLogin(object sender, EventArgs e)
     {
         // Navegar a la siguiente página
-        await Shell.Current.GoToAsync(nameof(LoginPage));
+        //await Shell.Current.GoToAsync(nameof(LoginPage));
+        await Navigation.PopAsync();
 
     }
 

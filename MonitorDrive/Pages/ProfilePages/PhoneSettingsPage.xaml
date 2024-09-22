@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MonitorDrive.Pages.ProfilePages.PhoneSettingsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Phone Settings"
+    BackgroundColor="{StaticResource Gray90}"
+    NavigationPage.IconColor="{StaticResource White}">
+
+    <StackLayout>
+        <!--  Titulo de la Pagina  -->
+        <StackLayout>
+            <Label
+                Margin="0,20,0,10"
+                FontFamily="InterB24"
+                FontSize="30"
+                HorizontalOptions="Center"
+                Text="Phones Settings"
+                TextColor="{StaticResource Tertiary}"
+                VerticalOptions="Center" />
+        </StackLayout>
+        <Frame
+            Margin="15,50,15,15"
+            BackgroundColor="{StaticResource CardBG}"
+            BorderColor="{StaticResource CardBG}"
+            CornerRadius="20"
+            HasShadow="True"
+            HeightRequest="350">
+            <Grid RowDefinitions=".1*,.1*,.1*,.1*,.1*,.1*,.1*">
+                <Grid ColumnDefinitions=".4*,.4*,.2*">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Country"
+                        TextColor="Black" />
+                    <Label
+                        Grid.Column="1"
+                        FontSize="16"
+                        Text="United States"
+                        TextColor="{StaticResource Tertiary}" />
+                    <Border
+                        Grid.Column="2"
+                        HeightRequest="40"
+                        StrokeShape="RoundRectangle 10"
+                        VerticalOptions="Start"
+                        WidthRequest="50" />
+                </Grid>
+
+                <BoxView
+                    Grid.Row="1"
+                    HeightRequest="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    Color="{StaticResource Tertiary}" />
+
+                <Grid Grid.Row="2" ColumnDefinitions=".4*,.4*,.2*">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Currency"
+                        TextColor="Black" />
+                    <Label
+                        Grid.Column="1"
+                        FontSize="16"
+                        Text="USD"
+                        TextColor="{StaticResource Tertiary}" />
+                    <Border
+                        Grid.Column="2"
+                        HeightRequest="40"
+                        StrokeShape="RoundRectangle 10"
+                        VerticalOptions="Start"
+                        WidthRequest="50" />
+                </Grid>
+
+                <BoxView
+                    Grid.Row="3"
+                    HeightRequest="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    Color="{StaticResource Tertiary}" />
+
+                <Grid Grid.Row="4" ColumnDefinitions=".4*,.4*,.2*">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Cars"
+                        TextColor="Black" />
+                    <Label
+                        Grid.Column="1"
+                        FontSize="16"
+                        Text="Toyota 2021"
+                        TextColor="{StaticResource Tertiary}" />
+                    <Border
+                        Grid.Column="2"
+                        HeightRequest="40"
+                        StrokeShape="RoundRectangle 10"
+                        VerticalOptions="Start"
+                        WidthRequest="50">
+                        <Button
+                            BackgroundColor="{StaticResource Tertiary}"
+                            FontFamily="InterB24"
+                            FontSize="16"
+                            Text="&gt;"
+                            TextColor="White" />
+                    </Border>
+                </Grid>
+
+                <BoxView
+                    Grid.Row="5"
+                    HeightRequest="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    Color="{StaticResource Tertiary}" />
+
+                <Grid Grid.Row="6" ColumnDefinitions=".4*,.4*,.2*">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Phones"
+                        TextColor="Black" />
+                    <Label
+                        Grid.Column="1"
+                        FontSize="16"
+                        Text="Iphone 13"
+                        TextColor="{StaticResource Tertiary}" />
+                    <Border
+                        Grid.Column="2"
+                        HeightRequest="40"
+                        StrokeShape="RoundRectangle 10"
+                        VerticalOptions="Start"
+                        WidthRequest="50">
+                        <Button
+                            BackgroundColor="{StaticResource Tertiary}"
+                            FontFamily="InterB24"
+                            FontSize="16"
+                            Text="&gt;"
+                            TextColor="White" />
+                    </Border>
+                </Grid>
+            </Grid>
+        </Frame>
+    </StackLayout>
+</ContentPage>

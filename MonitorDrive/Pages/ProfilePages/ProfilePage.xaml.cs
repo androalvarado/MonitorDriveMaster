@@ -2,29 +2,43 @@ using MonitorDrive;
 using MonitorDrive.Pages.ProfilePages;
 using System.Globalization;
 using Microsoft.Maui.Controls;
+using MonitorDrive.ViewModels;
+using MonitorDrive.Pages.Cars;
 namespace MonitorDrive.Pages.ProfilePages;
 
 public partial class ProfilePage : ContentPage
 {
-   
-    public ProfilePage()
+    private readonly UserViewModel user;
+    public ProfilePage(UserViewModel user)
     {
         InitializeComponent();
 
-        // Establecer el índice seleccionado por defecto (0 para Español)
+        this.user = user;
+
+        // Establecer el índice seleccionado por defecto (0 para ENG)
         LanguagePicker.SelectedIndex = 1; // Cambia el índice según tu preferencia
     }
 
-    private async void OnNavigateButtonClicked(object sender, EventArgs e)
+    private async void OnEditProfileTapped(object sender, EventArgs e)
     {
-        //await Navigation.PushAsync(new AddDayWorkInfoPage());
-        //await Shell.Current.GoToAsync(nameof(DashboardPage));
+        // Animación de escala al tocar el botón
+        await EditButton.ScaleTo(0.9, 50, Easing.Linear);
+        await EditButton.ScaleTo(1, 50, Easing.Linear);
+
+        // Navegar a la página de edición de perfil        
+        await Navigation.PushModalAsync(new EditProfileDetailsPage(this.user));       
     }
 
-    private async void OnRankTapped(object sender, EventArgs e)
+    private async void OnPhonesLabelTapped(object sender, EventArgs e)
     {
-        // Navegar a RankingPage
-        await Shell.Current.GoToAsync(nameof(RankingPage));
+
+        await Navigation.PushAsync(new PhoneSettingsPage());
+    }
+
+    private async void OnCarsTapped(object sender, EventArgs e)
+    {
+
+        await Navigation.PushAsync(new CarsListPage());
     }
 
     private void OnLanguageChanged(object sender, EventArgs e)
@@ -48,6 +62,18 @@ public partial class ProfilePage : ContentPage
             CultureInfo.CurrentUICulture = culture;
 
         }
+    }
+
+    private void OnInfoLabelTapped(object sender, TappedEventArgs e)
+    {
+        InfoSection.IsVisible = true;
+        SettingsSection.IsVisible = false;
+    }
+
+    private void OnSettingsLabelTapped(object sender, TappedEventArgs e)
+    {
+        InfoSection.IsVisible = false;
+        SettingsSection.IsVisible = true;
     }
 
 }

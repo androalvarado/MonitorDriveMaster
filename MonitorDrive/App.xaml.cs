@@ -11,11 +11,18 @@ namespace MonitorDrive
 
         InitializeComponent();
 
-            // Iniciar con StartupPage
-            MainPage = new AppShell();
+            // Crear una nueva NavigationPage
+            var navigationPage = new NavigationPage(new MainPage())
+            {
+                BarBackgroundColor = Color.FromHex("#703FF3"), // Color de fondo de la barra
+                BarTextColor = Color.FromHex("#FFFFFF") // Color del texto de la barra
+            };
 
-            Shell.Current.GoToAsync("MainPage");
-            
+            // Establecer la MainPage
+            MainPage = navigationPage;
+
+            //Shell.Current.GoToAsync("MainPage");
+
         }
     }
 }

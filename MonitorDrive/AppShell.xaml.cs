@@ -14,20 +14,20 @@ namespace MonitorDrive
         {
             InitializeComponent();
 
-            MainPageTab.IsVisible = false;
+            //MainPageTab.IsVisible = false;
 
             Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
 
-            Routing.RegisterRoute(nameof(DashboardPage), typeof(Pages.DashboardPage));
-
-            Routing.RegisterRoute(nameof(AddDayWorkInfoPage), typeof(Pages.Management.AddDayWorkInfoPage));
+            Routing.RegisterRoute(nameof(DashboardPage), typeof(DashboardPage));
+                        
             Routing.RegisterRoute(nameof(ListInfoPage), typeof(Pages.Management.ListInfoPage));
+            Routing.RegisterRoute(nameof(AddDayWorkInfoPage), typeof(Pages.Management.AddDayWorkInfoPage));
 
             Routing.RegisterRoute(nameof(MonitorMasterPage), typeof(Pages.Masters.MonitorMasterPage));
 
-
-            Routing.RegisterRoute(nameof(RankingPage), typeof(Pages.ProfilePages.RankingPage));
+            Routing.RegisterRoute(nameof(EditProfileDetailsPage), typeof(Pages.ProfilePages.EditProfileDetailsPage));
             Routing.RegisterRoute(nameof(ProfilePage), typeof(Pages.ProfilePages.ProfilePage));
+            Routing.RegisterRoute(nameof(PhoneSettingsPage), typeof(Pages.ProfilePages.PhoneSettingsPage));
 
             Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
             Routing.RegisterRoute(nameof(LoginPage), typeof(Pages.Auth.LoginPage));

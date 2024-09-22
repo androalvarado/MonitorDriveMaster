@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MonitorDrive.Pages.Cars.TiresDetailsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Tires Details"
+    BackgroundColor="{StaticResource Gray90}"
+    NavigationPage.IconColor="{StaticResource White}">
+
+    <Grid RowDefinitions=".1*,.3*,.4*,.2*" RowSpacing="10">
+        <!--  Titulo de la Pagina  -->
+        <StackLayout>
+            <Label
+                Margin="0,20,0,10"
+                FontFamily="InterB24"
+                FontSize="30"
+                HorizontalOptions="Center"
+                Text="Tires Cars Details"
+                TextColor="{StaticResource Tertiary}"
+                VerticalOptions="Center" />
+        </StackLayout>
+
+        <!--  Frame que muestra modelo, millas e imagen  -->
+        <Frame
+            Grid.Row="1"
+            Margin="20,0,20,0"
+            BackgroundColor="{StaticResource CardBG}"
+            BorderColor="{StaticResource CardBG}"
+            CornerRadius="20"
+            HasShadow="True">
+            <Grid>
+                <Border Stroke="{StaticResource CardBG}" StrokeShape="RoundRectangle 20">
+                    <Image Source="car_tires" />
+                </Border>
+            </Grid>
+        </Frame>
+
+        <Frame
+            Grid.Row="2"
+            Margin="20,50,20,15"
+            BackgroundColor="{StaticResource CardBG}"
+            BorderColor="{StaticResource CardBG}"
+            CornerRadius="20"
+            HasShadow="True"
+            HeightRequest="250">
+            <Grid RowDefinitions=".1*,.1*,.1*,.1*,.1*">
+                <Grid
+                    Margin="20,0,0,0"
+                    ColumnDefinitions=".4*,.4*"
+                    ColumnSpacing="50">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Life"
+                        TextColor="Black" />
+                    <Label
+                        Grid.Column="1"
+                        FontSize="16"
+                        Text="30000 miles"
+                        TextColor="{StaticResource Tertiary}" />
+                </Grid>
+
+                <BoxView
+                    Grid.Row="1"
+                    HeightRequest="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    Color="{StaticResource Tertiary}" />
+
+                <Grid
+                    Grid.Row="2"
+                    Margin="20,0,0,0"
+                    ColumnDefinitions=".4*,.4*"
+                    ColumnSpacing="50">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Cost"
+                        TextColor="Black" />
+                    <Label
+                        Grid.Column="1"
+                        FontSize="16"
+                        Text="500 USD"
+                        TextColor="{StaticResource Tertiary}" />
+                </Grid>
+
+                <BoxView
+                    Grid.Row="3"
+                    HeightRequest="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    Color="{StaticResource Tertiary}" />
+
+                <Grid
+                    Grid.Row="4"
+                    Margin="20,0,0,0"
+                    ColumnDefinitions=".4*,.4*"
+                    ColumnSpacing="50">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Assembly Cost"
+                        TextColor="Black" />
+                    <Label
+                        Grid.Column="1"
+                        FontSize="16"
+                        Text="250 USD"
+                        TextColor="{StaticResource Tertiary}" />
+                </Grid>
+            </Grid>
+        </Frame>
+
+        <!--  Botones continuar y regresar  -->
+        <Grid
+            Grid.Row="3"
+            Margin="20,10,20,20"
+            BackgroundColor="Transparent"
+            ColumnDefinitions="*,*"
+            ColumnSpacing="80"
+            VerticalOptions="End">
+            <Border
+                Margin="5,10,0,0"
+                BackgroundColor="{StaticResource Gray300}"
+                HeightRequest="60"
+                HorizontalOptions="Start"
+                Stroke="{StaticResource Gray300}"
+                StrokeShape="RoundRectangle 20"
+                WidthRequest="130">
+                <BoxView CornerRadius="20" Opacity="0.3" />
+            </Border>
+
+            <Frame
+                Padding="0"
+                BackgroundColor="Transparent"
+                BorderColor="Transparent"
+                CornerRadius="20"
+                HasShadow="True"
+                HeightRequest="60">
+                <Button
+                    BackgroundColor="{StaticResource CardBG}"
+                    BorderColor="{StaticResource Tertiary}"
+                    Clicked="OnBackClicked"
+                    FontFamily="InterB24"
+                    FontSize="20"
+                    Text="Back"
+                    TextColor="{StaticResource Tertiary}" />
+            </Frame>
+
+            <Border
+                Grid.Column="1"
+                Margin="5,10,0,0"
+                BackgroundColor="{StaticResource Gray300}"
+                HeightRequest="60"
+                HorizontalOptions="Start"
+                Stroke="{StaticResource Gray300}"
+                StrokeShape="RoundRectangle 20"
+                WidthRequest="130">
+                <BoxView CornerRadius="20" Opacity="0.3" />
+            </Border>
+            <Frame
+                Grid.Column="1"
+                Padding="0"
+                BackgroundColor="{StaticResource Tertiary}"
+                CornerRadius="20"
+                HasShadow="True"
+                HeightRequest="60">
+                <Button
+                    BackgroundColor="{StaticResource Tertiary}"
+                    BorderColor="{StaticResource Tertiary}"
+                    Clicked="OnNewClicked"
+                    FontFamily="InterB24"
+                    FontSize="20"
+                    Text="Change"
+                    TextColor="White" />
+            </Frame>
+        </Grid>
+    </Grid>
+
+</ContentPage>

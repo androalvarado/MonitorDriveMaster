@@ -3,134 +3,1103 @@
     x:Class="MonitorDrive.Pages.Management.AddDayWorkInfoPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Add Info"
+    Title="Insert Data for Today"
     BackgroundColor="{StaticResource Gray90}">
 
-    <ScrollView>
-        <Frame
-            Margin="10,10,10,5"
-            Padding="0"
-            BackgroundColor="{StaticResource CardBG}"
-            BorderColor="Transparent"
-            CornerRadius="20"
-            HasShadow="True">
-            <VerticalStackLayout Margin="15,15,15,10" Spacing="10">
-                <!--<Label
-                    FontFamily="InterSB"
-                    Text="Time"
-                    TextColor="{StaticResource Tertiary}" />
-                <Border Padding="10,0,0,0" Stroke="{StaticResource Tertiary}">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="40,40,40,40" />
-                    </Border.StrokeShape>
-                    <DatePicker
-                        x:Name="fechaPicker"
+    <Grid>
+        <!--  Primer formulario, paso 1  -->
+        <Grid
+            x:Name="grid1"
+            IsVisible="True"
+            RowDefinitions=".1*,.1*,.7*,.1*">
+
+            <!--  Titulo de la Pagina  -->
+            <StackLayout>
+                <Label
+                    Margin="0,20,0,10"
+                    FontFamily="InterB24"
+                    FontSize="30"
+                    HorizontalOptions="Center"
+                    Text="Insert Data for Today"
+                    TextColor="{StaticResource Tertiary}"
+                    VerticalOptions="Center" />
+            </StackLayout>
+
+            <!--  Indicador de los pasos del formulario  -->
+            <Grid
+                Grid.Row="1"
+                Margin="0,10,0,5"
+                ColumnDefinitions="*,Auto,*,Auto,*"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <!--  Circulo izquierdo  -->
+                <Frame
+                    Padding="0"
+                    BackgroundColor="{StaticResource Tertiary}"
+                    CornerRadius="25"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    WidthRequest="40">
+                    <Label
                         FontFamily="InterSB"
-                        TextColor="{StaticResource Primary}" />
-                </Border>-->
-                <Label
-                    FontFamily="InterSB"
-                    Text="Total Distance (km)"
-                    TextColor="{StaticResource Tertiary}" />
-                <Border Padding="10,0,0,0" Stroke="{StaticResource Tertiary}">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="40,40,40,40" />
-                    </Border.StrokeShape>
-                    <Entry
-                        x:Name="distanciaEntry"
-                        Keyboard="Numeric"
-                        Placeholder="Enter the distance traveled" />
-                </Border>
-                <Label
-                    FontFamily="InterSB"
-                    Text="Start Time"
-                    TextColor="{StaticResource Tertiary}" />
-                <Border Padding="10,0,0,0" Stroke="{StaticResource Tertiary}">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="40,40,40,40" />
-                    </Border.StrokeShape>
-                    <TimePicker
-                        x:Name="horaInicioPicker"
+                        FontSize="25"
+                        HorizontalOptions="Center"
+                        Text="1"
+                        TextColor="White"
+                        VerticalOptions="Center"
+                        ZIndex="999" />
+                </Frame>
+
+                <!--  Línea horizontal  -->
+                <BoxView
+                    Grid.Column="1"
+                    BackgroundColor="{StaticResource Tertiary}"
+                    HeightRequest="2"
+                    VerticalOptions="Center"
+                    WidthRequest="100" />
+
+                <!--  Circulo del medio  -->
+                <Frame
+                    Grid.Column="2"
+                    Padding="0"
+                    BackgroundColor="{StaticResource Tertiary}"
+                    CornerRadius="25"
+                    HeightRequest="40"
+                    HorizontalOptions="Center"
+                    WidthRequest="40">
+                    <Label
                         FontFamily="InterSB"
-                        TextColor="{StaticResource Primary}" />
-                </Border>
+                        FontSize="25"
+                        HorizontalOptions="Center"
+                        Text="2"
+                        TextColor="{StaticResource Tertiary}"
+                        VerticalOptions="Center"
+                        ZIndex="999" />
+                </Frame>
 
+                <!--  Línea horizontal  -->
+                <BoxView
+                    Grid.Column="3"
+                    BackgroundColor="{StaticResource Tertiary}"
+                    HeightRequest="2"
+                    VerticalOptions="Center"
+                    WidthRequest="100" />
 
-                <Label
-                    FontFamily="InterSB"
-                    Text="Time Finished"
-                    TextColor="{StaticResource Tertiary}" />
-                <Border Padding="10,0,0,0" Stroke="{StaticResource Tertiary}">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="40,40,40,40" />
-                    </Border.StrokeShape>
-                    <TimePicker
-                        x:Name="horaFinPicker"
+                <!--  Circulo derecho  -->
+                <Frame
+                    Grid.Column="4"
+                    Padding="0"
+                    BackgroundColor="{StaticResource Tertiary}"
+                    CornerRadius="25"
+                    HeightRequest="40"
+                    HorizontalOptions="Center"
+                    WidthRequest="40">
+                    <Label
                         FontFamily="InterSB"
-                        TextColor="{StaticResource Primary}" />
-                </Border>
+                        FontSize="25"
+                        HorizontalOptions="Center"
+                        Text="3"
+                        TextColor="{StaticResource Tertiary}"
+                        VerticalOptions="Center"
+                        ZIndex="999" />
+                </Frame>
+            </Grid>
+
+            <!--  Formulario  -->
+            <Frame
+                Grid.Row="2"
+                Margin="10,10,10,5"
+                Padding="0"
+                BackgroundColor="{StaticResource CardBG}"
+                BorderColor="Transparent"
+                CornerRadius="20"
+                HasShadow="True">
+                <Grid
+                    Margin="15,15,15,10"
+                    ColumnDefinitions="*,*"
+                    ColumnSpacing="40"
+                    RowDefinitions="*,*,*,*,*"
+                    RowSpacing="10">
+
+                    <!--  Picker para seleccionar un auto  -->
+                    <VerticalStackLayout Grid.ColumnSpan="2" VerticalOptions="Center">
+                        <Label
+                            FontFamily="InterSB"
+                            FontSize="16"
+                            Text="Select a Car:"
+                            TextColor="{StaticResource Tertiary}" />
+                        <Border
+                            Padding="10,0,0,0"
+                            Stroke="{StaticResource Tertiary}"
+                            StrokeShape="RoundRectangle 40,40,40,40">
+                            <Picker
+                                x:Name="carPicker"
+                                Title="Select a Car"
+                                HeightRequest="50"
+                                SelectedIndexChanged="OnPickerSelectedIndexChanged"
+                                TextColor="{StaticResource Tertiary}">
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>Auto 1</x:String>
+                                        <x:String>Auto 2</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <!--  Range para introducir la cantidad de millas  -->
+                    <VerticalStackLayout
+                        Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        VerticalOptions="Center">
+                        <Label
+                            FontFamily="InterSB"
+                            FontSize="16"
+                            Text="Miles traveled:"
+                            TextColor="{StaticResource Tertiary}" />
+                        <Slider
+                            x:Name="milesSlider"
+                            HeightRequest="50"
+                            Maximum="100"
+                            Minimum="0"
+                            ThumbColor="{StaticResource Tertiary}"
+                            ValueChanged="OnSliderValueChanged"
+                            Value="0" />
+                    </VerticalStackLayout>
+
+                    <!--  Time Picker para la hora de inicio y la hora finalizado  -->
+                    <VerticalStackLayout Grid.Row="2">
+                        <Label
+                            FontFamily="InterSB"
+                            Text="Start Time"
+                            TextColor="{StaticResource Tertiary}" />
+                        <Border
+                            Padding="10,0,0,0"
+                            Stroke="{StaticResource Tertiary}"
+                            StrokeShape="RoundRectangle 40">
+                            <TimePicker
+                                x:Name="startTimePicker"
+                                FontFamily="InterSB"
+                                HeightRequest="50"
+                                TextColor="{StaticResource Primary}" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Row="2" Grid.Column="1">
+                        <Label
+                            FontFamily="InterSB"
+                            Text="End Time"
+                            TextColor="{StaticResource Tertiary}" />
+                        <Border
+                            Padding="10,0,0,0"
+                            Stroke="{StaticResource Tertiary}"
+                            StrokeShape="RoundRectangle 40">
+                            <TimePicker
+                                x:Name="endTimePicker"
+                                FontFamily="InterSB"
+                                HeightRequest="50"
+                                TextColor="{StaticResource Primary}" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <!--  Entry para el total ganado y el total de propinas  -->
+                    <VerticalStackLayout Grid.Row="3">
+                        <Label
+                            FontFamily="InterSB"
+                            Text="Total Earned"
+                            TextColor="{StaticResource Tertiary}" />
+                        <Border
+                            Padding="10,0,0,0"
+                            Stroke="{StaticResource Tertiary}"
+                            StrokeShape="RoundRectangle 40">
+                            <Entry
+                                x:Name="totalEarnedEntry"
+                                HeightRequest="50"
+                                Keyboard="Numeric"
+                                Placeholder="$ 00.00"
+                                TextColor="{StaticResource Primary}" />
+                        </Border>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Row="3" Grid.Column="1">
+                        <Label
+                            FontFamily="InterSB"
+                            Text="Total Tips"
+                            TextColor="{StaticResource Tertiary}" />
+                        <Border
+                            Padding="10,0,0,0"
+                            Stroke="{StaticResource Tertiary}"
+                            StrokeShape="RoundRectangle 40">
+                            <Entry
+                                x:Name="totalTipsEntry"
+                                HeightRequest="50"
+                                Keyboard="Numeric"
+                                Placeholder="$ 00.00"
+                                TextColor="{StaticResource Primary}" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <!--  Entry para el total de viajes  -->
+                    <VerticalStackLayout Grid.Row="4" Grid.ColumnSpan="2">
+                        <Label
+                            FontFamily="InterSB"
+                            Text="Total of Travels"
+                            TextColor="{StaticResource Tertiary}" />
+                        <Border
+                            Padding="10,0,0,0"
+                            Stroke="{StaticResource Tertiary}"
+                            StrokeShape="RoundRectangle 40">
+                            <Entry
+                                x:Name="cantidadViajesEntry"
+                                HeightRequest="50"
+                                Keyboard="Numeric"
+                                Placeholder="Travels completed"
+                                TextColor="{StaticResource Primary}" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                </Grid>
+            </Frame>
 
 
-                <Label
-                    FontFamily="InterSB"
-                    Text="Total Amount Generated"
-                    TextColor="{StaticResource Tertiary}" />
-                <Border Padding="10,0,0,0" Stroke="{StaticResource Tertiary}">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="40,40,40,40" />
-                    </Border.StrokeShape>
-                    <Entry
-                        x:Name="montoTotalEntry"
-                        Keyboard="Numeric"
-                        Placeholder="Amount generated" />
-                </Border>
-                <Label
-                    FontFamily="InterSB"
-                    Text="Tips"
-                    TextColor="{StaticResource Tertiary}" />
-                <Border Padding="10,0,0,0" Stroke="{StaticResource Tertiary}">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="40,40,40,40" />
-                    </Border.StrokeShape>
-                    <Entry
-                        x:Name="propinaEntry"
-                        Keyboard="Numeric"
-                        Placeholder="Tip received" />
-                </Border>
-                <Label
-                    FontFamily="InterSB"
-                    Text="Number of Travels"
-                    TextColor="{StaticResource Tertiary}" />
-                <Border Padding="10,0,0,0" Stroke="{StaticResource Tertiary}">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="40,40,40,40" />
-                    </Border.StrokeShape>
-                    <Entry
-                        x:Name="cantidadPasajerosEntry"
-                        Keyboard="Numeric"
-                        Placeholder="Number of trips completed" />
+            <!--  Botones continuar y regresar  -->
+            <Grid
+                Grid.Row="3"
+                Margin="20,10,20,20"
+                BackgroundColor="Transparent"
+                ColumnDefinitions="*,*"
+                ColumnSpacing="80">
+                <Border
+                    Margin="5,10,0,0"
+                    BackgroundColor="{StaticResource Gray300}"
+                    HeightRequest="60"
+                    HorizontalOptions="Start"
+                    Stroke="{StaticResource Gray300}"
+                    StrokeShape="RoundRectangle 20"
+                    WidthRequest="130">
+                    <BoxView CornerRadius="20" Opacity="0.3" />
                 </Border>
 
                 <Frame
-                    Margin="0,60"
-                    Padding="0,-2"
+                    Padding="0"
                     BackgroundColor="Transparent"
+                    BorderColor="Transparent"
                     CornerRadius="20"
                     HasShadow="True"
-                    VerticalOptions="End">
+                    HeightRequest="60">
+                    <Button
+                        BackgroundColor="{StaticResource CardBG}"
+                        BorderColor="{StaticResource Tertiary}"
+                        Clicked="OnExitFormButtom"
+                        FontFamily="InterB24"
+                        FontSize="20"
+                        Text="Back"
+                        TextColor="{StaticResource Tertiary}" />
+                </Frame>
+
+                <Border
+                    Grid.Column="1"
+                    Margin="5,10,0,0"
+                    BackgroundColor="{StaticResource Gray300}"
+                    HeightRequest="60"
+                    HorizontalOptions="Start"
+                    Stroke="{StaticResource Gray300}"
+                    StrokeShape="RoundRectangle 20"
+                    WidthRequest="130">
+                    <BoxView CornerRadius="20" Opacity="0.3" />
+                </Border>
+                <Frame
+                    Grid.Column="1"
+                    Padding="0"
+                    BackgroundColor="{StaticResource Tertiary}"
+                    CornerRadius="20"
+                    HasShadow="True"
+                    HeightRequest="60">
                     <Button
                         BackgroundColor="{StaticResource Tertiary}"
                         BorderColor="{StaticResource Tertiary}"
-                        Clicked="OnNavigateButtonClicked"
-                        FontAttributes="Bold"
+                        Clicked="OnContinueClicked"
+                        FontFamily="InterB24"
                         FontSize="20"
-                        HeightRequest="60"
-                        Text="Add Info"
-                        TextColor="White"
-                        VerticalOptions="End"
-                        WidthRequest="360" />
+                        Text="Continue"
+                        TextColor="White" />
                 </Frame>
-            </VerticalStackLayout>
-        </Frame>
-    </ScrollView>
+            </Grid>
+        </Grid>
+
+        <!--  Segundo formulario, Paso 2  -->
+        <Grid
+            x:Name="grid2"
+            IsVisible="False"
+            RowDefinitions=".1*,.1*,.7*,.1*">
+            <!--  Titulo de la Pagina  -->
+            <StackLayout>
+                <Label
+                    Margin="0,20,0,10"
+                    FontFamily="InterB24"
+                    FontSize="30"
+                    HorizontalOptions="Center"
+                    Text="Few Questions About"
+                    TextColor="{StaticResource Tertiary}"
+                    VerticalOptions="Center" />
+            </StackLayout>
+
+            <!--  Indicador de los pasos del formulario  -->
+            <Grid
+                Grid.Row="1"
+                Margin="0,10,0,5"
+                ColumnDefinitions="*,Auto,*,Auto,*"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <!--  Circulo izquierdo  -->
+                <Frame
+                    Padding="0"
+                    BackgroundColor="{StaticResource Tertiary}"
+                    CornerRadius="25"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    WidthRequest="40">
+                    <Label
+                        BackgroundColor="{StaticResource Tertiary}"
+                        FontFamily="InterSB"
+                        FontSize="25"
+                        HorizontalOptions="Center"
+                        Text="1"
+                        TextColor="{StaticResource Tertiary}"
+                        VerticalOptions="Center"
+                        ZIndex="999" />
+                </Frame>
+
+                <!--  Línea horizontal  -->
+                <BoxView
+                    Grid.Column="1"
+                    BackgroundColor="{StaticResource Tertiary}"
+                    HeightRequest="2"
+                    VerticalOptions="Center"
+                    WidthRequest="100" />
+
+                <!--  Circulo del medio  -->
+                <Frame
+                    Grid.Column="2"
+                    Padding="0"
+                    BackgroundColor="{StaticResource Tertiary}"
+                    CornerRadius="25"
+                    HeightRequest="40"
+                    HorizontalOptions="Center"
+                    WidthRequest="40">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="25"
+                        HorizontalOptions="Center"
+                        Text="2"
+                        TextColor="White"
+                        VerticalOptions="Center"
+                        ZIndex="999" />
+                </Frame>
+
+                <!--  Línea horizontal  -->
+                <BoxView
+                    Grid.Column="3"
+                    BackgroundColor="{StaticResource Tertiary}"
+                    HeightRequest="2"
+                    VerticalOptions="Center"
+                    WidthRequest="100" />
+
+                <!--  Circulo derecho  -->
+                <Frame
+                    Grid.Column="4"
+                    Padding="0"
+                    BackgroundColor="{StaticResource Tertiary}"
+                    CornerRadius="25"
+                    HeightRequest="40"
+                    HorizontalOptions="Center"
+                    WidthRequest="40">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="25"
+                        HorizontalOptions="Center"
+                        Text="3"
+                        TextColor="{StaticResource Tertiary}"
+                        VerticalOptions="Center"
+                        ZIndex="999" />
+                </Frame>
+            </Grid>
+
+            <!--  Formulario  -->
+            <Frame
+                Grid.Row="2"
+                Margin="10,10,10,5"
+                Padding="0"
+                BackgroundColor="{StaticResource CardBG}"
+                BorderColor="Transparent"
+                CornerRadius="20"
+                HasShadow="True">
+                <VerticalStackLayout
+                    Padding="30,0"
+                    Spacing="25"
+                    VerticalOptions="Center">
+                    <VerticalStackLayout Spacing="10">
+                        <Label
+                            FontSize="18"
+                            Text="1. How do you feel today about  your travels?"
+                            TextColor="{StaticResource Tertiary}" />
+                        <HorizontalStackLayout
+                            x:Name="Rating1"
+                            HorizontalOptions="Center"
+                            Spacing="5">
+                            <Label
+                                FontSize="32"
+                                Text="&#9734;"
+                                TextColor="Gold">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="1,1" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label
+                                FontSize="32"
+                                Text="&#9734;"
+                                TextColor="Gold">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="1,2" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label
+                                FontSize="32"
+                                Text="&#9734;"
+                                TextColor="Gold">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="1,3" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label
+                                FontSize="32"
+                                Text="&#9734;"
+                                TextColor="Gold">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="1,4" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label
+                                FontSize="32"
+                                Text="&#9734;"
+                                TextColor="Gold">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="1,5" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="10">
+                        <Label
+                            FontSize="18"
+                            Text="2. How do you feel today about  your incomes?"
+                            TextColor="{StaticResource Tertiary}" />
+                        <HorizontalStackLayout
+                            x:Name="Rating2"
+                            HorizontalOptions="Center"
+                            Spacing="5">
+                            <Label
+                                FontSize="32"
+                                Text="&#9734;"
+                                TextColor="Gold">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="2,1" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label
+                                FontSize="32"
+                                Text="&#9734;"
+                                TextColor="Gold">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="2,2" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label
+                                FontSize="32"
+                                Text="&#9734;"
+                                TextColor="Gold">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="2,3" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label
+                                FontSize="32"
+                                Text="&#9734;"
+                                TextColor="Gold">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="2,4" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label
+                                FontSize="32"
+                                Text="&#9734;"
+                                TextColor="Gold">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="2,5" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="10">
+                        <Label
+                            FontSize="18"
+                            Text="3. How do you feel today in  general?"
+                            TextColor="{StaticResource Tertiary}" />
+                        <HorizontalStackLayout
+                            x:Name="Rating3"
+                            HorizontalOptions="Center"
+                            Spacing="5">
+                            <Label
+                                FontSize="32"
+                                Text="&#9734;"
+                                TextColor="Gold">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="3,1" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label
+                                FontSize="32"
+                                Text="&#9734;"
+                                TextColor="Gold">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="3,2" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label
+                                FontSize="32"
+                                Text="&#9734;"
+                                TextColor="Gold">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="3,3" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label
+                                FontSize="32"
+                                Text="&#9734;"
+                                TextColor="Gold">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="3,4" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label
+                                FontSize="32"
+                                Text="&#9734;"
+                                TextColor="Gold">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="3,5" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+
+
+            <!--  Botones continuar y regresar  -->
+            <Grid
+                Grid.Row="3"
+                Margin="20,10,20,20"
+                BackgroundColor="Transparent"
+                ColumnDefinitions="*,*"
+                ColumnSpacing="80">
+                <Border
+                    Margin="5,10,0,0"
+                    BackgroundColor="{StaticResource Gray300}"
+                    HeightRequest="60"
+                    HorizontalOptions="Start"
+                    Stroke="{StaticResource Gray300}"
+                    StrokeShape="RoundRectangle 20"
+                    WidthRequest="130">
+                    <BoxView CornerRadius="20" Opacity="0.3" />
+                </Border>
+
+                <Frame
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent"
+                    CornerRadius="20"
+                    HasShadow="True"
+                    HeightRequest="60">
+                    <Button
+                        BackgroundColor="{StaticResource CardBG}"
+                        BorderColor="{StaticResource Tertiary}"
+                        Clicked="OnCancelClicked"
+                        FontFamily="InterB24"
+                        FontSize="20"
+                        Text="Back"
+                        TextColor="{StaticResource Tertiary}" />
+                </Frame>
+
+                <Border
+                    Grid.Column="1"
+                    Margin="5,10,0,0"
+                    BackgroundColor="{StaticResource Gray300}"
+                    HeightRequest="60"
+                    HorizontalOptions="Start"
+                    Stroke="{StaticResource Gray300}"
+                    StrokeShape="RoundRectangle 20"
+                    WidthRequest="130">
+                    <BoxView CornerRadius="20" Opacity="0.3" />
+                </Border>
+                <Frame
+                    Grid.Column="1"
+                    Padding="0"
+                    BackgroundColor="{StaticResource Tertiary}"
+                    CornerRadius="20"
+                    HasShadow="True"
+                    HeightRequest="60">
+                    <Button
+                        BackgroundColor="{StaticResource Tertiary}"
+                        BorderColor="{StaticResource Tertiary}"
+                        Clicked="OnContinueClicked"
+                        FontFamily="InterB24"
+                        FontSize="20"
+                        Text="Continue"
+                        TextColor="White" />
+                </Frame>
+            </Grid>
+        </Grid>
+
+        <!--  Tercer Formulario, Paso 3  -->
+        <Grid
+            x:Name="grid3"
+            IsVisible="False"
+            RowDefinitions=".1*,.1*,.7*,.1*">
+            <!--  Titulo de la Pagina  -->
+            <StackLayout>
+                <Label
+                    Margin="0,20,0,10"
+                    FontFamily="InterB24"
+                    FontSize="30"
+                    HorizontalOptions="Center"
+                    Text="Check your Data"
+                    TextColor="{StaticResource Tertiary}"
+                    VerticalOptions="Center" />
+            </StackLayout>
+
+            <!--  Indicador de los pasos del formulario  -->
+            <Grid
+                Grid.Row="1"
+                Margin="0,10,0,5"
+                ColumnDefinitions="*,Auto,*,Auto,*"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <!--  Circulo izquierdo  -->
+                <Frame
+                    Padding="0"
+                    BackgroundColor="{StaticResource Tertiary}"
+                    CornerRadius="25"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    WidthRequest="40">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="25"
+                        HorizontalOptions="Center"
+                        Text="1"
+                        TextColor="{StaticResource Tertiary}"
+                        VerticalOptions="Center"
+                        ZIndex="999" />
+                </Frame>
+
+                <!--  Línea horizontal  -->
+                <BoxView
+                    Grid.Column="1"
+                    BackgroundColor="{StaticResource Tertiary}"
+                    HeightRequest="2"
+                    VerticalOptions="Center"
+                    WidthRequest="100" />
+
+                <!--  Circulo del medio  -->
+                <Frame
+                    Grid.Column="2"
+                    Padding="0"
+                    BackgroundColor="{StaticResource Tertiary}"
+                    CornerRadius="25"
+                    HeightRequest="40"
+                    HorizontalOptions="Center"
+                    WidthRequest="40">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="25"
+                        HorizontalOptions="Center"
+                        Text="2"
+                        TextColor="{StaticResource Tertiary}"
+                        VerticalOptions="Center"
+                        ZIndex="999" />
+                </Frame>
+
+                <!--  Línea horizontal  -->
+                <BoxView
+                    Grid.Column="3"
+                    BackgroundColor="{StaticResource Tertiary}"
+                    HeightRequest="2"
+                    VerticalOptions="Center"
+                    WidthRequest="100" />
+
+                <!--  Circulo derecho  -->
+                <Frame
+                    Grid.Column="4"
+                    Padding="0"
+                    BackgroundColor="{StaticResource Tertiary}"
+                    CornerRadius="25"
+                    HeightRequest="40"
+                    HorizontalOptions="Center"
+                    WidthRequest="40">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="25"
+                        HorizontalOptions="Center"
+                        Text="3"
+                        TextColor="White"
+                        VerticalOptions="Center"
+                        ZIndex="999" />
+                </Frame>
+            </Grid>
+
+            <!--  Formulario  -->
+            <Frame
+                Grid.Row="2"
+                Margin="10,10,10,5"
+                Padding="20,20,20,10"
+                BackgroundColor="{StaticResource CardBG}"
+                BorderColor="Transparent"
+                CornerRadius="20"
+                HasShadow="True">
+                <Grid RowDefinitions=".05*,.05*,.05*,.05*,.05*,.05*,.05*,.05*,.05*,.05*,.05*,.05*,.15*,.15*,.15*">
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="40">
+                        <Label
+                            FontFamily="InterSB"
+                            FontSize="16"
+                            Text="Selected Car:"
+                            TextColor="{StaticResource Tertiary}" />
+                        <Label
+                            Grid.Column="1"
+                            BindingContext="{x:Reference carPicker}"
+                            FontFamily="InterSB"
+                            HorizontalOptions="Start"
+                            Text="{Binding Path=SelectedItem}"
+                            TextColor="{StaticResource Gray400}" />
+                    </Grid>
+                    <BoxView
+                        Grid.Row="1"
+                        HeightRequest="1"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="350"
+                        Color="{StaticResource Tertiary}" />
+
+                    <Grid
+                        Grid.Row="2"
+                        ColumnDefinitions="*,*"
+                        ColumnSpacing="40">
+                        <Label
+                            FontFamily="InterSB"
+                            FontSize="16"
+                            Text="Miles:"
+                            TextColor="{StaticResource Tertiary}" />
+                        <Label
+                            Grid.Column="1"
+                            BindingContext="{x:Reference milesSlider}"
+                            FontFamily="InterSB"
+                            HorizontalOptions="Start"
+                            Text="{Binding Path=Value, StringFormat='{0:F2}'}"
+                            TextColor="{StaticResource Gray400}" />
+                    </Grid>
+                    <BoxView
+                        Grid.Row="3"
+                        HeightRequest="1"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="350"
+                        Color="{StaticResource Tertiary}" />
+
+                    <Grid
+                        Grid.Row="4"
+                        ColumnDefinitions="*,*"
+                        ColumnSpacing="40">
+                        <Label
+                            FontFamily="InterSB"
+                            FontSize="16"
+                            Text="Time:"
+                            TextColor="{StaticResource Tertiary}" />
+                        <Grid Grid.Column="1" ColumnDefinitions=".45*,.07*,.45*">
+                            <Label
+                                BindingContext="{x:Reference startTimePicker}"
+                                FontFamily="InterSB"
+                                HorizontalOptions="Start"
+                                Text="{Binding Path=Time}"
+                                TextColor="{StaticResource Gray400}" />
+                            <BoxView
+                                Grid.Column="1"
+                                HeightRequest="2"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Center"
+                                WidthRequest="5"
+                                Color="{StaticResource Tertiary}" />
+                            <Label
+                                Grid.Column="2"
+                                BindingContext="{x:Reference endTimePicker}"
+                                FontFamily="InterSB"
+                                HorizontalOptions="Start"
+                                Text="{Binding Path=Time}"
+                                TextColor="{StaticResource Gray400}" />
+                        </Grid>
+                    </Grid>
+                    <BoxView
+                        Grid.Row="5"
+                        HeightRequest="1"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="350"
+                        Color="{StaticResource Tertiary}" />
+
+                    <Grid
+                        Grid.Row="6"
+                        ColumnDefinitions="*,*"
+                        ColumnSpacing="40">
+                        <Label
+                            FontFamily="InterSB"
+                            FontSize="16"
+                            Text="Total Earned:"
+                            TextColor="{StaticResource Tertiary}" />
+                        <Label
+                            Grid.Column="1"
+                            BindingContext="{x:Reference totalEarnedEntry}"
+                            FontFamily="InterSB"
+                            HorizontalOptions="Start"
+                            Text="{Binding Path=Text}"
+                            TextColor="{StaticResource Gray400}" />
+                    </Grid>
+                    <BoxView
+                        Grid.Row="7"
+                        HeightRequest="1"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="350"
+                        Color="{StaticResource Tertiary}" />
+
+                    <Grid
+                        Grid.Row="8"
+                        ColumnDefinitions="*,*"
+                        ColumnSpacing="40">
+                        <Label
+                            FontFamily="InterSB"
+                            FontSize="16"
+                            Text="Total Tips:"
+                            TextColor="{StaticResource Tertiary}" />
+                        <Label
+                            Grid.Column="1"
+                            BindingContext="{x:Reference totalTipsEntry}"
+                            FontFamily="InterSB"
+                            HorizontalOptions="Start"
+                            Text="{Binding Path=Text}"
+                            TextColor="{StaticResource Gray400}" />
+                    </Grid>
+                    <BoxView
+                        Grid.Row="9"
+                        HeightRequest="1"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="350"
+                        Color="{StaticResource Tertiary}" />
+
+                    <Grid
+                        Grid.Row="10"
+                        ColumnDefinitions="*,*"
+                        ColumnSpacing="40">
+                        <Label
+                            FontFamily="InterSB"
+                            FontSize="16"
+                            Text="Total Travels:"
+                            TextColor="{StaticResource Tertiary}" />
+                        <Label
+                            Grid.Column="1"
+                            BindingContext="{x:Reference cantidadViajesEntry}"
+                            FontFamily="InterSB"
+                            HorizontalOptions="Start"
+                            Text="{Binding Path=Text}"
+                            TextColor="{StaticResource Gray400}" />
+                    </Grid>
+                    <BoxView
+                        Grid.Row="11"
+                        HeightRequest="1"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="350"
+                        Color="{StaticResource Tertiary}" />
+
+                    <StackLayout Grid.Row="12">
+                        <Label
+                            FontFamily="InterSB"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            Text="Travels Feels"
+                            TextColor="{StaticResource Tertiary}" />
+                        <HorizontalStackLayout
+                            HorizontalOptions="Center"
+                            Spacing="5"
+                            VerticalOptions="Start">
+                            <Label
+                                FontSize="24"
+                                Text="&#9734;"
+                                TextColor="Gold" />
+                            <Label
+                                FontSize="24"
+                                Text="&#9734;"
+                                TextColor="Gold" />
+                            <Label
+                                FontSize="24"
+                                Text="&#9734;"
+                                TextColor="Gold" />
+                            <Label
+                                FontSize="24"
+                                Text="&#9734;"
+                                TextColor="Gold" />
+                            <Label
+                                FontSize="24"
+                                Text="&#9734;"
+                                TextColor="Gold" />
+                        </HorizontalStackLayout>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="13">
+                        <Label
+                            FontFamily="InterSB"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            Text="Incomes Feels"
+                            TextColor="{StaticResource Tertiary}" />
+                        <HorizontalStackLayout
+                            HorizontalOptions="Center"
+                            Spacing="5"
+                            VerticalOptions="Start">
+                            <Label
+                                FontSize="24"
+                                Text="&#9734;"
+                                TextColor="Gold" />
+                            <Label
+                                FontSize="24"
+                                Text="&#9734;"
+                                TextColor="Gold" />
+                            <Label
+                                FontSize="24"
+                                Text="&#9734;"
+                                TextColor="Gold" />
+                            <Label
+                                FontSize="24"
+                                Text="&#9734;"
+                                TextColor="Gold" />
+                            <Label
+                                FontSize="24"
+                                Text="&#9734;"
+                                TextColor="Gold" />
+                        </HorizontalStackLayout>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="14">
+                        <Label
+                            FontFamily="InterSB"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            Text="Generals Feels"
+                            TextColor="{StaticResource Tertiary}" />
+                        <HorizontalStackLayout
+                            HorizontalOptions="Center"
+                            Spacing="5"
+                            VerticalOptions="Start">
+                            <Label
+                                FontSize="24"
+                                Text="&#9734;"
+                                TextColor="Gold" />
+                            <Label
+                                FontSize="24"
+                                Text="&#9734;"
+                                TextColor="Gold" />
+                            <Label
+                                FontSize="24"
+                                Text="&#9734;"
+                                TextColor="Gold" />
+                            <Label
+                                FontSize="24"
+                                Text="&#9734;"
+                                TextColor="Gold" />
+                            <Label
+                                FontSize="24"
+                                Text="&#9734;"
+                                TextColor="Gold" />
+                        </HorizontalStackLayout>
+                    </StackLayout>
+
+                </Grid>
+            </Frame>
+
+            <!--  Botones continuar y regresar  -->
+            <Grid
+                Grid.Row="3"
+                Margin="20,10,20,20"
+                BackgroundColor="Transparent"
+                ColumnDefinitions="*,*"
+                ColumnSpacing="80">
+                <Border
+                    Margin="5,10,0,0"
+                    BackgroundColor="{StaticResource Gray300}"
+                    HeightRequest="60"
+                    HorizontalOptions="Start"
+                    Stroke="{StaticResource Gray300}"
+                    StrokeShape="RoundRectangle 20"
+                    WidthRequest="130">
+                    <BoxView CornerRadius="20" Opacity="0.3" />
+                </Border>
+
+                <Frame
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent"
+                    CornerRadius="20"
+                    HasShadow="True"
+                    HeightRequest="60">
+                    <Button
+                        BackgroundColor="{StaticResource CardBG}"
+                        BorderColor="{StaticResource Tertiary}"
+                        Clicked="OnCancelClicked"
+                        FontFamily="InterB24"
+                        FontSize="20"
+                        Text="Back"
+                        TextColor="{StaticResource Tertiary}" />
+                </Frame>
+
+                <Border
+                    Grid.Column="1"
+                    Margin="5,10,0,0"
+                    BackgroundColor="{StaticResource Gray300}"
+                    HeightRequest="60"
+                    HorizontalOptions="Start"
+                    Stroke="{StaticResource Gray300}"
+                    StrokeShape="RoundRectangle 20"
+                    WidthRequest="130">
+                    <BoxView CornerRadius="20" Opacity="0.3" />
+                </Border>
+                <Frame
+                    Grid.Column="1"
+                    Padding="0"
+                    BackgroundColor="{StaticResource Tertiary}"
+                    CornerRadius="20"
+                    HasShadow="True"
+                    HeightRequest="60">
+                    <Button
+                        BackgroundColor="{StaticResource Tertiary}"
+                        BorderColor="{StaticResource Tertiary}"
+                        Clicked="OnConfirmClicked"
+                        FontFamily="InterB24"
+                        FontSize="20"
+                        Text="Confirm"
+                        TextColor="White" />
+                </Frame>
+            </Grid>
+        </Grid>
+    </Grid>
 </ContentPage>

@@ -3,78 +3,94 @@
     x:Class="MonitorDrive.Pages.Management.ListInfoPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Data Display"
-    BackgroundColor="{StaticResource Gray90}">
+    xmlns:contentview="clr-namespace:MonitorDrive.ContentViews"
+    BackgroundColor="{StaticResource Gray90}"
+    NavigationPage.IconColor="{StaticResource Tertiary}">
 
-    <Grid
-        Margin="15,25,15,0"
-        RowDefinitions=".05*,.85*,.1*"
-        RowSpacing="10">
-        <Label
-            FontFamily="InterSB"
-            FontSize="Title"
-            Text="Travels List"
-            TextColor="{StaticResource Tertiary}" />
-
-        <Frame
-            Grid.Row="1"
-            Padding="0"
-            BackgroundColor="{StaticResource CardBG}"
-            BorderColor="{StaticResource CardBG}"
-            HasShadow="True">
-            <CollectionView x:Name="dataCollectionView">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Padding="10">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-
-                            <Label
-                                Grid.Column="0"
-                                Text="Date"
-                                TextColor="Black" />
-                            <Label Grid.Column="1" Text="Distance" />
-                            <Label Grid.Column="2" Text="Start Time" />
-                            <Label Grid.Column="3" Text="End Time" />
-                            <Label Grid.Column="4" Text="Total Amount" />
-                            <Label Grid.Column="5" Text="Tips" />
-                            <Label Grid.Column="6" Text="Number of Passengers" />
-                        </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </Frame>
-
-        <!--  Botón circular con símbolo +  -->
-        <Frame
-            x:Name="CircularButton"
-            Grid.Row="2"
-            Margin="20"
-            Padding="0"
-            BackgroundColor="{StaticResource Tertiary}"
-            CornerRadius="10"
-            HasShadow="True"
-            HeightRequest="60"
-            HorizontalOptions="Center"
-            VerticalOptions="Center"
-            WidthRequest="250">
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnCircularButtonTapped" />
-            </Frame.GestureRecognizers>
+    <Grid RowDefinitions=".93*,.07*" RowSpacing="20">
+        <Grid
+            Margin="15,25,15,0"
+            RowDefinitions=".1*,.8*,.1*"
+            RowSpacing="20">
             <Label
-                FontAttributes="Bold"
-                FontSize="20"
+                FontFamily="InterSB"
+                FontSize="28"
                 HorizontalOptions="Center"
-                Text="+ Add New Travel"
-                TextColor="White"
-                VerticalOptions="Center" />
-        </Frame>
-    </Grid>
+                Text="Travels List"
+                TextColor="{StaticResource Tertiary}" />
 
+            <Frame
+                Grid.Row="1"
+                Padding="0"
+                BackgroundColor="{StaticResource CardBG}"
+                BorderColor="{StaticResource CardBG}"
+                HasShadow="True">
+                <CollectionView x:Name="dataCollectionView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label
+                                    Grid.Column="0"
+                                    Text="Date"
+                                    TextColor="Black" />
+                                <Label Grid.Column="1" Text="Distance" />
+                                <Label Grid.Column="2" Text="Start Time" />
+                                <Label Grid.Column="3" Text="End Time" />
+                                <Label Grid.Column="4" Text="Total Amount" />
+                                <Label Grid.Column="5" Text="Tips" />
+                                <Label Grid.Column="6" Text="Number of Passengers" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
+
+            <!--  Botón con sombreado  -->
+            <Border
+                Grid.Row="2"
+                Margin="5,10,0,0"
+                BackgroundColor="{StaticResource Gray300}"
+                HeightRequest="60"
+                HorizontalOptions="Center"
+                Stroke="{StaticResource Gray300}"
+                StrokeShape="RoundRectangle 10"
+                WidthRequest="200">
+                <BoxView CornerRadius="20" Opacity="0.3" />
+            </Border>
+            <Frame
+                x:Name="CircularButton"
+                Grid.Row="2"
+                Margin="20"
+                Padding="0"
+                BackgroundColor="{StaticResource Tertiary}"
+                BorderColor="Transparent"
+                CornerRadius="10"
+                HasShadow="True"
+                HeightRequest="60"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="200">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnCircularButtonTapped" />
+                </Frame.GestureRecognizers>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    Text="+ Add New Travel"
+                    TextColor="White"
+                    VerticalOptions="Center" />
+            </Frame>
+        </Grid>
+        <contentview:NavBarContentView Grid.Row="1" />
+    </Grid>
 </ContentPage>

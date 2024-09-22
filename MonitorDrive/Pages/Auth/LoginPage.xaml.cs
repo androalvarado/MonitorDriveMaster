@@ -44,12 +44,17 @@ public partial class LoginPage : ContentPage
         //    await Application.Current.MainPage.DisplayAlert("Error", "Incorrect user ID or password.", "OK");
         //}
 
-        await Shell.Current.GoToAsync("///DashboardPage");
+        //await Shell.Current.GoToAsync("///DashboardPage");
+        await Navigation.PushAsync(new DashboardPage());
+
+        // Eliminar la página anterior de la pila de navegación
+            Navigation.RemovePage(this);
     }
 
     async private void GoToRegister(object sender, EventArgs e)
     {
         // Navegar a la siguiente página
-        await Shell.Current.GoToAsync(nameof(RegisterPage));
+        //await Shell.Current.GoToAsync(nameof(RegisterPage));
+        await Navigation.PushAsync(new RegisterPage());
     }
 }

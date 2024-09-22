@@ -29,8 +29,11 @@ namespace MonitorDrive
             //await App.AppShellInstance.FadeTo(1, 200);
 
             // Navegar explícitamente a Register
-            await Shell.Current.GoToAsync(nameof(RegisterPage));
-            await Task.Delay(100);
+            //await Shell.Current.GoToAsync(nameof(RegisterPage));
+
+            await Navigation.PushAsync(new RegisterPage());
+            // Eliminar la página anterior de la pila de navegación
+            Navigation.RemovePage(this);
         }
         async private void GoToLogin(object sender, EventArgs e)
         {
@@ -43,7 +46,11 @@ namespace MonitorDrive
             //Application.Current.MainPage = App.AppShellInstance;
 
             // Navegar explícitamente a Register
-            await Shell.Current.GoToAsync($"{nameof(LoginPage)}");
+            //await Shell.Current.GoToAsync($"{nameof(LoginPage)}");
+            await Navigation.PushAsync(new LoginPage());
+
+            // Eliminar la página anterior de la pila de navegación
+            Navigation.RemovePage(this);
 
         }
 

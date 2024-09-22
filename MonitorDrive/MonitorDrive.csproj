@@ -65,14 +65,19 @@
 	  <None Remove="Resources\Fonts\Inter_24pt-Bold.ttf" />
 	  <None Remove="Resources\Fonts\Inter_24pt-Medium.ttf" />
 	  <None Remove="Resources\Fonts\Inter_24pt-SemiBold.ttf" />
+	  <None Remove="Resources\Images\audi_a3_car.png" />
 	  <None Remove="Resources\Images\brain.png" />
 	  <None Remove="Resources\Images\brainBG.png" />
+	  <None Remove="Resources\Images\car_tires.png" />
 	  <None Remove="Resources\Images\grafica.png" />
 	  <None Remove="Resources\Images\nameandlogo.png" />
 	  <None Remove="Resources\Images\podio1.png" />
 	  <None Remove="Resources\Images\podio2.svg" />
 	  <None Remove="Resources\Images\profile.png" />
 	  <None Remove="Resources\Images\profileranking.jfif" />
+	  <None Remove="Resources\Images\star_empty.png" />
+	  <None Remove="Resources\Images\star_filled.png" />
+	  <None Remove="Resources\Images\toyota_corolla_car.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -84,13 +89,40 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Pages\Cars\ExtraExpensivesListPage.xaml.cs">
+	    <DependentUpon>ExtraExpensivesListPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Pages\Masters\MonitorMasterPage.xaml.cs">
 	    <DependentUpon>MonitorMasterPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\ProfilePages\EditProfileDetailsPage.xaml.cs">
+	    <DependentUpon>EditProfileDetailsPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\ProfilePages\ProfilePage.xaml.cs">
+	    <DependentUpon>ProfilePage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="ContentViews\NavBarContentView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="MauiSplashScreen.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Cars\CarDetailsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Cars\ExtraExpensivesListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Cars\CarMaintenancesListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Cars\CarsListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Cars\TiresDetailsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Management\AddDayWorkInfoPage.xaml">
@@ -109,6 +141,12 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Masters\MonitorMasterPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\ProfilePages\PhoneSettingsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\ProfilePages\EditProfileDetailsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\ProfilePages\ProfilePage.xaml">
