@@ -25,8 +25,12 @@ public partial class ProfilePage : ContentPage
         await EditButton.ScaleTo(0.9, 50, Easing.Linear);
         await EditButton.ScaleTo(1, 50, Easing.Linear);
 
+        
+        // Navegar a la página de detalles
+        await Navigation.PushModalAsync(new EditProfileDetailsPage(user));
+      
         // Navegar a la página de edición de perfil        
-        await Navigation.PushModalAsync(new EditProfileDetailsPage(this.user));       
+        //await Navigation.PushModalAsync(new EditProfileDetailsPage(this.user));       
     }
 
     private async void OnPhonesLabelTapped(object sender, EventArgs e)

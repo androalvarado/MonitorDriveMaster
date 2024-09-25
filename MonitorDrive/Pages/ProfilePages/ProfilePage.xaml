@@ -17,7 +17,7 @@
             <Grid
                 Margin="0,0,0,10"
                 Padding="20"
-                RowDefinitions=".3*,.55*,.1*"
+                RowDefinitions=".3*,.6*,.05*"
                 RowSpacing="15">
 
                 <!--  Primera fila: Información del perfil  -->
@@ -49,8 +49,8 @@
                             FontFamily="InterB24"
                             FontSize="20"
                             HorizontalOptions="End"
-                            Text="Andrew Smith"
-                            TextColor="#FFFFFF"
+                            Text="{Binding User.FullName}"
+                            TextColor="{StaticResource CardBG}"
                             VerticalOptions="Center" />
 
                         <BoxView
@@ -220,15 +220,24 @@
                                         Padding="5"
                                         BackgroundColor="{StaticResource Tertiary}"
                                         BorderColor="{StaticResource Tertiary}"
-                                        WidthRequest="100">
+                                        WidthRequest="130">
                                         <Frame.GestureRecognizers>
                                             <TapGestureRecognizer Tapped="OnPhonesLabelTapped" />
                                         </Frame.GestureRecognizers>
-                                        <Label
-                                            FontFamily="InterB24"
-                                            HorizontalOptions="Center"
-                                            Text="{Binding User.Cellphone}"
-                                            TextColor="{StaticResource CardBG}" />
+                                        <HorizontalStackLayout Spacing="20">
+                                            <Label
+                                                Margin="10,0,0,0"
+                                                FontFamily="InterB24"
+                                                Text="{Binding User.Cellphone}"
+                                                TextColor="{StaticResource CardBG}" />
+                                            <Label
+                                                FontFamily="Icons"
+                                                FontSize="18"
+                                                HorizontalOptions="End"
+                                                Text="&#xE813;"
+                                                TextColor="{StaticResource CardBG}"
+                                                VerticalOptions="Center" />
+                                        </HorizontalStackLayout>
                                     </Frame>
                                     <BoxView
                                         Grid.Row="5"
@@ -242,36 +251,31 @@
                                         FontAttributes="Bold"
                                         Text="Cars:"
                                         TextColor="Black" />
-                                    <HorizontalStackLayout
+                                    <Frame
                                         Grid.Row="7"
                                         Grid.Column="1"
-                                        HorizontalOptions="End"
-                                        Spacing="10">
-                                        <Frame
-                                            Padding="5"
-                                            BackgroundColor="{StaticResource Tertiary}"
-                                            BorderColor="{StaticResource Tertiary}">
-                                            <Frame.GestureRecognizers>
-                                                <TapGestureRecognizer Tapped="OnCarsTapped" />
-                                            </Frame.GestureRecognizers>
+                                        Padding="5"
+                                        BackgroundColor="{StaticResource Tertiary}"
+                                        BorderColor="{StaticResource Tertiary}"
+                                        WidthRequest="75">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnCarsTapped" />
+                                        </Frame.GestureRecognizers>
+                                        <HorizontalStackLayout Spacing="20">
                                             <Label
+                                                Margin="10,0,0,0"
                                                 FontFamily="InterB24"
-                                                Text="{Binding User.SelectedVehicles[0]}"
+                                                Text="{Binding User.SelectedVehicles.Count}"
                                                 TextColor="{StaticResource CardBG}" />
-                                        </Frame>
-                                        <Frame
-                                            Padding="5"
-                                            BackgroundColor="{StaticResource Tertiary}"
-                                            BorderColor="{StaticResource Tertiary}">
-                                            <Frame.GestureRecognizers>
-                                                <TapGestureRecognizer Tapped="OnCarsTapped" />
-                                            </Frame.GestureRecognizers>
                                             <Label
-                                                FontFamily="InterB24"
-                                                Text="{Binding User.SelectedVehicles[1]}"
-                                                TextColor="{StaticResource CardBG}" />
-                                        </Frame>
-                                    </HorizontalStackLayout>
+                                                FontFamily="Icons"
+                                                FontSize="18"
+                                                HorizontalOptions="End"
+                                                Text="&#xE813;"
+                                                TextColor="{StaticResource CardBG}"
+                                                VerticalOptions="Center" />
+                                        </HorizontalStackLayout>
+                                    </Frame>
                                 </Grid>
 
                                 <Grid
@@ -365,7 +369,7 @@
                     <Border
                         Margin="5,10,0,0"
                         BackgroundColor="{StaticResource Gray300}"
-                        HeightRequest="60"
+                        HeightRequest="50"
                         HorizontalOptions="Center"
                         Stroke="{StaticResource Gray300}"
                         StrokeShape="RoundRectangle 10"
@@ -380,20 +384,29 @@
                         BorderColor="Transparent"
                         CornerRadius="10"
                         HasShadow="True"
-                        HeightRequest="60"
+                        HeightRequest="50"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
                         WidthRequest="200">
                         <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnEditProfileTapped" />
+                            <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="OnEditProfileTapped" />
                         </Frame.GestureRecognizers>
-                        <Label
-                            FontAttributes="Bold"
-                            FontSize="20"
-                            HorizontalOptions="Center"
-                            Text="Edit Profile"
-                            TextColor="{StaticResource CardBG}"
-                            VerticalOptions="Center" />
+                        <HorizontalStackLayout HorizontalOptions="Center" Spacing="15">
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                HorizontalOptions="Center"
+                                Text="Edit Profile"
+                                TextColor="{StaticResource CardBG}"
+                                VerticalOptions="Center" />
+                            <Label
+                                FontFamily="Icons"
+                                FontSize="18"
+                                HorizontalOptions="End"
+                                Text="&#xE808;"
+                                TextColor="{StaticResource CardBG}"
+                                VerticalOptions="Center" />
+                        </HorizontalStackLayout>
                     </Frame>
                 </Grid>
 

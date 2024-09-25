@@ -77,16 +77,26 @@ namespace MonitorDrive.ViewModels
         [ObservableProperty]
         private int usagePercentage;
 
-        public CarDetailsViewModel(CarViewModel car)
+        public CarDetailsViewModel()
         {
-            Title = $"Your {car.Brand} Details"; // Personaliza el título según el auto
+            Title = "Default Title";
+            Brand = "Default Brand";
+            FullDescription = "Default Full Description";
+            EconomicValue = 0;
+            Miles = 0;
+            Mpg = 0;
+            UsagePercentage = 0;
+        }
+
+        public CarDetailsViewModel(CarViewModel car) : this()
+        {
+            Title = $"Your {car.Brand} Details";
             Brand = car.Brand;
-            FullDescription = $"{car.Brand} {car.Model}"; // Ejemplo de descripción
+            FullDescription = car.FullDescription;
             EconomicValue = car.EconomicValue;
             Miles = car.Miles;
             Mpg = car.Mpg;
             UsagePercentage = 65;
-
         }
     }
 }

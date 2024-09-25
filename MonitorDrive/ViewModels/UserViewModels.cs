@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace MonitorDrive.ViewModels
@@ -27,6 +28,9 @@ namespace MonitorDrive.ViewModels
 
         [ObservableProperty]
         private string selectedCurrency;
+
+        [ObservableProperty]
+        public string fullName;
 
         [ObservableProperty]
         private ObservableCollection<string> selectedVehicles;
@@ -78,6 +82,7 @@ namespace MonitorDrive.ViewModels
             User.Id = 1;
             User.Name = "Andrew";
             User.LastName = "Smith";
+            User.FullName = $"{User.Name} {User.LastName}";
             User.Cellphone = "Iphone 13";
             User.Email = "andrewsmith@gmail.com";
             User.SelectedCountry = "Estados Unidos";

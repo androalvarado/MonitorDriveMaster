@@ -57,7 +57,14 @@ public partial class CarDetailsPage : ContentPage
 
     private async void OnEditClicked(object sender, EventArgs e)
     {
-        //await Navigation.PushModalAsync(new CarDetailsPage());
+        var button = sender as Button;
+        var car = button?.CommandParameter as CarViewModel;
+
+        if (car != null)
+        {
+            // Navegar a la página de detalles
+            await Navigation.PushModalAsync(new CarDetailsPage(car));
+        }
     }
 
     private async void OnTiresDetailsCliked(object sender, EventArgs e)

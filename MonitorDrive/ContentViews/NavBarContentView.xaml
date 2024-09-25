@@ -38,7 +38,7 @@
                 FontFamily="Icons"
                 FontSize="24"
                 HorizontalOptions="Center"
-                Text="&#xE807;"
+                Text="&#xF0CA;"
                 TextColor="White"
                 VerticalOptions="Center" />
             <Label

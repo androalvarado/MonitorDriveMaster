@@ -52,18 +52,16 @@ public partial class DashboardPage : ContentPage
         await AddExpensiveButton.ScaleTo(0.9, 50, Easing.Linear);
         await AddExpensiveButton.ScaleTo(1, 50, Easing.Linear);
 
-        await Navigation.PushAsync(new AddDayWorkInfoPage());
+        //await Navigation.PushAsync(new AddDayWorkInfoPage());
     }
 
     private void OnProfileImageTapped(object sender, EventArgs e)
     {
         TooltipFrame.IsVisible = !TooltipFrame.IsVisible;
-        //await Shell.Current.GoToAsync("LoginPage");
     }
 
     private async void OnLogOutTapped(object sender, EventArgs e)
     {
-        //TooltipFrame.IsVisible = false;
         await Navigation.PushAsync(new LoginPage());
 
         // Eliminar la página anterior de la pila de navegación

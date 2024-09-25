@@ -4,8 +4,14 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:contentview="clr-namespace:MonitorDrive.ContentViews"
+    xmlns:vm="clr-namespace:MonitorDrive.ViewModels"
+    x:DataType="vm:TravelViewModel"
     BackgroundColor="{StaticResource Gray90}"
     NavigationPage.IconColor="{StaticResource Tertiary}">
+
+    <ContentPage.BindingContext>
+        <vm:TravelViewModel />
+    </ContentPage.BindingContext>
 
     <Grid RowDefinitions=".93*,.07*" RowSpacing="20">
         <Grid
@@ -25,33 +31,43 @@
                 BackgroundColor="{StaticResource CardBG}"
                 BorderColor="{StaticResource CardBG}"
                 HasShadow="True">
-                <CollectionView x:Name="dataCollectionView">
-                    <CollectionView.ItemTemplate>
+                <ListView ItemsSource="{Binding Travels}">
+                    <ListView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Padding="10">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-
+                            <Grid Padding="10" ColumnDefinitions="*,*,*,*,*,*,*">
                                 <Label
                                     Grid.Column="0"
-                                    Text="Date"
+                                    Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}"
                                     TextColor="Black" />
-                                <Label Grid.Column="1" Text="Distance" />
-                                <Label Grid.Column="2" Text="Start Time" />
-                                <Label Grid.Column="3" Text="End Time" />
-                                <Label Grid.Column="4" Text="Total Amount" />
-                                <Label Grid.Column="5" Text="Tips" />
-                                <Label Grid.Column="6" Text="Number of Passengers" />
+                                <Label
+                                    Grid.Column="1"
+                                    Text="{Binding Distance}"
+                                    TextColor="{StaticResource Tertiary}" />
+                                <Label
+                                    Grid.Column="2"
+                                    Text="{Binding StartTime, StringFormat='{0:hh\\:mm}'}"
+                                    TextColor="{StaticResource Tertiary}" />
+                                <Label
+                                    Grid.Column="3"
+                                    Text="{Binding EndTime, StringFormat='{0:hh\\:mm}'}"
+                                    TextColor="{StaticResource Tertiary}" />
+                                <Label
+                                    Grid.Column="4"
+                                    Text="{Binding TotalAmount, StringFormat='${0:F2}'}"
+                                    TextColor="{StaticResource Tertiary}" />
+                                <Label
+                                    Grid.Column="5"
+                                    Text="{Binding Tips, StringFormat='${0:F2}'}"
+                                    TextColor="{StaticResource Tertiary}" />
+                                <Label
+                                    Grid.Column="6"
+                                    Text="{Binding NumberOfTravels}"
+                                    TextColor="{StaticResource Tertiary}" />
                             </Grid>
                         </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
+                    </ListView.ItemTemplate>
+
+                </ListView>
             </Frame>
 
             <!--  Botón con sombreado  -->

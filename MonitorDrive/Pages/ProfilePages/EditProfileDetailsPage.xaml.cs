@@ -18,7 +18,7 @@ public partial class EditProfileDetailsPage : ContentPage, INotifyPropertyChange
         Shell.SetTabBarIsVisible(this, false);
     }
 
-    public EditProfileDetailsPage()
+    public EditProfileDetailsPage(CarViewModel car)
     {
     }
 

@@ -8,6 +8,9 @@
     BackgroundColor="{StaticResource Gray90}"
     NavigationPage.IconColor="{StaticResource White}">
 
+    <ContentPage.BindingContext>
+        <viewmodels:CarDetailsViewModel />
+    </ContentPage.BindingContext>
 
     <Grid RowDefinitions=".1*,.3*,.15*,.3*,.2*" RowSpacing="10">
         <!--  Titulo de la Pagina  -->
@@ -411,9 +414,7 @@
             </Grid>
         </Frame>
 
-
-
-        <!--  Botones continuar y regresar  -->
+        <!--  Botones Cacelar y Editar  -->
         <Grid
             Grid.Row="4"
             Margin="20,10,20,20"
@@ -471,6 +472,7 @@
                     BackgroundColor="{StaticResource Tertiary}"
                     BorderColor="{StaticResource Tertiary}"
                     Clicked="OnEditClicked"
+                    CommandParameter="{Binding .}"
                     FontFamily="InterB24"
                     FontSize="20"
                     Text="Edit"

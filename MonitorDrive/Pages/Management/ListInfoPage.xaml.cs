@@ -1,15 +1,20 @@
 using MonitorDrive.Pages;
+using MonitorDrive.ViewModels;
 namespace MonitorDrive.Pages.Management
 { 
     public partial class ListInfoPage : ContentPage
 {
-	public ListInfoPage()
+        public TravelViewModel DataContext { get; private set; }
+
+        public ListInfoPage()
 	{
 		InitializeComponent();
 
-        // Deshabilitar el TabBar
-        //Shell.SetTabBarIsVisible(this, false);
-    }
+            //BindingContext = new TravelViewModel();
+
+            // Deshabilitar el TabBar
+            //Shell.SetTabBarIsVisible(this, false);
+        }
         
         private async void OnCircularButtonTapped(object sender, EventArgs e)
         {
