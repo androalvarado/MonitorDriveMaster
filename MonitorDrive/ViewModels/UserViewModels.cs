@@ -40,8 +40,7 @@ namespace MonitorDrive.ViewModels
         public ObservableCollection<string> AvailableVehicles { get; } = new ObservableCollection<string>
         {
             "Audi A4",
-            "Toyota Corolla",
-            "Ford Mustang"
+            "Toyota Corolla"
         };
 
         public UserViewModel()

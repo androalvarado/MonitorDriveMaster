@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MonitorDrive.Pages.Cars.AddCarPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Add Car Page"
+    BackgroundColor="{StaticResource Gray90}">
+
+
+    <Grid RowDefinitions=".1*,.6*,.1*">
+
+        <!--  Titulo de la Pagina  -->
+        <StackLayout>
+            <Label
+                Margin="0,20,0,10"
+                FontFamily="InterB24"
+                FontSize="30"
+                HorizontalOptions="Center"
+                Text="Add New car"
+                TextColor="{StaticResource Tertiary}"
+                VerticalOptions="Center" />
+        </StackLayout>
+
+        <!--  Formulario  -->
+        <Frame
+            Grid.Row="1"
+            Margin="20,0,20,0"
+            BackgroundColor="#FFFFFF"
+            BorderColor="#ffffff"
+            CornerRadius="20"
+            HasShadow="True">
+            <ScrollView>
+                <StackLayout Spacing="20">
+
+                    <!--  Brand Entry  -->
+                    <StackLayout Spacing="10">
+                        <Label
+                            Margin="0,0,0,-10"
+                            FontFamily="InterB18"
+                            Text="Brand"
+                            TextColor="{StaticResource Tertiary}" />
+                        <Frame
+                            Margin="0,0,5,0"
+                            Padding="10,0,0,0"
+                            BackgroundColor="Transparent"
+                            BorderColor="{StaticResource Tertiary}"
+                            CornerRadius="20"
+                            HasShadow="True"
+                            HeightRequest="50">
+                            <Entry
+                                x:Name="BrandEntry"
+                                Margin="0"
+                                HeightRequest="60"
+                                Placeholder="Car Brand"
+                                PlaceholderColor="{StaticResource FontOP}"
+                                VerticalOptions="Center" />
+                        </Frame>
+                    </StackLayout>
+
+                    <!--  Model Entry  -->
+                    <StackLayout Spacing="10">
+                        <Label
+                            Margin="0,0,0,-10"
+                            FontFamily="InterB18"
+                            Text="Model"
+                            TextColor="{StaticResource Tertiary}" />
+                        <Frame
+                            Margin="0,0,5,0"
+                            Padding="10,0,0,0"
+                            BackgroundColor="Transparent"
+                            BorderColor="{StaticResource Tertiary}"
+                            CornerRadius="20"
+                            HasShadow="True"
+                            HeightRequest="50">
+                            <Entry
+                                x:Name="ModelEntry"
+                                Margin="0"
+                                HeightRequest="60"
+                                Placeholder="Car Model"
+                                PlaceholderColor="{StaticResource FontOP}"
+                                VerticalOptions="Center" />
+                        </Frame>
+                    </StackLayout>
+
+
+                    <!--  Miles and Usage Entry  -->
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="20">
+                        <!--  Miles Entry  -->
+                        <StackLayout Spacing="10">
+                            <Label
+                                Margin="0,0,0,-10"
+                                FontFamily="InterB18"
+                                Text="Miles"
+                                TextColor="{StaticResource Tertiary}" />
+                            <Frame
+                                Padding="10,0,0,0"
+                                BackgroundColor="Transparent"
+                                BorderColor="{StaticResource Tertiary}"
+                                CornerRadius="20"
+                                HasShadow="True"
+                                HeightRequest="50">
+                                <Entry
+                                    x:Name="MilesEntry"
+                                    Margin="0"
+                                    HeightRequest="60"
+                                    Placeholder="000000"
+                                    PlaceholderColor="{StaticResource FontOP}"
+                                    VerticalOptions="Center" />
+                            </Frame>
+                        </StackLayout>
+
+                        <!--  Percent usage  -->
+
+                        <StackLayout
+                            Grid.Column="1"
+                            Margin="0,0,5,0"
+                            Spacing="10">
+                            <Label
+                                Margin="0,0,0,-10"
+                                FontFamily="InterB18"
+                                Text="Usage (%)"
+                                TextColor="{StaticResource Tertiary}" />
+                            <Frame
+                                Padding="10,0,0,0"
+                                BackgroundColor="Transparent"
+                                BorderColor="{StaticResource Tertiary}"
+                                CornerRadius="20"
+                                HasShadow="True"
+                                HeightRequest="50">
+                                <Entry
+                                    x:Name="PercentUsageEntry"
+                                    HeightRequest="60"
+                                    IsPassword="True"
+                                    Placeholder="00%"
+                                    PlaceholderColor="{StaticResource FontOP}"
+                                    VerticalOptions="Center" />
+                            </Frame>
+                        </StackLayout>
+                    </Grid>
+
+                    <!--  Insurance and MPG Entry  -->
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="20">
+                        <!--  Insurance payment  -->
+                        <StackLayout Spacing="10">
+                            <Label
+                                Margin="0,0,0,-10"
+                                FontFamily="InterB18"
+                                Text="Insurance"
+                                TextColor="{StaticResource Tertiary}" />
+                            <Frame
+                                Margin="0,0,5,0"
+                                Padding="10,0,0,0"
+                                BackgroundColor="Transparent"
+                                BorderColor="{StaticResource Tertiary}"
+                                CornerRadius="20"
+                                HasShadow="True"
+                                HeightRequest="50">
+                                <Entry
+                                    x:Name="InsurancePaymentEntry"
+                                    HeightRequest="60"
+                                    IsPassword="True"
+                                    Placeholder="$0.00"
+                                    PlaceholderColor="{StaticResource FontOP}"
+                                    VerticalOptions="Center" />
+                            </Frame>
+                        </StackLayout>
+
+
+                        <!--  MPG  -->
+                        <StackLayout Grid.Column="1" Spacing="10">
+                            <Label
+                                Margin="0,0,0,-10"
+                                FontFamily="InterB18"
+                                Text="Miles per galons"
+                                TextColor="{StaticResource Tertiary}" />
+                            <Frame
+                                Margin="0,0,5,0"
+                                Padding="10,0,0,0"
+                                BackgroundColor="Transparent"
+                                BorderColor="{StaticResource Tertiary}"
+                                CornerRadius="20"
+                                HasShadow="True"
+                                HeightRequest="50">
+                                <Entry
+                                    x:Name="MPGEntry"
+                                    HeightRequest="60"
+                                    IsPassword="True"
+                                    Placeholder="00.00"
+                                    PlaceholderColor="{StaticResource FontOP}"
+                                    VerticalOptions="Center" />
+                            </Frame>
+                        </StackLayout>
+                    </Grid>
+
+
+
+                    <!--  Control de imagen para la foto del auto  -->
+                    <Frame
+                        Margin="0,0,5,0"
+                        Padding="5"
+                        BackgroundColor="{StaticResource CardBG}"
+                        BorderColor="LightGray"
+                        CornerRadius="10">
+                        <Image
+                            x:Name="imgAuto"
+                            Aspect="AspectFill"
+                            HeightRequest="100"
+                            Source="audi_a3_car"
+                            WidthRequest="200" />
+                    </Frame>
+
+                    <Button
+                        BackgroundColor="{StaticResource Tertiary}"
+                        Clicked="OnSelectPhotoClicked"
+                        CornerRadius="20"
+                        FontFamily="InterSB"
+                        Text="Upload"
+                        TextColor="White"
+                        WidthRequest="100" />
+                </StackLayout>
+            </ScrollView>
+
+        </Frame>
+
+        <!--  Botones continuar y regresar  -->
+        <Grid
+            Grid.Row="2"
+            Margin="20,10,20,20"
+            BackgroundColor="Transparent"
+            ColumnDefinitions="*,*"
+            ColumnSpacing="80"
+            VerticalOptions="End">
+            <Button
+                BackgroundColor="{StaticResource CardBG}"
+                BorderColor="{StaticResource Tertiary}"
+                Clicked="OnCancelClicked"
+                CornerRadius="20"
+                FontFamily="InterB24"
+                FontSize="20"
+                HeightRequest="50"
+                Text="Back"
+                TextColor="{StaticResource Tertiary}">
+                <Button.Shadow>
+                    <Shadow
+                        Brush="Black"
+                        Opacity="0.3"
+                        Radius="5"
+                        Offset="10,10" />
+                </Button.Shadow>
+            </Button>
+
+            <Button
+                Grid.Column="1"
+                BackgroundColor="{StaticResource Tertiary}"
+                BorderColor="{StaticResource Tertiary}"
+                Clicked="OnConfirmClicked"
+                CornerRadius="20"
+                FontFamily="InterB24"
+                FontSize="20"
+                HeightRequest="50"
+                Text="Confirm"
+                TextColor="White">
+                <Button.Shadow>
+                    <Shadow
+                        Brush="Black"
+                        Opacity="0.3"
+                        Radius="5"
+                        Offset="10,10" />
+                </Button.Shadow>
+            </Button>
+        </Grid>
+    </Grid>
+</ContentPage>

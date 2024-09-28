@@ -9,7 +9,10 @@
 
     <Grid RowDefinitions=".5*,.5*">
 
-        <!--<Image Margin="20,0,20,0" Source="nameandlogo.png" />-->
+        <Image
+            Margin="20,0,20,20"
+            HeightRequest="200"
+            Source="brain_logo.png" />
 
         <Border
             Grid.Row="1"

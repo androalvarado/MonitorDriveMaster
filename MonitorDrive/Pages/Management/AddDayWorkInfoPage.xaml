@@ -269,61 +269,44 @@
                 BackgroundColor="Transparent"
                 ColumnDefinitions="*,*"
                 ColumnSpacing="80">
-                <Border
-                    Margin="5,10,0,0"
-                    BackgroundColor="{StaticResource Gray300}"
-                    HeightRequest="60"
-                    HorizontalOptions="Start"
-                    Stroke="{StaticResource Gray300}"
-                    StrokeShape="RoundRectangle 20"
-                    WidthRequest="130">
-                    <BoxView CornerRadius="20" Opacity="0.3" />
-                </Border>
-
-                <Frame
-                    Padding="0"
-                    BackgroundColor="Transparent"
-                    BorderColor="Transparent"
+                <Button
+                    BackgroundColor="{StaticResource CardBG}"
+                    BorderColor="{StaticResource Tertiary}"
+                    Clicked="OnExitFormButtom"
                     CornerRadius="20"
-                    HasShadow="True"
-                    HeightRequest="60">
-                    <Button
-                        BackgroundColor="{StaticResource CardBG}"
-                        BorderColor="{StaticResource Tertiary}"
-                        Clicked="OnExitFormButtom"
-                        FontFamily="InterB24"
-                        FontSize="20"
-                        Text="Back"
-                        TextColor="{StaticResource Tertiary}" />
-                </Frame>
+                    FontFamily="InterB24"
+                    FontSize="20"
+                    HeightRequest="50"
+                    Text="Back"
+                    TextColor="{StaticResource Tertiary}">
+                    <Button.Shadow>
+                        <Shadow
+                            Brush="Black"
+                            Opacity="0.3"
+                            Radius="5"
+                            Offset="10,10" />
+                    </Button.Shadow>
+                </Button>
 
-                <Border
+                <Button
                     Grid.Column="1"
-                    Margin="5,10,0,0"
-                    BackgroundColor="{StaticResource Gray300}"
-                    HeightRequest="60"
-                    HorizontalOptions="Start"
-                    Stroke="{StaticResource Gray300}"
-                    StrokeShape="RoundRectangle 20"
-                    WidthRequest="130">
-                    <BoxView CornerRadius="20" Opacity="0.3" />
-                </Border>
-                <Frame
-                    Grid.Column="1"
-                    Padding="0"
                     BackgroundColor="{StaticResource Tertiary}"
+                    BorderColor="{StaticResource Tertiary}"
+                    Clicked="OnContinueClicked"
                     CornerRadius="20"
-                    HasShadow="True"
-                    HeightRequest="60">
-                    <Button
-                        BackgroundColor="{StaticResource Tertiary}"
-                        BorderColor="{StaticResource Tertiary}"
-                        Clicked="OnContinueClicked"
-                        FontFamily="InterB24"
-                        FontSize="20"
-                        Text="Continue"
-                        TextColor="White" />
-                </Frame>
+                    FontFamily="InterB24"
+                    FontSize="20"
+                    HeightRequest="50"
+                    Text="Continue"
+                    TextColor="White">
+                    <Button.Shadow>
+                        <Shadow
+                            Brush="Black"
+                            Opacity="0.3"
+                            Radius="5"
+                            Offset="10,10" />
+                    </Button.Shadow>
+                </Button>
             </Grid>
         </Grid>
 
@@ -605,61 +588,44 @@
                 BackgroundColor="Transparent"
                 ColumnDefinitions="*,*"
                 ColumnSpacing="80">
-                <Border
-                    Margin="5,10,0,0"
-                    BackgroundColor="{StaticResource Gray300}"
-                    HeightRequest="60"
-                    HorizontalOptions="Start"
-                    Stroke="{StaticResource Gray300}"
-                    StrokeShape="RoundRectangle 20"
-                    WidthRequest="130">
-                    <BoxView CornerRadius="20" Opacity="0.3" />
-                </Border>
-
-                <Frame
-                    Padding="0"
-                    BackgroundColor="Transparent"
-                    BorderColor="Transparent"
+                <Button
+                    BackgroundColor="{StaticResource CardBG}"
+                    BorderColor="{StaticResource Tertiary}"
+                    Clicked="OnCancelClicked"
                     CornerRadius="20"
-                    HasShadow="True"
-                    HeightRequest="60">
-                    <Button
-                        BackgroundColor="{StaticResource CardBG}"
-                        BorderColor="{StaticResource Tertiary}"
-                        Clicked="OnCancelClicked"
-                        FontFamily="InterB24"
-                        FontSize="20"
-                        Text="Back"
-                        TextColor="{StaticResource Tertiary}" />
-                </Frame>
+                    FontFamily="InterB24"
+                    FontSize="20"
+                    HeightRequest="50"
+                    Text="Back"
+                    TextColor="{StaticResource Tertiary}">
+                    <Button.Shadow>
+                        <Shadow
+                            Brush="Black"
+                            Opacity="0.3"
+                            Radius="5"
+                            Offset="10,10" />
+                    </Button.Shadow>
+                </Button>
 
-                <Border
+                <Button
                     Grid.Column="1"
-                    Margin="5,10,0,0"
-                    BackgroundColor="{StaticResource Gray300}"
-                    HeightRequest="60"
-                    HorizontalOptions="Start"
-                    Stroke="{StaticResource Gray300}"
-                    StrokeShape="RoundRectangle 20"
-                    WidthRequest="130">
-                    <BoxView CornerRadius="20" Opacity="0.3" />
-                </Border>
-                <Frame
-                    Grid.Column="1"
-                    Padding="0"
                     BackgroundColor="{StaticResource Tertiary}"
+                    BorderColor="{StaticResource Tertiary}"
+                    Clicked="OnContinueClicked"
                     CornerRadius="20"
-                    HasShadow="True"
-                    HeightRequest="60">
-                    <Button
-                        BackgroundColor="{StaticResource Tertiary}"
-                        BorderColor="{StaticResource Tertiary}"
-                        Clicked="OnContinueClicked"
-                        FontFamily="InterB24"
-                        FontSize="20"
-                        Text="Continue"
-                        TextColor="White" />
-                </Frame>
+                    FontFamily="InterB24"
+                    FontSize="20"
+                    HeightRequest="50"
+                    Text="Continue"
+                    TextColor="White">
+                    <Button.Shadow>
+                        <Shadow
+                            Brush="Black"
+                            Opacity="0.3"
+                            Radius="5"
+                            Offset="10,10" />
+                    </Button.Shadow>
+                </Button>
             </Grid>
         </Grid>
 
@@ -1044,61 +1010,44 @@
                 BackgroundColor="Transparent"
                 ColumnDefinitions="*,*"
                 ColumnSpacing="80">
-                <Border
-                    Margin="5,10,0,0"
-                    BackgroundColor="{StaticResource Gray300}"
-                    HeightRequest="60"
-                    HorizontalOptions="Start"
-                    Stroke="{StaticResource Gray300}"
-                    StrokeShape="RoundRectangle 20"
-                    WidthRequest="130">
-                    <BoxView CornerRadius="20" Opacity="0.3" />
-                </Border>
-
-                <Frame
-                    Padding="0"
-                    BackgroundColor="Transparent"
-                    BorderColor="Transparent"
+                <Button
+                    BackgroundColor="{StaticResource CardBG}"
+                    BorderColor="{StaticResource Tertiary}"
+                    Clicked="OnCancelClicked"
                     CornerRadius="20"
-                    HasShadow="True"
-                    HeightRequest="60">
-                    <Button
-                        BackgroundColor="{StaticResource CardBG}"
-                        BorderColor="{StaticResource Tertiary}"
-                        Clicked="OnCancelClicked"
-                        FontFamily="InterB24"
-                        FontSize="20"
-                        Text="Back"
-                        TextColor="{StaticResource Tertiary}" />
-                </Frame>
+                    FontFamily="InterB24"
+                    FontSize="20"
+                    HeightRequest="50"
+                    Text="Back"
+                    TextColor="{StaticResource Tertiary}">
+                    <Button.Shadow>
+                        <Shadow
+                            Brush="Black"
+                            Opacity="0.3"
+                            Radius="5"
+                            Offset="10,10" />
+                    </Button.Shadow>
+                </Button>
 
-                <Border
+                <Button
                     Grid.Column="1"
-                    Margin="5,10,0,0"
-                    BackgroundColor="{StaticResource Gray300}"
-                    HeightRequest="60"
-                    HorizontalOptions="Start"
-                    Stroke="{StaticResource Gray300}"
-                    StrokeShape="RoundRectangle 20"
-                    WidthRequest="130">
-                    <BoxView CornerRadius="20" Opacity="0.3" />
-                </Border>
-                <Frame
-                    Grid.Column="1"
-                    Padding="0"
                     BackgroundColor="{StaticResource Tertiary}"
+                    BorderColor="{StaticResource Tertiary}"
+                    Clicked="OnConfirmClicked"
                     CornerRadius="20"
-                    HasShadow="True"
-                    HeightRequest="60">
-                    <Button
-                        BackgroundColor="{StaticResource Tertiary}"
-                        BorderColor="{StaticResource Tertiary}"
-                        Clicked="OnConfirmClicked"
-                        FontFamily="InterB24"
-                        FontSize="20"
-                        Text="Confirm"
-                        TextColor="White" />
-                </Frame>
+                    FontFamily="InterB24"
+                    FontSize="20"
+                    HeightRequest="50"
+                    Text="Confirm"
+                    TextColor="White">
+                    <Button.Shadow>
+                        <Shadow
+                            Brush="Black"
+                            Opacity="0.3"
+                            Radius="5"
+                            Offset="10,10" />
+                    </Button.Shadow>
+                </Button>
             </Grid>
         </Grid>
     </Grid>

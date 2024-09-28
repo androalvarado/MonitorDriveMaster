@@ -40,7 +40,6 @@ namespace MonitorDrive.ViewModels
             // Simulando la carga de información de carros
             Cars.Add(new CarViewModel("Audi", "A4 2020", 35000m, 15000, 28));
             Cars.Add(new CarViewModel("Toyota", "Corolla 2021", 20000m, 5000, 30));
-            Cars.Add(new CarViewModel("Ford", "Mustang 2019", 45000m, 20000, 22));
         }
 
         // Constructor adicional para instanciar un carro específico

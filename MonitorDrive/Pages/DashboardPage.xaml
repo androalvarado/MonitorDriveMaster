@@ -192,7 +192,7 @@
                 Grid.Row="3"
                 Padding="0"
                 BackgroundColor="{StaticResource Gray90}"
-                BorderColor="{StaticResource Tertiary}"
+                BorderColor="{StaticResource FontOP}"
                 CornerRadius="10"
                 HasShadow="True"
                 HeightRequest="300"
@@ -249,17 +249,6 @@
                 Margin="10,20,10,0"
                 ColumnDefinitions="*,*"
                 ColumnSpacing="70">
-                <!--  Boton para agragar la info  -->
-                <Border
-                    Margin="-8,7,0,0"
-                    BackgroundColor="{StaticResource Gray300}"
-                    HeightRequest="50"
-                    HorizontalOptions="Start"
-                    Stroke="{StaticResource Gray300}"
-                    StrokeShape="RoundRectangle 30"
-                    WidthRequest="150">
-                    <BoxView CornerRadius="20" Opacity="0.3" />
-                </Border>
                 <Button
                     x:Name="AddInfoButton"
                     BackgroundColor="{StaticResource Tertiary}"
@@ -277,20 +266,17 @@
                                             Color=White}"
                     Text=" Add Info"
                     TextColor="White"
-                    WidthRequest="150" />
+                    WidthRequest="150">
+                    <Button.Shadow>
+                        <Shadow
+                            Brush="Black"
+                            Opacity="0.3"
+                            Radius="5"
+                            Offset="10,10" />
+                    </Button.Shadow>
+                </Button>
 
                 <!--  Boton para agregar los gastos  -->
-                <Border
-                    Grid.Column="1"
-                    Margin="-8,7,0,0"
-                    BackgroundColor="{StaticResource Gray300}"
-                    HeightRequest="50"
-                    HorizontalOptions="Start"
-                    Stroke="{StaticResource Gray300}"
-                    StrokeShape="RoundRectangle 30"
-                    WidthRequest="150">
-                    <BoxView CornerRadius="20" Opacity="0.3" />
-                </Border>
                 <Button
                     x:Name="AddExpensiveButton"
                     Grid.Column="1"
@@ -307,9 +293,17 @@
                                             Glyph='&#xE804;',
                                             Size=24,
                                             Color={StaticResource Tertiary}}"
-                    Text="Expensives"
+                    Text="Expenses"
                     TextColor="{StaticResource Tertiary}"
-                    WidthRequest="150" />
+                    WidthRequest="150">
+                    <Button.Shadow>
+                        <Shadow
+                            Brush="Black"
+                            Opacity="0.3"
+                            Radius="5"
+                            Offset="10,10" />
+                    </Button.Shadow>
+                </Button>
 
             </Grid>
 

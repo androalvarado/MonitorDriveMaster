@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MonitorDrive.Pages.Expenses.AddExpensesPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Add Expenses Page"
+    BackgroundColor="{StaticResource Gray90}">
+    <Grid RowDefinitions=".1*,.4*,.1*">
+
+        <!--  Titulo de la Pagina  -->
+        <StackLayout>
+            <Label
+                Margin="0,20,0,10"
+                FontFamily="InterB24"
+                FontSize="30"
+                HorizontalOptions="Center"
+                Text="Add Expenses"
+                TextColor="{StaticResource Tertiary}"
+                VerticalOptions="Center" />
+        </StackLayout>
+
+        <!--  Formulario  -->
+        <Frame
+            Grid.Row="1"
+            Margin="20,0,20,0"
+            BackgroundColor="#FFFFFF"
+            BorderColor="#ffffff"
+            CornerRadius="20"
+            HasShadow="True">
+            <ScrollView>
+                <StackLayout Spacing="30">
+
+                    <!--  Expenses Category Picker  -->
+                    <StackLayout Spacing="10">
+                        <Label
+                            Margin="0,0,0,-10"
+                            FontFamily="InterB18"
+                            Text="Category"
+                            TextColor="{StaticResource Tertiary}" />
+                        <Frame
+                            Margin="0,0,5,0"
+                            Padding="10,0,0,0"
+                            BackgroundColor="Transparent"
+                            BorderColor="{StaticResource Tertiary}"
+                            CornerRadius="20"
+                            HasShadow="True"
+                            HeightRequest="50">
+                            <Picker
+                                Title="Select a category"
+                                SelectedIndexChanged="OnCategorySelected"
+                                TextColor="{StaticResource FontOP}">
+                                <Picker.Items>
+                                    <x:String>Gasoline</x:String>
+                                    <x:String>Grocery</x:String>
+                                    <x:String>Extra</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </Frame>
+                    </StackLayout>
+
+                    <!--  Gasoline Formulario  -->
+                    <!--  Galons and Bill Entry  -->
+                    <Grid
+                        x:Name="GasolineGrid"
+                        ColumnDefinitions="*,*"
+                        ColumnSpacing="20"
+                        IsVisible="False"
+                        RowSpacing="20">
+                        <!--  Miles Entry  -->
+                        <StackLayout Spacing="10">
+                            <Label
+                                Margin="0,0,0,-10"
+                                FontFamily="InterB18"
+                                Text="Galons"
+                                TextColor="{StaticResource Tertiary}" />
+                            <Frame
+                                Padding="10,0,0,0"
+                                BackgroundColor="Transparent"
+                                BorderColor="{StaticResource Tertiary}"
+                                CornerRadius="20"
+                                HasShadow="True"
+                                HeightRequest="50">
+                                <Entry
+                                    x:Name="GasolineGalonsEntry"
+                                    Margin="0"
+                                    HeightRequest="60"
+                                    Placeholder="00.00"
+                                    PlaceholderColor="{StaticResource FontOP}"
+                                    VerticalOptions="Center" />
+                            </Frame>
+                        </StackLayout>
+
+                        <!--  Maintenance Value Entry  -->
+                        <StackLayout
+                            Grid.Column="1"
+                            Margin="0,0,5,0"
+                            Spacing="10">
+                            <Label
+                                Margin="0,0,0,-10"
+                                FontFamily="InterB18"
+                                Text="Bill"
+                                TextColor="{StaticResource Tertiary}" />
+                            <Frame
+                                Padding="10,0,0,0"
+                                BackgroundColor="Transparent"
+                                BorderColor="{StaticResource Tertiary}"
+                                CornerRadius="20"
+                                HasShadow="True"
+                                HeightRequest="50">
+                                <Entry
+                                    x:Name="GasolineBillEntry"
+                                    HeightRequest="60"
+                                    IsPassword="True"
+                                    Placeholder="$ 0.00"
+                                    PlaceholderColor="{StaticResource FontOP}"
+                                    VerticalOptions="Center" />
+                            </Frame>
+                        </StackLayout>
+                    </Grid>
+
+                    <!--  Grocery Formulario  -->
+                    <!--  Value, WeekToPay and Category Entry  -->
+                    <Grid
+                        x:Name="GroceryGrid"
+                        ColumnDefinitions="*,*"
+                        ColumnSpacing="20"
+                        IsVisible="False"
+                        RowDefinitions="*,*"
+                        RowSpacing="20">
+                        <!--  Grocery Value Entry  -->
+                        <StackLayout Margin="0,0,5,0" Spacing="10">
+                            <Label
+                                Margin="0,0,0,-10"
+                                FontFamily="InterB18"
+                                Text="Value"
+                                TextColor="{StaticResource Tertiary}" />
+                            <Frame
+                                Padding="10,0,0,0"
+                                BackgroundColor="Transparent"
+                                BorderColor="{StaticResource Tertiary}"
+                                CornerRadius="20"
+                                HasShadow="True"
+                                HeightRequest="50">
+                                <Entry
+                                    x:Name="GroceryValueEntry"
+                                    HeightRequest="60"
+                                    IsPassword="True"
+                                    Placeholder="$ 0.00"
+                                    PlaceholderColor="{StaticResource FontOP}"
+                                    VerticalOptions="Center" />
+                            </Frame>
+                        </StackLayout>
+
+                        <!--  WeekToPay Entry  -->
+                        <StackLayout Grid.Column="1" Spacing="10">
+                            <Label
+                                Margin="0,0,0,-10"
+                                FontFamily="InterB18"
+                                Text="Week To Pay"
+                                TextColor="{StaticResource Tertiary}" />
+                            <Frame
+                                Margin="0,0,5,0"
+                                Padding="10,0,0,0"
+                                BackgroundColor="Transparent"
+                                BorderColor="{StaticResource Tertiary}"
+                                CornerRadius="20"
+                                HasShadow="True"
+                                HeightRequest="50">
+                                <Entry
+                                    x:Name="GroceryWeekToPayEntry"
+                                    Margin="0"
+                                    HeightRequest="60"
+                                    Placeholder="00"
+                                    PlaceholderColor="{StaticResource FontOP}"
+                                    VerticalOptions="Center" />
+                            </Frame>
+                        </StackLayout>
+
+                        <!--  Grocery Category Entry  -->
+                        <StackLayout
+                            Grid.Row="1"
+                            Grid.ColumnSpan="2"
+                            Spacing="10">
+                            <Label
+                                Margin="0,0,0,-10"
+                                FontFamily="InterB18"
+                                Text="Description"
+                                TextColor="{StaticResource Tertiary}" />
+                            <Frame
+                                Margin="0,0,5,0"
+                                Padding="10,0,0,0"
+                                BackgroundColor="Transparent"
+                                BorderColor="{StaticResource Tertiary}"
+                                CornerRadius="20"
+                                HasShadow="True"
+                                HeightRequest="50">
+                                <Entry
+                                    x:Name="GroceryCategoryEntry"
+                                    Margin="0"
+                                    HeightRequest="60"
+                                    Placeholder="00.00"
+                                    PlaceholderColor="{StaticResource FontOP}"
+                                    VerticalOptions="Center" />
+                            </Frame>
+                        </StackLayout>
+                    </Grid>
+
+                    <!--  ExtraExpense Formulario  -->
+                    <!--  Value, WeekToPay and Category Entry  -->
+                    <Grid
+                        x:Name="ExtraExpenseGrid"
+                        ColumnDefinitions="*,*"
+                        ColumnSpacing="20"
+                        IsVisible="False"
+                        RowDefinitions="*,*"
+                        RowSpacing="20">
+                        <!--  ExtraExpense Value Entry  -->
+                        <StackLayout Margin="0,0,5,0" Spacing="10">
+                            <Label
+                                Margin="0,0,0,-10"
+                                FontFamily="InterB18"
+                                Text="Value"
+                                TextColor="{StaticResource Tertiary}" />
+                            <Frame
+                                Padding="10,0,0,0"
+                                BackgroundColor="Transparent"
+                                BorderColor="{StaticResource Tertiary}"
+                                CornerRadius="20"
+                                HasShadow="True"
+                                HeightRequest="50">
+                                <Entry
+                                    x:Name="ExtraExpenseValueEntry"
+                                    HeightRequest="60"
+                                    IsPassword="True"
+                                    Placeholder="$ 0.00"
+                                    PlaceholderColor="{StaticResource FontOP}"
+                                    VerticalOptions="Center" />
+                            </Frame>
+                        </StackLayout>
+
+                        <!--  ExtraExpense Entry  -->
+                        <StackLayout Grid.Column="1" Spacing="10">
+                            <Label
+                                Margin="0,0,0,-10"
+                                FontFamily="InterB18"
+                                Text="Week To Pay"
+                                TextColor="{StaticResource Tertiary}" />
+                            <Frame
+                                Margin="0,0,5,0"
+                                Padding="10,0,0,0"
+                                BackgroundColor="Transparent"
+                                BorderColor="{StaticResource Tertiary}"
+                                CornerRadius="20"
+                                HasShadow="True"
+                                HeightRequest="50">
+                                <Entry
+                                    x:Name="ExtraExpenseWeekToPayEntry"
+                                    Margin="0"
+                                    HeightRequest="60"
+                                    Placeholder="00"
+                                    PlaceholderColor="{StaticResource FontOP}"
+                                    VerticalOptions="Center" />
+                            </Frame>
+                        </StackLayout>
+
+                        <!--  ExtraExpense Category Entry  -->
+                        <StackLayout
+                            Grid.Row="1"
+                            Grid.ColumnSpan="2"
+                            Spacing="10">
+                            <Label
+                                Margin="0,0,0,-10"
+                                FontFamily="InterB18"
+                                Text="Description"
+                                TextColor="{StaticResource Tertiary}" />
+                            <Frame
+                                Margin="0,0,5,0"
+                                Padding="10,0,0,0"
+                                BackgroundColor="Transparent"
+                                BorderColor="{StaticResource Tertiary}"
+                                CornerRadius="20"
+                                HasShadow="True"
+                                HeightRequest="50">
+                                <Entry
+                                    x:Name="ExtraExpenseCategoryEntry"
+                                    Margin="0"
+                                    HeightRequest="60"
+                                    Placeholder="00.00"
+                                    PlaceholderColor="{StaticResource FontOP}"
+                                    VerticalOptions="Center" />
+                            </Frame>
+                        </StackLayout>
+                    </Grid>
+
+                </StackLayout>
+            </ScrollView>
+
+        </Frame>
+
+        <!--  Botones continuar y regresar  -->
+        <Grid
+            Grid.Row="2"
+            Margin="20,10,20,20"
+            BackgroundColor="Transparent"
+            ColumnDefinitions="*,*"
+            ColumnSpacing="80"
+            VerticalOptions="End">
+            <Button
+                BackgroundColor="{StaticResource CardBG}"
+                BorderColor="{StaticResource Tertiary}"
+                Clicked="OnCancelClicked"
+                CornerRadius="20"
+                FontFamily="InterB24"
+                FontSize="20"
+                HeightRequest="50"
+                Text="Back"
+                TextColor="{StaticResource Tertiary}">
+                <Button.Shadow>
+                    <Shadow
+                        Brush="Black"
+                        Opacity="0.3"
+                        Radius="5"
+                        Offset="10,10" />
+                </Button.Shadow>
+            </Button>
+
+            <Button
+                Grid.Column="1"
+                BackgroundColor="{StaticResource Tertiary}"
+                BorderColor="{StaticResource Tertiary}"
+                Clicked="OnConfirmClicked"
+                CornerRadius="20"
+                FontFamily="InterB24"
+                FontSize="20"
+                HeightRequest="50"
+                Text="Confirm"
+                TextColor="White">
+                <Button.Shadow>
+                    <Shadow
+                        Brush="Black"
+                        Opacity="0.3"
+                        Radius="5"
+                        Offset="10,10" />
+                </Button.Shadow>
+            </Button>
+        </Grid>
+    </Grid>
+</ContentPage>

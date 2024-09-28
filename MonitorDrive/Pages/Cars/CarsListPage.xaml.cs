@@ -20,7 +20,7 @@ public partial class CarsListPage : ContentPage
 
     private async void OnAddClicked(object sender, EventArgs e)
     {
-        //await Navigation.PushModalAsync(new CarDetailsPage());
+        await Navigation.PushModalAsync(new AddCarPage());
     }
 
     private async void OnDetailsButtonClicked(object sender, EventArgs e)

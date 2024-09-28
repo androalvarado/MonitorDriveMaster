@@ -43,7 +43,7 @@
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\brain.png" Color="#703FF3" BaseSize="100,100" />
+		<MauiSplashScreen Include="Resources\Splash\brain.svg" Color="#703FF3" BaseSize="300,300" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -66,18 +66,20 @@
 	  <None Remove="Resources\Fonts\Inter_24pt-Medium.ttf" />
 	  <None Remove="Resources\Fonts\Inter_24pt-SemiBold.ttf" />
 	  <None Remove="Resources\Images\audi_a3_car.png" />
-	  <None Remove="Resources\Images\brain.png" />
-	  <None Remove="Resources\Images\brainBG.png" />
+	  <None Remove="Resources\Images\brain_logo.png" />
 	  <None Remove="Resources\Images\car_tires.png" />
 	  <None Remove="Resources\Images\grafica.png" />
-	  <None Remove="Resources\Images\nameandlogo.png" />
 	  <None Remove="Resources\Images\podio1.png" />
-	  <None Remove="Resources\Images\podio2.svg" />
+	  <None Remove="Resources\Images\podio2.png" />
 	  <None Remove="Resources\Images\profile.png" />
 	  <None Remove="Resources\Images\profileranking.jfif" />
 	  <None Remove="Resources\Images\star_empty.png" />
 	  <None Remove="Resources\Images\star_filled.png" />
 	  <None Remove="Resources\Images\toyota_corolla_car.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Include="Resources\Splash\brain.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -107,7 +109,7 @@
 	  <MauiXaml Update="ContentViews\NavBarContentView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MauiSplashScreen.xaml">
+	  <MauiXaml Update="Pages\Cars\AddCarPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Cars\CarDetailsPage.xaml">
@@ -123,6 +125,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Cars\TiresDetailsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Expenses\AddExpensesPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Management\AddDayWorkInfoPage.xaml">

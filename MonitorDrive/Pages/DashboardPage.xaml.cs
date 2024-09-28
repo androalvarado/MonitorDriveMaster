@@ -1,6 +1,7 @@
 namespace MonitorDrive.Pages;
 using Microsoft.Maui.Controls;
 using MonitorDrive.Pages.Auth;
+using MonitorDrive.Pages.Expenses;
 using MonitorDrive.Pages.Management;
 using MonitorDrive.Pages.ProfilePages;
 
@@ -52,7 +53,7 @@ public partial class DashboardPage : ContentPage
         await AddExpensiveButton.ScaleTo(0.9, 50, Easing.Linear);
         await AddExpensiveButton.ScaleTo(1, 50, Easing.Linear);
 
-        //await Navigation.PushAsync(new AddDayWorkInfoPage());
+        await Navigation.PushModalAsync(new AddExpensesPage());
     }
 
     private void OnProfileImageTapped(object sender, EventArgs e)
