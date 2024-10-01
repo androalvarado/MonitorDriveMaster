@@ -11,7 +11,7 @@ public partial class DashboardPage : ContentPage
 	{
 		InitializeComponent();
 
-        BindingContext = this;
+        //BindingContext = this;
     }
     private void OnWordTapped(object sender, EventArgs e)
     {
@@ -33,7 +33,7 @@ public partial class DashboardPage : ContentPage
             labelIndicator.Text = tappedLabel.Text;
 
             // Ocultar o mostrar el grid
-            labelStats.IsVisible = !labelStats.IsVisible;
+            ProfitabilityStats.IsVisible = !ProfitabilityStats.IsVisible;
         }
 
     }

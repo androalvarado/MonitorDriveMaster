@@ -68,7 +68,7 @@
                             <Label
                                 FontFamily="InterB24"
                                 HorizontalOptions="Center"
-                                Text="Starts"
+                                Text="Stars"
                                 TextColor="#FFFFFF" />
                             <Label
                                 Grid.Row="1"
@@ -117,18 +117,18 @@
                                         HeightRequest="45"
                                         Stroke="{StaticResource CardBG}">
                                         <Border.GestureRecognizers>
-                                            <TapGestureRecognizer Tapped="OnInfoLabelTapped" />
+                                            <TapGestureRecognizer Tapped="OnLabelTapped" />
                                         </Border.GestureRecognizers>
                                         <Label
                                             x:Name="InfoLabel"
                                             Margin="20,0,0,0"
-                                            FontAttributes="Bold"
+                                            FontFamily="InterB18"
                                             FontSize="18"
                                             HorizontalOptions="Center"
                                             Text="Info"
-                                            TextColor="{StaticResource FontOP}">
+                                            TextColor="{StaticResource Tertiary}">
                                             <Label.GestureRecognizers>
-                                                <TapGestureRecognizer Tapped="OnInfoLabelTapped" />
+                                                <TapGestureRecognizer Tapped="OnLabelTapped" />
                                             </Label.GestureRecognizers>
                                         </Label>
                                     </Border>
@@ -147,18 +147,18 @@
                                         HeightRequest="45"
                                         Stroke="{StaticResource CardBG}">
                                         <Border.GestureRecognizers>
-                                            <TapGestureRecognizer Tapped="OnInfoLabelTapped" />
+                                            <TapGestureRecognizer Tapped="OnLabelTapped" />
                                         </Border.GestureRecognizers>
                                         <Label
                                             x:Name="SettingsLabel"
                                             Grid.Column="2"
-                                            FontAttributes="Bold"
+                                            FontFamily="InterB18"
                                             FontSize="18"
                                             HorizontalOptions="Center"
                                             Text="Settings"
-                                            TextColor="#D8CBFA">
+                                            TextColor="{StaticResource PrimaryDark}">
                                             <Label.GestureRecognizers>
-                                                <TapGestureRecognizer Tapped="OnSettingsLabelTapped" />
+                                                <TapGestureRecognizer Tapped="OnLabelTapped" />
                                             </Label.GestureRecognizers>
                                         </Label>
                                     </Border>
@@ -282,12 +282,12 @@
                                     x:Name="SettingsSection"
                                     ColumnDefinitions="*,*"
                                     IsVisible="False"
-                                    RowDefinitions="*,*,*"
+                                    RowDefinitions="*,.1*,*,.1*,*,.1*,*"
                                     RowSpacing="10">
                                     <Label
                                         Margin="20,15,0,0"
                                         FontAttributes="Bold"
-                                        Text="Language:"
+                                        Text="Language"
                                         TextColor="Black" />
                                     <Border
                                         Grid.Column="1"
@@ -302,7 +302,7 @@
                                         <Picker
                                             x:Name="LanguagePicker"
                                             BackgroundColor="{StaticResource Tertiary}"
-                                            FontFamily="InterB24"
+                                            FontFamily="InterSB"
                                             HeightRequest="50"
                                             HorizontalTextAlignment="Center"
                                             SelectedIndexChanged="OnLanguageChanged"
@@ -317,18 +317,17 @@
                                             </Picker.ItemsSource>
                                         </Picker>
                                     </Border>
-
                                     <BoxView
                                         Grid.Row="1"
                                         Grid.ColumnSpan="2"
                                         Margin="10,10"
                                         HeightRequest="1"
-                                        Color="#d0d0d0" />
+                                        Color="{StaticResource FontOP}" />
                                     <Label
                                         Grid.Row="2"
                                         Margin="20,0,0,0"
                                         FontAttributes="Bold"
-                                        Text="Profile Details:"
+                                        Text="Currency"
                                         TextColor="Black"
                                         VerticalOptions="Center" />
                                     <Border
@@ -348,13 +347,88 @@
                                             BorderColor="{StaticResource Tertiary}"
                                             BorderWidth="1"
                                             CornerRadius="30"
-                                            FontAttributes="Bold"
-                                            FontFamily="RobotoR"
+                                            FontFamily="InterSB"
                                             FontSize="14"
                                             HeightRequest="40"
                                             Text="{Binding User.SelectedCurrency}"
                                             TextColor="{StaticResource CardBG}"
                                             WidthRequest="70"
+                                            ZIndex="999" />
+                                    </Border>
+                                    <BoxView
+                                        Grid.Row="3"
+                                        Grid.ColumnSpan="2"
+                                        Margin="10,10"
+                                        HeightRequest="1"
+                                        Color="{StaticResource FontOP}" />
+                                    <Label
+                                        Grid.Row="4"
+                                        Margin="20,0,0,0"
+                                        FontAttributes="Bold"
+                                        Text="Metrics"
+                                        TextColor="Black"
+                                        VerticalOptions="Center" />
+                                    <Border
+                                        Grid.Row="4"
+                                        Grid.Column="1"
+                                        Margin="0,0,20,0"
+                                        BackgroundColor="{StaticResource Tertiary}"
+                                        HeightRequest="40"
+                                        HorizontalOptions="End"
+                                        Stroke="{StaticResource PrimaryDark}"
+                                        StrokeShape="RoundRectangle 20,20,20,20"
+                                        StrokeThickness="1"
+                                        VerticalOptions="Center"
+                                        WidthRequest="70">
+                                        <Button
+                                            BackgroundColor="{StaticResource Tertiary}"
+                                            BorderColor="{StaticResource Tertiary}"
+                                            BorderWidth="1"
+                                            CornerRadius="30"
+                                            FontFamily="InterSB"
+                                            FontSize="14"
+                                            HeightRequest="40"
+                                            Text="Milles"
+                                            TextColor="{StaticResource CardBG}"
+                                            WidthRequest="70"
+                                            ZIndex="999" />
+                                    </Border>
+                                    <BoxView
+                                        Grid.Row="5"
+                                        Grid.ColumnSpan="2"
+                                        Margin="10,10"
+                                        HeightRequest="1"
+                                        Color="{StaticResource FontOP}" />
+                                    <Label
+                                        Grid.Row="6"
+                                        Margin="20,0,0,0"
+                                        FontAttributes="Bold"
+                                        Text="Volumetric"
+                                        TextColor="Black"
+                                        VerticalOptions="Center" />
+                                    <Border
+                                        Grid.Row="6"
+                                        Grid.Column="1"
+                                        Margin="0,0,20,0"
+                                        BackgroundColor="{StaticResource Tertiary}"
+                                        HeightRequest="40"
+                                        HorizontalOptions="End"
+                                        Stroke="{StaticResource PrimaryDark}"
+                                        StrokeShape="RoundRectangle 20,20,20,20"
+                                        StrokeThickness="1"
+                                        VerticalOptions="Center"
+                                        WidthRequest="70">
+                                        <Button
+                                            BackgroundColor="{StaticResource Tertiary}"
+                                            BorderColor="{StaticResource Tertiary}"
+                                            BorderWidth="1"
+                                            CornerRadius="30"
+                                            FontFamily="InterSB"
+                                            FontSize="14"
+                                            HeightRequest="40"
+                                            Text="Gallons"
+                                            TextColor="{StaticResource CardBG}"
+                                            WidthRequest="80"
                                             ZIndex="999" />
                                     </Border>
                                 </Grid>

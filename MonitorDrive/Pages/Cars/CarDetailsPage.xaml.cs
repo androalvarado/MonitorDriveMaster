@@ -1,3 +1,5 @@
+using CommunityToolkit.Maui.Views;
+using MonitorDrive.Pages.Cars.CarPopupPages;
 using MonitorDrive.ViewModels;
 
 namespace MonitorDrive.Pages.Cars;
@@ -7,6 +9,7 @@ public partial class CarDetailsPage : ContentPage
     public CarDetailsPage(CarViewModel car)
     {
         InitializeComponent();
+
         BindingContext = new CarDetailsViewModel(car);
     }
     
@@ -17,28 +20,27 @@ public partial class CarDetailsPage : ContentPage
 
     private async void OnEditClicked(object sender, EventArgs e)
     {
-        var button = sender as Button;
-        var car = button?.CommandParameter as CarViewModel;
-
-        if (car != null)
-        {
-            // Navegar a la página de detalles
-            await Navigation.PushModalAsync(new CarDetailsPage(car));
-        }
+        await Navigation.PushModalAsync(new AddCarPage());
     }
 
     private async void OnTiresDetailsCliked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new TiresDetailsPage());
+        await this.ShowPopupAsync(new AddTiresPopup());
     }
 
     private async void OnMaintenancesButtonClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new CarMaintenancesListPage());
+        await this.ShowPopupAsync(new AddMaintenancePopup());
+
     }
 
-    private async void OnExpensivesButtonClicked(object sender, EventArgs e)
+    private  async void OnExtraDetailsCliked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new ExtraExpensivesListPage());
+        await this.ShowPopupAsync(new AddExtraExpensePopup());
+    }
+
+    private async void OnPaymentCliked(object sender, EventArgs e)
+    {
+        await this.ShowPopupAsync(new AddCarPaymentPopup());
     }
 }

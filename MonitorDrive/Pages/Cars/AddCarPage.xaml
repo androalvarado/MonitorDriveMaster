@@ -3,11 +3,11 @@
     x:Class="MonitorDrive.Pages.Cars.AddCarPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Add Car Page"
+    Title="Add Vehicle"
     BackgroundColor="{StaticResource Gray90}">
 
 
-    <Grid RowDefinitions=".1*,.6*,.1*">
+    <Grid RowDefinitions=".1*,.4*,.1*">
 
         <!--  Titulo de la Pagina  -->
         <StackLayout>
@@ -16,7 +16,7 @@
                 FontFamily="InterB24"
                 FontSize="30"
                 HorizontalOptions="Center"
-                Text="Add New car"
+                Text="Add New Vehicle"
                 TextColor="{StaticResource Tertiary}"
                 VerticalOptions="Center" />
         </StackLayout>
@@ -31,6 +31,30 @@
             HasShadow="True">
             <ScrollView>
                 <StackLayout Spacing="20">
+                    <Label
+                        Margin="0,0,0,-20"
+                        FontFamily="InterB18"
+                        Text="Type of Vehicle"
+                        TextColor="{StaticResource Tertiary}" />
+                    <!--  Type of car Picker  -->
+                    <Border
+                        Padding="10,0,0,0"
+                        HeightRequest="50"
+                        Stroke="{StaticResource Tertiary}"
+                        StrokeShape="RoundRectangle 20">
+                        <Picker
+                            Title="Type of Vehicle"
+                            SelectedIndexChanged="CarPickerSelectedIndexChanged"
+                            TextColor="{StaticResource FontOP}">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Gasoline</x:String>
+                                    <x:String>Electric</x:String>
+                                    <x:String>Hybrid</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </Border>
 
                     <!--  Brand Entry  -->
                     <StackLayout Spacing="10">
@@ -171,7 +195,7 @@
                             <Label
                                 Margin="0,0,0,-10"
                                 FontFamily="InterB18"
-                                Text="Miles per galons"
+                                Text="MPG or Autonomy"
                                 TextColor="{StaticResource Tertiary}" />
                             <Frame
                                 Margin="0,0,5,0"
@@ -191,10 +215,8 @@
                             </Frame>
                         </StackLayout>
                     </Grid>
-
-
-
                     <!--  Control de imagen para la foto del auto  -->
+                    <!--
                     <Frame
                         Margin="0,0,5,0"
                         Padding="5"
@@ -216,7 +238,7 @@
                         FontFamily="InterSB"
                         Text="Upload"
                         TextColor="White"
-                        WidthRequest="100" />
+                        WidthRequest="100" />-->
                 </StackLayout>
             </ScrollView>
 

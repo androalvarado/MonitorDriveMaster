@@ -9,6 +9,6 @@ public partial class CarMaintenancesListPage : ContentPage
 
     private async void OnCancelButtonClicked(object sender, EventArgs e)
     {
-        await Navigation.PopAsync();
+        await Navigation.PopModalAsync();
     }
 }

@@ -3,6 +3,8 @@
     x:Class="MonitorDrive.Pages.Cars.CarDetailsPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mct="clr-namespace:CommunityToolkit.Maui;assembly=CommunityToolkit.Maui"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:viewmodels="clr-namespace:MonitorDrive.ViewModels"
     Title="Car Details"
     BackgroundColor="{StaticResource Gray90}"
@@ -12,7 +14,7 @@
         <viewmodels:CarDetailsViewModel />
     </ContentPage.BindingContext>
 
-    <Grid RowDefinitions=".1*,.35*,.35*,.2*" RowSpacing="10">
+    <Grid RowDefinitions=".1*,.3*,.5*,.2*" RowSpacing="10">
         <!--  Titulo de la Pagina  -->
         <StackLayout>
             <Label
@@ -67,28 +69,45 @@
         <Frame
             x:Name="CarDetailsFrame"
             Grid.Row="2"
-            Margin="20,20,20,15"
+            Margin="20,20,20,0"
             BackgroundColor="{StaticResource CardBG}"
             BorderColor="{StaticResource CardBG}"
             CornerRadius="10"
             HasShadow="True"
-            HeightRequest="250"
+            HeightRequest="320"
             IsVisible="True">
-            <Grid RowDefinitions=".1*,.1*,.1*,.1*,.1*,.1*">
+            <Grid RowDefinitions=".15*,.1*,.1*,.1*,.1*,.1*,.4*">
                 <Grid
                     Margin="20,0,0,0"
-                    ColumnDefinitions=".4*,.4*"
-                    ColumnSpacing="50">
+                    ColumnDefinitions=".5*,.4*, .33*"
+                    ColumnSpacing="30"
+                    HeightRequest="20">
                     <Label
                         FontFamily="InterSB"
                         FontSize="16"
                         Text="Value"
-                        TextColor="Black" />
+                        TextColor="{StaticResource Tertiary}" />
                     <Label
                         Grid.Column="1"
+                        FontFamily="InterSB"
                         FontSize="16"
                         Text="$19,800"
-                        TextColor="{StaticResource Tertiary}" />
+                        TextColor="{StaticResource Gray400}" />
+                    <Button
+                        Grid.Column="2"
+                        Margin="0,-4,0,20"
+                        BackgroundColor="{StaticResource Tertiary}"
+                        Clicked="OnPaymentCliked"
+                        CornerRadius="20"
+                        FontFamily="InterB24"
+                        FontSize="8"
+                        HeightRequest="35"
+                        ImageSource="{FontImage FontFamily=Icons,
+                                                Glyph='&#xE813;',
+                                                Size=22,
+                                                Color={StaticResource CardBG}}"
+                        VerticalOptions="Start"
+                        WidthRequest="60" />
                 </Grid>
 
                 <BoxView
@@ -102,18 +121,18 @@
                 <Grid
                     Grid.Row="2"
                     Margin="20,0,0,0"
-                    ColumnDefinitions=".4*,.4*"
-                    ColumnSpacing="50">
+                    ColumnDefinitions=".4*,.4*">
                     <Label
                         FontFamily="InterSB"
                         FontSize="16"
                         Text="MPG"
-                        TextColor="Black" />
+                        TextColor="{StaticResource Tertiary}" />
                     <Label
                         Grid.Column="1"
+                        FontFamily="InterSB"
                         FontSize="16"
                         Text="{Binding Mpg}"
-                        TextColor="{StaticResource Tertiary}" />
+                        TextColor="{StaticResource Gray400}" />
                 </Grid>
 
                 <BoxView
@@ -127,18 +146,18 @@
                 <Grid
                     Grid.Row="4"
                     Margin="20,0,0,0"
-                    ColumnDefinitions=".4*,.4*"
-                    ColumnSpacing="50">
+                    ColumnDefinitions=".4*,.4*">
                     <Label
                         FontFamily="InterSB"
                         FontSize="16"
                         Text="Usage (%)"
-                        TextColor="Black" />
+                        TextColor="{StaticResource Tertiary}" />
                     <Label
                         Grid.Column="1"
+                        FontFamily="InterSB"
                         FontSize="16"
                         Text="{Binding UsagePercentage}"
-                        TextColor="{StaticResource Tertiary}" />
+                        TextColor="{StaticResource Gray400}" />
                 </Grid>
 
                 <BoxView
@@ -149,37 +168,64 @@
                     WidthRequest="350"
                     Color="{StaticResource FontOP}" />
 
-                <!--<Grid
+                <Grid
                     Grid.Row="6"
-                    Margin="20,0,0,0"
-                    ColumnDefinitions=".7*,.7*">
-                    <Label
-                        FontFamily="InterSB"
-                        FontSize="16"
-                        Text="Tires"
-                        TextColor="Black" />
+                    Margin="10,10,10,10"
+                    ColumnDefinitions=".7*,.7*"
+                    ColumnSpacing="20"
+                    RowDefinitions="*,*"
+                    RowSpacing="20">
                     <Border
+                        Grid.ColumnSpan="2"
+                        HeightRequest="40"
+                        HorizontalOptions="Center"
+                        StrokeShape="RoundRectangle 20"
+                        WidthRequest="120">
+                        <Button
+                            BackgroundColor="{StaticResource Tertiary}"
+                            Clicked="OnMaintenancesButtonClicked"
+                            FontFamily="InterB24"
+                            FontSize="12"
+                            Text="Maintenance"
+                            TextColor="White" />
+                    </Border>
+                    <Border
+                        Grid.Row="1"
+                        HeightRequest="40"
+                        HorizontalOptions="End"
+                        StrokeShape="RoundRectangle 20"
+                        WidthRequest="100">
+                        <Button
+                            BackgroundColor="{StaticResource Tertiary}"
+                            Clicked="OnExtraDetailsCliked"
+                            FontFamily="InterB24"
+                            FontSize="12"
+                            Text="Extra"
+                            TextColor="White" />
+                    </Border>
+                    <Border
+                        Grid.Row="1"
                         Grid.Column="1"
                         HeightRequest="40"
+                        HorizontalOptions="Start"
                         StrokeShape="RoundRectangle 20"
-                        VerticalOptions="Start"
                         WidthRequest="100">
                         <Button
                             BackgroundColor="{StaticResource Tertiary}"
                             Clicked="OnTiresDetailsCliked"
                             FontFamily="InterB24"
                             FontSize="12"
-                            Text="Details &gt;"
+                            Text="Tires"
                             TextColor="White" />
                     </Border>
-                </Grid>-->
+                </Grid>
             </Grid>
         </Frame>
 
         <!--  Botones Cacelar y Editar  -->
         <Grid
             Grid.Row="4"
-            Margin="20,10,20,20"
+            Margin="20,0,20,20"
             BackgroundColor="Transparent"
             ColumnDefinitions="*,*"
             ColumnSpacing="80"

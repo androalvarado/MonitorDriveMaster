@@ -51,6 +51,7 @@
                                 TextColor="{StaticResource FontOP}">
                                 <Picker.Items>
                                     <x:String>Gasoline</x:String>
+                                    <x:String>Charge</x:String>
                                     <x:String>Grocery</x:String>
                                     <x:String>Extra</x:String>
                                 </Picker.Items>
@@ -59,7 +60,7 @@
                     </StackLayout>
 
                     <!--  Gasoline Formulario  -->
-                    <!--  Galons and Bill Entry  -->
+                    <!--  Gallons and Bill Entry  -->
                     <Grid
                         x:Name="GasolineGrid"
                         ColumnDefinitions="*,*"
@@ -71,7 +72,7 @@
                             <Label
                                 Margin="0,0,0,-10"
                                 FontFamily="InterB18"
-                                Text="Galons"
+                                Text="Gallons"
                                 TextColor="{StaticResource Tertiary}" />
                             <Frame
                                 Padding="10,0,0,0"
@@ -118,21 +119,79 @@
                         </StackLayout>
                     </Grid>
 
+                    <!--  Charge Formulario  -->
+                    <!--  Bill and Time Entry  -->
+                    <Grid
+                        x:Name="ChargeGrid"
+                        ColumnDefinitions="*,*"
+                        ColumnSpacing="20"
+                        IsVisible="False"
+                        RowSpacing="20">
+                        <!--  Bill Entry  -->
+                        <StackLayout Spacing="10">
+                            <Label
+                                Margin="0,0,0,-10"
+                                FontFamily="InterB18"
+                                Text="Bill"
+                                TextColor="{StaticResource Tertiary}" />
+                            <Frame
+                                Padding="10,0,0,0"
+                                BackgroundColor="Transparent"
+                                BorderColor="{StaticResource Tertiary}"
+                                CornerRadius="20"
+                                HasShadow="True"
+                                HeightRequest="50">
+                                <Entry
+                                    x:Name="ChargeBillEntry"
+                                    Margin="0"
+                                    HeightRequest="60"
+                                    Placeholder="$ 00.00"
+                                    PlaceholderColor="{StaticResource FontOP}"
+                                    VerticalOptions="Center" />
+                            </Frame>
+                        </StackLayout>
+
+                        <!--  Maintenance Time Entry  -->
+                        <StackLayout
+                            Grid.Column="1"
+                            Margin="0,0,5,0"
+                            Spacing="10">
+                            <Label
+                                Margin="0,0,0,-10"
+                                FontFamily="InterB18"
+                                Text="Time"
+                                TextColor="{StaticResource Tertiary}" />
+                            <Frame
+                                Padding="10,0,0,0"
+                                BackgroundColor="Transparent"
+                                BorderColor="{StaticResource Tertiary}"
+                                CornerRadius="20"
+                                HasShadow="True"
+                                HeightRequest="50">
+                                <Entry
+                                    x:Name="ChargeTimeEntry"
+                                    HeightRequest="60"
+                                    IsPassword="True"
+                                    Placeholder="00:00:00"
+                                    PlaceholderColor="{StaticResource FontOP}"
+                                    VerticalOptions="Center" />
+                            </Frame>
+                        </StackLayout>
+                    </Grid>
+
                     <!--  Grocery Formulario  -->
                     <!--  Value, WeekToPay and Category Entry  -->
                     <Grid
                         x:Name="GroceryGrid"
                         ColumnDefinitions="*,*"
                         ColumnSpacing="20"
-                        IsVisible="False"
-                        RowDefinitions="*,*"
-                        RowSpacing="20">
+                        IsVisible="False">
                         <!--  Grocery Value Entry  -->
                         <StackLayout Margin="0,0,5,0" Spacing="10">
                             <Label
                                 Margin="0,0,0,-10"
                                 FontFamily="InterB18"
-                                Text="Value"
+                                Text="Cost"
                                 TextColor="{StaticResource Tertiary}" />
                             <Frame
                                 Padding="10,0,0,0"
@@ -175,34 +234,6 @@
                                     VerticalOptions="Center" />
                             </Frame>
                         </StackLayout>
-
-                        <!--  Grocery Category Entry  -->
-                        <StackLayout
-                            Grid.Row="1"
-                            Grid.ColumnSpan="2"
-                            Spacing="10">
-                            <Label
-                                Margin="0,0,0,-10"
-                                FontFamily="InterB18"
-                                Text="Description"
-                                TextColor="{StaticResource Tertiary}" />
-                            <Frame
-                                Margin="0,0,5,0"
-                                Padding="10,0,0,0"
-                                BackgroundColor="Transparent"
-                                BorderColor="{StaticResource Tertiary}"
-                                CornerRadius="20"
-                                HasShadow="True"
-                                HeightRequest="50">
-                                <Entry
-                                    x:Name="GroceryCategoryEntry"
-                                    Margin="0"
-                                    HeightRequest="60"
-                                    Placeholder="00.00"
-                                    PlaceholderColor="{StaticResource FontOP}"
-                                    VerticalOptions="Center" />
-                            </Frame>
-                        </StackLayout>
                     </Grid>
 
                     <!--  ExtraExpense Formulario  -->
@@ -219,7 +250,7 @@
                             <Label
                                 Margin="0,0,0,-10"
                                 FontFamily="InterB18"
-                                Text="Value"
+                                Text="Cost"
                                 TextColor="{StaticResource Tertiary}" />
                             <Frame
                                 Padding="10,0,0,0"
@@ -271,7 +302,7 @@
                             <Label
                                 Margin="0,0,0,-10"
                                 FontFamily="InterB18"
-                                Text="Description"
+                                Text="New Category"
                                 TextColor="{StaticResource Tertiary}" />
                             <Frame
                                 Margin="0,0,5,0"
@@ -285,7 +316,7 @@
                                     x:Name="ExtraExpenseCategoryEntry"
                                     Margin="0"
                                     HeightRequest="60"
-                                    Placeholder="00.00"
+                                    Placeholder="New Extra Expense Category"
                                     PlaceholderColor="{StaticResource FontOP}"
                                     VerticalOptions="Center" />
                             </Frame>

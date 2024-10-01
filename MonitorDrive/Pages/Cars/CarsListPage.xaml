@@ -4,7 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:viewmodels="clr-namespace:MonitorDrive.ViewModels"
-    Title="Cars List"
+    Title="Vehicles List"
     BackgroundColor="{StaticResource Gray90}"
     NavigationPage.IconColor="{StaticResource White}">
 
@@ -20,7 +20,7 @@
                 FontFamily="InterB24"
                 FontSize="30"
                 HorizontalOptions="Center"
-                Text="Your Cars List"
+                Text="Your Vehicles List"
                 TextColor="{StaticResource Tertiary}"
                 VerticalOptions="Center" />
         </StackLayout>
@@ -89,7 +89,7 @@
             </CollectionView>
         </Grid>
 
-        <!--  Botones continuar y regresar  -->
+        <!--  Botones Back y Add New  -->
         <Grid
             Grid.Row="2"
             Margin="20,10,20,20"

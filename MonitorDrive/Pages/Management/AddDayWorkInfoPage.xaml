@@ -149,27 +149,26 @@
                     </VerticalStackLayout>
 
                     <!--  Range para introducir la cantidad de millas  -->
-                    <VerticalStackLayout
-                        Grid.Row="1"
-                        Grid.ColumnSpan="2"
-                        VerticalOptions="Center">
+                    <VerticalStackLayout Grid.Row="1">
                         <Label
                             FontFamily="InterSB"
-                            FontSize="16"
-                            Text="Miles traveled:"
+                            Text="Start Miles"
                             TextColor="{StaticResource Tertiary}" />
-                        <Slider
-                            x:Name="milesSlider"
-                            HeightRequest="50"
-                            Maximum="100"
-                            Minimum="0"
-                            ThumbColor="{StaticResource Tertiary}"
-                            ValueChanged="OnSliderValueChanged"
-                            Value="0" />
+                        <Border
+                            Padding="10,0,0,0"
+                            Stroke="{StaticResource Tertiary}"
+                            StrokeShape="RoundRectangle 40">
+                            <Entry
+                                x:Name="MilesStartedEntry"
+                                HeightRequest="50"
+                                Keyboard="Numeric"
+                                Placeholder="000000.00"
+                                TextColor="{StaticResource Primary}" />
+                        </Border>
                     </VerticalStackLayout>
 
-                    <!--  Time Picker para la hora de inicio y la hora finalizado  -->
-                    <VerticalStackLayout Grid.Row="2">
+                    <!--  Time Picker para la hora de inicio  -->
+                    <VerticalStackLayout Grid.Row="1" Grid.Column="1">
                         <Label
                             FontFamily="InterSB"
                             Text="Start Time"
@@ -186,6 +185,26 @@
                         </Border>
                     </VerticalStackLayout>
 
+                    <!--  Entry para introducir la cantidad de millas al finalizar  -->
+                    <VerticalStackLayout Grid.Row="2">
+                        <Label
+                            FontFamily="InterSB"
+                            Text="End Miles"
+                            TextColor="{StaticResource Tertiary}" />
+                        <Border
+                            Padding="10,0,0,0"
+                            Stroke="{StaticResource Tertiary}"
+                            StrokeShape="RoundRectangle 40">
+                            <Entry
+                                x:Name="MilesFinishedEntry"
+                                HeightRequest="50"
+                                Keyboard="Numeric"
+                                Placeholder="000000.00"
+                                TextColor="{StaticResource Primary}" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <!--  Time Picker para la hora finalizado  -->
                     <VerticalStackLayout Grid.Row="2" Grid.Column="1">
                         <Label
                             FontFamily="InterSB"
@@ -423,8 +442,9 @@
                     VerticalOptions="Center">
                     <VerticalStackLayout Spacing="10">
                         <Label
+                            FontFamily="InterSB"
                             FontSize="18"
-                            Text="1. How do you feel today about  your travels?"
+                            Text="How do you feel today about  your travels?"
                             TextColor="{StaticResource Tertiary}" />
                         <HorizontalStackLayout
                             x:Name="Rating1"
@@ -475,8 +495,9 @@
 
                     <VerticalStackLayout Spacing="10">
                         <Label
+                            FontFamily="InterSB"
                             FontSize="18"
-                            Text="2. How do you feel today about  your incomes?"
+                            Text="How do you feel today about  your incomes?"
                             TextColor="{StaticResource Tertiary}" />
                         <HorizontalStackLayout
                             x:Name="Rating2"
@@ -527,8 +548,9 @@
 
                     <VerticalStackLayout Spacing="10">
                         <Label
+                            FontFamily="InterSB"
                             FontSize="18"
-                            Text="3. How do you feel today in  general?"
+                            Text="How do you feel today in  general?"
                             TextColor="{StaticResource Tertiary}" />
                         <HorizontalStackLayout
                             x:Name="Rating3"
@@ -578,8 +600,6 @@
                     </VerticalStackLayout>
                 </VerticalStackLayout>
             </Frame>
-
-
 
             <!--  Botones continuar y regresar  -->
             <Grid
@@ -735,7 +755,7 @@
                 BorderColor="Transparent"
                 CornerRadius="20"
                 HasShadow="True">
-                <Grid RowDefinitions=".05*,.05*,.05*,.05*,.05*,.05*,.05*,.05*,.05*,.05*,.05*,.05*,.15*,.15*,.15*">
+                <Grid RowDefinitions=".05*,.05*,.05*,.05*,.05*,.05*,.05*,.05*,.05*,.05*,.05*,.05*,.3*">
                     <Grid ColumnDefinitions="*,*" ColumnSpacing="40">
                         <Label
                             FontFamily="InterSB"
@@ -756,7 +776,7 @@
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
                         WidthRequest="350"
-                        Color="{StaticResource Tertiary}" />
+                        Color="{StaticResource FontOP}" />
 
                     <Grid
                         Grid.Row="2"
@@ -781,18 +801,18 @@
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
                         WidthRequest="350"
-                        Color="{StaticResource Tertiary}" />
+                        Color="{StaticResource FontOP}" />
 
                     <Grid
                         Grid.Row="4"
-                        ColumnDefinitions="*,*"
+                        ColumnDefinitions=".4*,.6*"
                         ColumnSpacing="40">
                         <Label
                             FontFamily="InterSB"
                             FontSize="16"
                             Text="Time:"
                             TextColor="{StaticResource Tertiary}" />
-                        <Grid Grid.Column="1" ColumnDefinitions=".45*,.07*,.45*">
+                        <Grid Grid.Column="1" ColumnDefinitions=".55*,.07*,.55*">
                             <Label
                                 BindingContext="{x:Reference startTimePicker}"
                                 FontFamily="InterSB"
@@ -821,7 +841,7 @@
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
                         WidthRequest="350"
-                        Color="{StaticResource Tertiary}" />
+                        Color="{StaticResource FontOP}" />
 
                     <Grid
                         Grid.Row="6"
@@ -846,7 +866,7 @@
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
                         WidthRequest="350"
-                        Color="{StaticResource Tertiary}" />
+                        Color="{StaticResource FontOP}" />
 
                     <Grid
                         Grid.Row="8"
@@ -871,7 +891,7 @@
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
                         WidthRequest="350"
-                        Color="{StaticResource Tertiary}" />
+                        Color="{StaticResource FontOP}" />
 
                     <Grid
                         Grid.Row="10"
@@ -896,109 +916,147 @@
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
                         WidthRequest="350"
-                        Color="{StaticResource Tertiary}" />
+                        Color="{StaticResource FontOP}" />
 
-                    <StackLayout Grid.Row="12">
+                    <Grid
+                        Grid.Row="12"
+                        ColumnDefinitions="*,*"
+                        RowDefinitions="*,*,*,*">
                         <Label
                             FontFamily="InterSB"
                             FontSize="16"
-                            HorizontalOptions="Center"
-                            Text="Travels Feels"
+                            Text="Valoration:"
                             TextColor="{StaticResource Tertiary}" />
-                        <HorizontalStackLayout
-                            HorizontalOptions="Center"
-                            Spacing="5"
-                            VerticalOptions="Start">
+                        <Grid
+                            Grid.Row="1"
+                            Grid.ColumnSpan="2"
+                            ColumnDefinitions="*,*"
+                            ColumnSpacing="20">
                             <Label
-                                FontSize="24"
-                                Text="&#9734;"
-                                TextColor="Gold" />
-                            <Label
-                                FontSize="24"
-                                Text="&#9734;"
-                                TextColor="Gold" />
-                            <Label
-                                FontSize="24"
-                                Text="&#9734;"
-                                TextColor="Gold" />
-                            <Label
-                                FontSize="24"
-                                Text="&#9734;"
-                                TextColor="Gold" />
-                            <Label
-                                FontSize="24"
-                                Text="&#9734;"
-                                TextColor="Gold" />
-                        </HorizontalStackLayout>
-                    </StackLayout>
+                                FontFamily="InterSB"
+                                FontSize="16"
+                                HorizontalOptions="Center"
+                                Text="Travels"
+                                TextColor="{StaticResource Tertiary}" />
+                            <Grid
+                                Grid.Column="1"
+                                Margin="0,-9,0,0"
+                                ColumnDefinitions="*,*,*,*,*"
+                                ColumnSpacing="1">
+                                <Label
+                                    FontSize="24"
+                                    Text="&#9734;"
+                                    TextColor="Gold" />
+                                <Label
+                                    Grid.Column="1"
+                                    FontSize="24"
+                                    Text="&#9734;"
+                                    TextColor="Gold" />
+                                <Label
+                                    Grid.Column="2"
+                                    FontSize="24"
+                                    Text="&#9734;"
+                                    TextColor="Gold" />
+                                <Label
+                                    Grid.Column="3"
+                                    FontSize="24"
+                                    Text="&#9734;"
+                                    TextColor="Gold" />
+                                <Label
+                                    Grid.Column="4"
+                                    FontSize="24"
+                                    Text="&#9734;"
+                                    TextColor="Gold" />
+                            </Grid>
+                        </Grid>
 
-                    <StackLayout Grid.Row="13">
-                        <Label
-                            FontFamily="InterSB"
-                            FontSize="16"
-                            HorizontalOptions="Center"
-                            Text="Incomes Feels"
-                            TextColor="{StaticResource Tertiary}" />
-                        <HorizontalStackLayout
-                            HorizontalOptions="Center"
-                            Spacing="5"
-                            VerticalOptions="Start">
+                        <Grid
+                            Grid.Row="2"
+                            Grid.ColumnSpan="2"
+                            ColumnDefinitions="*,*"
+                            ColumnSpacing="20">
                             <Label
-                                FontSize="24"
-                                Text="&#9734;"
-                                TextColor="Gold" />
-                            <Label
-                                FontSize="24"
-                                Text="&#9734;"
-                                TextColor="Gold" />
-                            <Label
-                                FontSize="24"
-                                Text="&#9734;"
-                                TextColor="Gold" />
-                            <Label
-                                FontSize="24"
-                                Text="&#9734;"
-                                TextColor="Gold" />
-                            <Label
-                                FontSize="24"
-                                Text="&#9734;"
-                                TextColor="Gold" />
-                        </HorizontalStackLayout>
-                    </StackLayout>
+                                FontFamily="InterSB"
+                                FontSize="16"
+                                HorizontalOptions="Center"
+                                Text="Income"
+                                TextColor="{StaticResource Tertiary}" />
+                            <Grid
+                                Grid.Column="1"
+                                Margin="0,-9,0,0"
+                                ColumnDefinitions="*,*,*,*,*"
+                                ColumnSpacing="1">
+                                <Label
+                                    FontSize="24"
+                                    Text="&#9734;"
+                                    TextColor="Gold" />
+                                <Label
+                                    Grid.Column="1"
+                                    FontSize="24"
+                                    Text="&#9734;"
+                                    TextColor="Gold" />
+                                <Label
+                                    Grid.Column="2"
+                                    FontSize="24"
+                                    Text="&#9734;"
+                                    TextColor="Gold" />
+                                <Label
+                                    Grid.Column="3"
+                                    FontSize="24"
+                                    Text="&#9734;"
+                                    TextColor="Gold" />
+                                <Label
+                                    Grid.Column="4"
+                                    FontSize="24"
+                                    Text="&#9734;"
+                                    TextColor="Gold" />
+                            </Grid>
+                        </Grid>
 
-                    <StackLayout Grid.Row="14">
-                        <Label
-                            FontFamily="InterSB"
-                            FontSize="16"
-                            HorizontalOptions="Center"
-                            Text="Generals Feels"
-                            TextColor="{StaticResource Tertiary}" />
-                        <HorizontalStackLayout
-                            HorizontalOptions="Center"
-                            Spacing="5"
-                            VerticalOptions="Start">
+                        <Grid
+                            Grid.Row="3"
+                            Grid.ColumnSpan="2"
+                            ColumnDefinitions="*,*"
+                            ColumnSpacing="20">
                             <Label
-                                FontSize="24"
-                                Text="&#9734;"
-                                TextColor="Gold" />
-                            <Label
-                                FontSize="24"
-                                Text="&#9734;"
-                                TextColor="Gold" />
-                            <Label
-                                FontSize="24"
-                                Text="&#9734;"
-                                TextColor="Gold" />
-                            <Label
-                                FontSize="24"
-                                Text="&#9734;"
-                                TextColor="Gold" />
-                            <Label
-                                FontSize="24"
-                                Text="&#9734;"
-                                TextColor="Gold" />
-                        </HorizontalStackLayout>
-                    </StackLayout>
+                                FontFamily="InterSB"
+                                FontSize="16"
+                                HorizontalOptions="Center"
+                                Text="General"
+                                TextColor="{StaticResource Tertiary}" />
+                            <Grid
+                                Grid.Column="1"
+                                Margin="0,-9,0,0"
+                                ColumnDefinitions="*,*,*,*,*"
+                                ColumnSpacing="1">
+                                <Label
+                                    FontSize="24"
+                                    Text="&#9734;"
+                                    TextColor="Gold" />
+                                <Label
+                                    Grid.Column="1"
+                                    FontSize="24"
+                                    Text="&#9734;"
+                                    TextColor="Gold" />
+                                <Label
+                                    Grid.Column="2"
+                                    FontSize="24"
+                                    Text="&#9734;"
+                                    TextColor="Gold" />
+                                <Label
+                                    Grid.Column="3"
+                                    FontSize="24"
+                                    Text="&#9734;"
+                                    TextColor="Gold" />
+                                <Label
+                                    Grid.Column="4"
+                                    FontSize="24"
+                                    Text="&#9734;"
+                                    TextColor="Gold" />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
 
                 </Grid>
             </Frame>

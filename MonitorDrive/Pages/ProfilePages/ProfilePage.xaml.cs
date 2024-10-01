@@ -4,6 +4,7 @@ using System.Globalization;
 using Microsoft.Maui.Controls;
 using MonitorDrive.ViewModels;
 using MonitorDrive.Pages.Cars;
+using MonitorDrive.Pages.CellPhones;
 namespace MonitorDrive.Pages.ProfilePages;
 
 public partial class ProfilePage : ContentPage
@@ -36,7 +37,7 @@ public partial class ProfilePage : ContentPage
     private async void OnPhonesLabelTapped(object sender, EventArgs e)
     {
 
-        await Navigation.PushAsync(new PhoneSettingsPage());
+        await Navigation.PushAsync(new PhonesListPage());
     }
 
     private async void OnCarsTapped(object sender, EventArgs e)
@@ -68,16 +69,27 @@ public partial class ProfilePage : ContentPage
         }
     }
 
-    private void OnInfoLabelTapped(object sender, TappedEventArgs e)
+    private void OnLabelTapped(object sender, EventArgs e)
     {
-        InfoSection.IsVisible = true;
-        SettingsSection.IsVisible = false;
-    }
+        Label tappedLabel = sender as Label;
 
-    private void OnSettingsLabelTapped(object sender, TappedEventArgs e)
-    {
-        InfoSection.IsVisible = false;
-        SettingsSection.IsVisible = true;
+        // Restablecer el color de todos los Labels
+        InfoLabel.TextColor = Color.FromRgb(172, 153, 234);
+        SettingsLabel.TextColor = Color.FromRgb(172, 153, 234);
+
+        // Cambiar el color del texto del Label presionado
+        if (tappedLabel == InfoLabel)
+        {
+            InfoSection.IsVisible = true;
+            SettingsSection.IsVisible = false;            
+            InfoLabel.TextColor = Color.FromRgb(0x70, 0x3F, 0xF3); // Cambiar color al presionar InfoLabel
+        }
+        else if (tappedLabel == SettingsLabel)
+        {
+            InfoSection.IsVisible = false;
+            SettingsSection.IsVisible = true;
+            SettingsLabel.TextColor = Color.FromRgb(0x70, 0x3F, 0xF3); // Cambiar a coloral presionar SettingsLabel
+        }
     }
 
 }

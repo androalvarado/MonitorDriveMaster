@@ -23,4 +23,12 @@ public partial class AddCarPage : ContentPage
     {
 
     }
+
+    private void CarPickerSelectedIndexChanged(object sender, EventArgs e)
+    {
+        Picker carPicker = (Picker)sender;
+        string selectedCarType = carPicker.SelectedItem.ToString();
+        // Hacer algo con la opción seleccionada (por ejemplo, mostrar un mensaje)
+        //DisplayAlert("Carro seleccionado", $"Has seleccionado un carro {selectedCarType}", "OK");
+    }
 }

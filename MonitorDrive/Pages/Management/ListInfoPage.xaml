@@ -22,7 +22,7 @@
                 FontFamily="InterSB"
                 FontSize="28"
                 HorizontalOptions="Center"
-                Text="Your Trips List"
+                Text="Trips Journal"
                 TextColor="{StaticResource Tertiary}" />
 
             <Frame
@@ -84,10 +84,14 @@
                 FontSize="18"
                 HeightRequest="50"
                 HorizontalOptions="Center"
-                Text="+ Add Trip"
+                Text="Add Trip"
                 TextColor="{StaticResource CardBG}"
                 VerticalOptions="Center"
-                WidthRequest="150">
+                WidthRequest="150"
+                ImageSource="{FontImage FontFamily=Icons,
+                        Glyph='&#xE804;',
+                        Size=22,
+                        Color=White}">
                 <Button.Shadow>
                     <Shadow
                         Brush="Black"

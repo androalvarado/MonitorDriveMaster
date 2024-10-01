@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MonitorDrive.Pages.CellPhones.PhonesListPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="PhonesListPage"
+    BackgroundColor="{StaticResource Gray90}">
+
+    <Grid RowDefinitions=".1*,.35*,.35*,.1*" RowSpacing="10">
+        <!--  Titulo de la Pagina  -->
+        <StackLayout>
+            <Label
+                Margin="0,20,0,0"
+                FontFamily="InterB24"
+                FontSize="30"
+                HorizontalOptions="Center"
+                Text="Your Cars List"
+                TextColor="{StaticResource Tertiary}"
+                VerticalOptions="Center" />
+        </StackLayout>
+
+        <Frame
+            Grid.Row="1"
+            Margin="15,20,15,15"
+            BackgroundColor="{StaticResource CardBG}"
+            BorderColor="{StaticResource CardBG}"
+            CornerRadius="20"
+            HasShadow="True"
+            HeightRequest="200">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnPhoneTapped" />
+            </Frame.GestureRecognizers>
+            <Grid RowDefinitions=".1*,.1*,.1*,.1*,.1*,.1*,.1*">
+                <Grid ColumnDefinitions=".4*,.4*">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Model"
+                        TextColor="{StaticResource Tertiary}" />
+                    <Label
+                        Grid.Column="1"
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Iphone 13 Pro Max"
+                        TextColor="{StaticResource Gray400}" />
+                </Grid>
+
+                <BoxView
+                    Grid.Row="1"
+                    HeightRequest="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    Color="{StaticResource FontOP}" />
+
+                <Grid Grid.Row="2" ColumnDefinitions=".4*,.4*">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Cost"
+                        TextColor="{StaticResource Tertiary}" />
+                    <Label
+                        Grid.Column="1"
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="$ 980"
+                        TextColor="{StaticResource Gray400}" />
+                </Grid>
+
+                <BoxView
+                    Grid.Row="3"
+                    HeightRequest="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    Color="{StaticResource FontOP}" />
+
+                <Grid Grid.Row="4" ColumnDefinitions=".4*,.4*">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Line Bill"
+                        TextColor="{StaticResource Tertiary}" />
+                    <Label
+                        Grid.Column="1"
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="$ 60"
+                        TextColor="{StaticResource Gray400}" />
+                </Grid>
+
+                <BoxView
+                    Grid.Row="5"
+                    HeightRequest="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    Color="{StaticResource FontOP}" />
+
+                <Grid
+                    Grid.Row="6"
+                    ColumnDefinitions="*,*"
+                    ColumnSpacing="0">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Usage (%)"
+                        TextColor="{StaticResource Tertiary}" />
+                    <Label
+                        Grid.Column="1"
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="65 %"
+                        TextColor="{StaticResource Gray400}" />
+                </Grid>
+            </Grid>
+        </Frame>
+        <Frame
+            Grid.Row="2"
+            Margin="15,20,15,15"
+            BackgroundColor="{StaticResource CardBG}"
+            BorderColor="{StaticResource CardBG}"
+            CornerRadius="20"
+            HasShadow="True"
+            HeightRequest="200">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnPhoneTapped" />
+            </Frame.GestureRecognizers>
+            <Grid RowDefinitions=".1*,.1*,.1*,.1*,.1*,.1*,.1*">
+                <Grid ColumnDefinitions=".4*,.4*">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Model"
+                        TextColor="{StaticResource Tertiary}" />
+                    <Label
+                        Grid.Column="1"
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Galaxy S24"
+                        TextColor="{StaticResource Gray400}" />
+                </Grid>
+
+                <BoxView
+                    Grid.Row="1"
+                    HeightRequest="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    Color="{StaticResource FontOP}" />
+
+                <Grid Grid.Row="2" ColumnDefinitions=".4*,.4*">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Cost"
+                        TextColor="{StaticResource Tertiary}" />
+                    <Label
+                        Grid.Column="1"
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="$ 980"
+                        TextColor="{StaticResource Gray400}" />
+                </Grid>
+
+                <BoxView
+                    Grid.Row="3"
+                    HeightRequest="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    Color="{StaticResource FontOP}" />
+
+                <Grid Grid.Row="4" ColumnDefinitions=".4*,.4*">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Line Bill"
+                        TextColor="{StaticResource Tertiary}" />
+                    <Label
+                        Grid.Column="1"
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="$ 60"
+                        TextColor="{StaticResource Gray400}" />
+                </Grid>
+
+                <BoxView
+                    Grid.Row="5"
+                    HeightRequest="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    Color="{StaticResource FontOP}" />
+
+                <Grid
+                    Grid.Row="6"
+                    ColumnDefinitions="*,*"
+                    ColumnSpacing="0">
+                    <Label
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="Usage (%)"
+                        TextColor="{StaticResource Tertiary}" />
+                    <Label
+                        Grid.Column="1"
+                        FontFamily="InterSB"
+                        FontSize="16"
+                        Text="65 %"
+                        TextColor="{StaticResource Gray400}" />
+                </Grid>
+            </Grid>
+        </Frame>
+
+
+        <!--  Botones Back y Add New  -->
+        <Grid
+            Grid.Row="3"
+            Margin="20,10,20,20"
+            BackgroundColor="Transparent"
+            ColumnDefinitions="*,*"
+            ColumnSpacing="80"
+            VerticalOptions="End">
+            <Button
+                BackgroundColor="{StaticResource CardBG}"
+                BorderColor="{StaticResource Tertiary}"
+                Clicked="OnCancelClicked"
+                CornerRadius="20"
+                FontFamily="InterB24"
+                FontSize="20"
+                Text="Back"
+                TextColor="{StaticResource Tertiary}">
+                <Button.Shadow>
+                    <Shadow
+                        Brush="Black"
+                        Opacity="0.3"
+                        Radius="5"
+                        Offset="10,10" />
+                </Button.Shadow>
+            </Button>
+            <Button
+                Grid.Column="1"
+                BackgroundColor="{StaticResource Tertiary}"
+                BorderColor="{StaticResource Tertiary}"
+                Clicked="OnAddClicked"
+                CornerRadius="20"
+                FontFamily="InterB24"
+                FontSize="20"
+                Text="Add New"
+                TextColor="{StaticResource CardBG}">
+                <Button.Shadow>
+                    <Shadow
+                        Brush="Black"
+                        Opacity="0.3"
+                        Radius="5"
+                        Offset="10,10" />
+                </Button.Shadow>
+            </Button>
+        </Grid>
+    </Grid>
+
+</ContentPage>

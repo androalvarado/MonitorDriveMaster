@@ -14,7 +14,7 @@ namespace MonitorDrive
             // Crear una nueva NavigationPage
             var navigationPage = new NavigationPage(new MainPage())
             {
-                BarBackgroundColor = Color.FromHex("#703FF3"), // Color de fondo de la barra
+                BarBackgroundColor = Color.FromRgb(0x70, 0x3F, 0xF3), // Color de fondo de la barra
                 BarTextColor = Color.FromHex("#FFFFFF") // Color del texto de la barra
             };
 

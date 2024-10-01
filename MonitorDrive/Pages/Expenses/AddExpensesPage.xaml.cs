@@ -25,12 +25,16 @@ public partial class AddExpensesPage : ContentPage
         GasolineGrid.IsVisible = false;
         GroceryGrid.IsVisible = false;
         ExtraExpenseGrid.IsVisible = false;
+        ChargeGrid.IsVisible = false;
 
         // Mostrar el Grid correspondiente a la categoría seleccionada
         switch (selectedCategory)
         {
             case "Gasoline":
                 GasolineGrid.IsVisible = true;
+                break;
+            case "Charge":
+                ChargeGrid.IsVisible = true;
                 break;
             case "Grocery":
                 GroceryGrid.IsVisible = true;

@@ -4,6 +4,7 @@ using MonitorDrive.Pages.ProfilePages;
 using MonitorDrive.Pages.Masters;
 using MonitorDrive.Pages.Management;
 using Microsoft.Maui.Controls;
+using MonitorDrive.Pages.CellPhones;
 
 namespace MonitorDrive
 
@@ -27,7 +28,6 @@ namespace MonitorDrive
 
             Routing.RegisterRoute(nameof(EditProfileDetailsPage), typeof(Pages.ProfilePages.EditProfileDetailsPage));
             Routing.RegisterRoute(nameof(ProfilePage), typeof(Pages.ProfilePages.ProfilePage));
-            Routing.RegisterRoute(nameof(PhoneSettingsPage), typeof(Pages.ProfilePages.PhoneSettingsPage));
 
             Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
             Routing.RegisterRoute(nameof(LoginPage), typeof(Pages.Auth.LoginPage));

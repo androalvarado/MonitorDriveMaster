@@ -44,7 +44,6 @@ public partial class LoginPage : ContentPage
         //    await Application.Current.MainPage.DisplayAlert("Error", "Incorrect user ID or password.", "OK");
         //}
 
-        //await Shell.Current.GoToAsync("///DashboardPage");
         await Navigation.PushAsync(new DashboardPage());
 
         // Eliminar la página anterior de la pila de navegación

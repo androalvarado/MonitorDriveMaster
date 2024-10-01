@@ -9,12 +9,12 @@ public partial class TiresDetailsPage : ContentPage
 
     private async void OnBackClicked(object sender, EventArgs e)
     {
-        await Navigation.PopAsync();
+        await Navigation.PopModalAsync();
     }
 
     private async void OnNewClicked(object sender, EventArgs e)
     {
         //await Navigation.PushModalAsync(new CarDetailsPage());
-        await Navigation.PopAsync();
+        await Navigation.PopModalAsync();
     }
 }

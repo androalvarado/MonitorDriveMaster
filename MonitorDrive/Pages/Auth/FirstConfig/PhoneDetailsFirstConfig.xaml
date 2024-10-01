@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MonitorDrive.Pages.Auth.FirstConfig.PhoneDetailsFirstConfig"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{StaticResource Gray90}">
+
+    <Grid Padding="20,20,20,5" RowDefinitions=".1*,.7*,.1*,.05*">
+
+        <!--  Título  -->
+        <Label
+            FontFamily="InterSB"
+            FontSize="30"
+            HorizontalOptions="Center"
+            Text="Insert Phone Settings"
+            TextColor="{StaticResource Tertiary}"
+            VerticalOptions="Center" />
+
+        <!--  Formulario  -->
+        <Frame
+            Grid.Row="1"
+            BackgroundColor="#FFFFFF"
+            BorderColor="#ffffff"
+            CornerRadius="20"
+            HasShadow="True">
+            <StackLayout Spacing="20">
+
+                <!--  Model Entry  -->
+                <Label
+                    Margin="0,0,0,-15"
+                    FontFamily="InterB18"
+                    Text="Model"
+                    TextColor="{StaticResource Tertiary}" />
+                <Frame
+                    Padding="10,0,0,0"
+                    BackgroundColor="Transparent"
+                    BorderColor="{StaticResource Tertiary}"
+                    CornerRadius="20"
+                    HasShadow="True">
+                    <Entry
+                        x:Name="PhoneModelEntry"
+                        Margin="0"
+                        FontFamily="InterSB"
+                        HeightRequest="50"
+                        Placeholder="Iphone 13 Pro max"
+                        PlaceholderColor="{StaticResource FontOP}"
+                        Text="{Binding FullName}"
+                        TextColor="{StaticResource Gray400}"
+                        VerticalOptions="Center" />
+                </Frame>
+
+                <!--  Cost y Line Bill Entry  -->
+                <Grid
+                    Margin="0,0,5,0"
+                    ColumnDefinitions="*,*"
+                    ColumnSpacing="50"
+                    RowDefinitions=" *,*">
+                    <!--  Cost Entry  -->
+                    <Label
+                        Margin="0,0,0,5"
+                        FontFamily="InterB18"
+                        Text="Cost"
+                        TextColor="{StaticResource Tertiary}" />
+                    <Frame
+                        Grid.Row="1"
+                        Padding="10,0,0,0"
+                        BackgroundColor="Transparent"
+                        BorderColor="{StaticResource Tertiary}"
+                        CornerRadius="20"
+                        HasShadow="True">
+                        <Entry
+                            x:Name="PhoneCostEntry"
+                            Margin="0"
+                            FontFamily="InterSB"
+                            HeightRequest="50"
+                            Placeholder="$ 0.00"
+                            PlaceholderColor="{StaticResource FontOP}"
+                            Text="{Binding Email}"
+                            TextColor="{StaticResource Gray400}"
+                            VerticalOptions="Center" />
+                    </Frame>
+
+                    <!--  Line Bill Entry  -->
+                    <Label
+                        Grid.Column="1"
+                        Margin="0,0,0,5"
+                        FontFamily="InterB18"
+                        Text="Select Currency"
+                        TextColor="{StaticResource Tertiary}" />
+                    <Frame
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Padding="10,0,0,0"
+                        BackgroundColor="Transparent"
+                        BorderColor="{StaticResource Tertiary}"
+                        CornerRadius="20"
+                        HasShadow="True">
+                        <Entry
+                            x:Name="PhoneLineBillEntry"
+                            Margin="0"
+                            FontFamily="InterSB"
+                            HeightRequest="50"
+                            Placeholder="$ 0.00"
+                            PlaceholderColor="{StaticResource FontOP}"
+                            Text="{Binding PhoneNumber}"
+                            TextColor="{StaticResource Gray400}"
+                            VerticalOptions="Center" />
+                    </Frame>
+                </Grid>
+
+                <!--  Percent Usage Entry  -->
+                <Label
+                    Margin="0,0,0,-10"
+                    FontFamily="InterB18"
+                    Text="Usage (%)"
+                    TextColor="{StaticResource Tertiary}" />
+                <Frame
+                    Padding="10,0,0,0"
+                    BackgroundColor="Transparent"
+                    BorderColor="{StaticResource Tertiary}"
+                    CornerRadius="20"
+                    HasShadow="True">
+                    <Entry
+                        x:Name="phonePercentUsageEntry"
+                        Margin="0"
+                        FontFamily="InterSB"
+                        HeightRequest="50"
+                        Placeholder="00%"
+                        PlaceholderColor="{StaticResource FontOP}"
+                        Text="{Binding FullName}"
+                        TextColor="{StaticResource Gray400}"
+                        VerticalOptions="Center" />
+                </Frame>
+            </StackLayout>
+        </Frame>
+
+        <!--  Botón de Register  -->
+        <Border
+            Grid.Row="2"
+            Margin="0,10,0,0"
+            HeightRequest="60"
+            HorizontalOptions="Center"
+            StrokeShape="RoundRectangle 20"
+            VerticalOptions="End"
+            WidthRequest="250">
+            <Grid>
+                <Button
+                    BackgroundColor="{StaticResource Tertiary}"
+                    Clicked="OnConfirmCliked"
+                    FontFamily="InterB18"
+                    FontSize="20"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Confirm"
+                    TextColor="White"
+                    VerticalOptions="FillAndExpand" />
+            </Grid>
+
+        </Border>
+
+
+        <!--  Pie de página  -->
+        <Label
+            Grid.Row="3"
+            FontFamily="InterB18"
+            HorizontalOptions="Center"
+            Text="@ Copyright by Monitor Drive"
+            TextColor="{StaticResource Tertiary}"
+            VerticalOptions="EndAndExpand" />
+    </Grid>
+</ContentPage>
