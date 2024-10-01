@@ -4,7 +4,9 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:contentview="clr-namespace:MonitorDrive.ContentViews"
+    xmlns:customcontrol="clr-namespace:MonitorDrive.CustomControls"
     xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.Maui;assembly=LiveChartsCore.SkiaSharpView.Maui"
+    xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:vms="clr-namespace:MonitorDrive.ViewModels"
     BackgroundColor="{StaticResource Gray90}"
@@ -92,6 +94,7 @@
                 VerticalOptions="Center">
                 <Label
                     x:Name="ProfitabilityLabel"
+                    FontAttributes="Bold"
                     FontFamily="InterR"
                     FontSize="15"
                     Text="Profitability"
@@ -173,17 +176,17 @@
                     <Label
                         x:Name="labelIndicator"
                         Grid.Column="2"
-                        FontFamily="InterR"
+                        FontFamily="InterSB"
                         FontSize="18"
                         HorizontalTextAlignment="Center"
                         Text="Profitability"
-                        TextColor="Black"
+                        TextColor="{StaticResource Gray500}"
                         VerticalTextAlignment="Center"
                         WidthRequest="105" />
                     <Label
                         Grid.Column="2"
                         AbsoluteLayout.LayoutFlags="PositionProportional"
-                        FontFamily="NexaHeavy"
+                        FontFamily="InterSB"
                         FontSize="18"
                         HorizontalOptions="End"
                         Text="74%"
@@ -274,6 +277,7 @@
                                             Glyph='&#xE804;',
                                             Size=22,
                                             Color=White}"
+                    IsVisible="True"
                     Text=" Add Trip"
                     TextColor="White"
                     WidthRequest="150">
@@ -285,6 +289,19 @@
                             Offset="10,10" />
                     </Button.Shadow>
                 </Button>
+                <Border
+                    x:Name="AddTripLoadingButton"
+                    BackgroundColor="{StaticResource Tertiary}"
+                    HeightRequest="50"
+                    IsVisible="False"
+                    Stroke="{StaticResource Tertiary}"
+                    StrokeShape="RoundRectangle 30"
+                    WidthRequest="150">
+                    <skia:SKLottieView
+                        RepeatCount="-1"
+                        Source="loading_white.json"
+                        ZIndex="999" />
+                </Border>
 
                 <!--  Boton para agregar los gastos  -->
                 <Button
@@ -303,6 +320,7 @@
                                             Glyph='&#xE804;',
                                             Size=22,
                                             Color={StaticResource Tertiary}}"
+                    IsVisible="True"
                     Text="Expenses"
                     TextColor="{StaticResource Tertiary}"
                     WidthRequest="150">
@@ -314,6 +332,21 @@
                             Offset="10,10" />
                     </Button.Shadow>
                 </Button>
+
+                <Border
+                    x:Name="AddExpensiveLoadingButton"
+                    Grid.Column="1"
+                    BackgroundColor="{StaticResource CardBG}"
+                    HeightRequest="50"
+                    IsVisible="False"
+                    Stroke="{StaticResource Tertiary}"
+                    StrokeShape="RoundRectangle 30"
+                    WidthRequest="150">
+                    <skia:SKLottieView
+                        RepeatCount="-1"
+                        Source="loading_tertiary.json"
+                        ZIndex="999" />
+                </Border>
 
             </Grid>
 

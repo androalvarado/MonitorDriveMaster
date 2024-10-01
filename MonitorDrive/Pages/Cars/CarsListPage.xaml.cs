@@ -1,3 +1,4 @@
+using MonitorDrive.Pages.ProfilePages;
 using MonitorDrive.ViewModels;
 
 namespace MonitorDrive.Pages.Cars;
@@ -6,16 +7,23 @@ public partial class CarsListPage : ContentPage
 {
     public CarViewModel DataContext { get; private set; }
 
-    public CarsListPage()
+    private readonly UserViewModel user;
+
+    public CarsListPage(UserViewModel user)
 	{
 		InitializeComponent();
+
+        this.user = user;
 
         DataContext = new CarViewModel(); // Inicialización vacía
     }
 
     private async void OnCancelClicked(object sender, EventArgs e)
     {
-        await Navigation.PopAsync();
+        
+        await Navigation.PushAsync(new ProfilePage(user));
+
+        Navigation.RemovePage(this);
     }
 
     private async void OnAddClicked(object sender, EventArgs e)

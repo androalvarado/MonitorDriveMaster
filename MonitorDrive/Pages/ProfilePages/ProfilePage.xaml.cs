@@ -28,10 +28,7 @@ public partial class ProfilePage : ContentPage
 
         
         // Navegar a la página de detalles
-        await Navigation.PushModalAsync(new EditProfileDetailsPage(user));
-      
-        // Navegar a la página de edición de perfil        
-        //await Navigation.PushModalAsync(new EditProfileDetailsPage(this.user));       
+        await Navigation.PushModalAsync(new EditProfileDetailsPage(user));     
     }
 
     private async void OnPhonesLabelTapped(object sender, EventArgs e)
@@ -43,7 +40,7 @@ public partial class ProfilePage : ContentPage
     private async void OnCarsTapped(object sender, EventArgs e)
     {
 
-        await Navigation.PushAsync(new CarsListPage());
+        await Navigation.PushAsync(new CarsListPage(user));
     }
 
     private void OnLanguageChanged(object sender, EventArgs e)

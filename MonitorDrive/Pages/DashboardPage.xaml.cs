@@ -1,9 +1,13 @@
 namespace MonitorDrive.Pages;
+
+using CommunityToolkit.Maui.Views;
+using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 using MonitorDrive.Pages.Auth;
 using MonitorDrive.Pages.Expenses;
 using MonitorDrive.Pages.Management;
 using MonitorDrive.Pages.ProfilePages;
+using System.Reflection;
 
 public partial class DashboardPage : ContentPage
 {
@@ -40,12 +44,17 @@ public partial class DashboardPage : ContentPage
 
     private async void OnAddInfoButtonClicked(object sender, EventArgs e)
     {
+        AddInfoButton.IsVisible = false;
+        AddTripLoadingButton.IsVisible = true;
+
         // Animación de escala al tocar el botón
         await AddInfoButton.ScaleTo(0.9, 50, Easing.Linear);
         await AddInfoButton.ScaleTo(1, 50, Easing.Linear);
 
-        //await Shell.Current.GoToAsync("AddDayWorkInfoPage");
         await Navigation.PushAsync(new AddDayWorkInfoPage());
+
+        AddInfoButton.IsVisible = !AddInfoButton.IsVisible;
+        AddTripLoadingButton.IsVisible = !AddTripLoadingButton.IsVisible;
     }
 
     private async void OnAddExpensiveButtonClicked(object sender, EventArgs e)
@@ -53,7 +62,13 @@ public partial class DashboardPage : ContentPage
         await AddExpensiveButton.ScaleTo(0.9, 50, Easing.Linear);
         await AddExpensiveButton.ScaleTo(1, 50, Easing.Linear);
 
-        await Navigation.PushModalAsync(new AddExpensesPage());
+        AddExpensiveButton.IsVisible = false;
+        AddExpensiveLoadingButton.IsVisible = true;
+
+        await this.ShowPopupAsync(new AddExpensePopup());
+
+        AddExpensiveButton.IsVisible = !AddExpensiveButton.IsVisible;
+        AddExpensiveLoadingButton.IsVisible = !AddExpensiveLoadingButton.IsVisible;
     }
 
     private void OnProfileImageTapped(object sender, EventArgs e)

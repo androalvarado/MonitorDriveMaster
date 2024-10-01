@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace MonitorDrive.Pages.Management;
 
-public partial class AddDayWorkInfoPage : ContentPage, INotifyPropertyChanged
+public partial class AddDayWorkInfoPage : ContentPage
 {
     // Propiedades del grid para hacer el cambio de estados
     private int currentGridIndex = 0;
@@ -43,28 +43,27 @@ public partial class AddDayWorkInfoPage : ContentPage, INotifyPropertyChanged
 
     private async void OnExitFormButtom(object sender, EventArgs e)
     {
-        //Shell.Current.GoToAsync("..");
         await Navigation.PopAsync();
     }
 
     private async void OnConfirmClicked(object sender, EventArgs e)
     {
-        //Shell.Current.GoToAsync("/ListInfoPage"));
         await Navigation.PushAsync(new ListInfoPage());
+
+        Navigation.RemovePage(this);
 
     }
 
     private void OnPickerSelectedIndexChanged(object sender, EventArgs e)
     {
         var picker = (Picker)sender;
-        var selectedCar = picker.SelectedItem.ToString();
-        //SelectedCarLabel.Text = $"Has seleccionado: {selectedCar}";
+        _ = picker.SelectedItem.ToString();
     }
 
     private void OnSliderValueChanged(object sender, ValueChangedEventArgs e)
     {
         // Obtiene el valor del slider y lo redondea
-        var miles = (int)e.NewValue;
+        _ = (int)e.NewValue;
     }
 
 }

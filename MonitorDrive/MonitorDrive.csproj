@@ -68,7 +68,6 @@
 	  <None Remove="Resources\Images\audi_a3_car.png" />
 	  <None Remove="Resources\Images\brain_logo.png" />
 	  <None Remove="Resources\Images\car_tires.png" />
-	  <None Remove="Resources\Images\grafica.png" />
 	  <None Remove="Resources\Images\podio1.png" />
 	  <None Remove="Resources\Images\podio2.png" />
 	  <None Remove="Resources\Images\profile.png" />
@@ -76,6 +75,8 @@
 	  <None Remove="Resources\Images\star_empty.png" />
 	  <None Remove="Resources\Images\star_filled.png" />
 	  <None Remove="Resources\Images\toyota_corolla_car.png" />
+	  <None Remove="Resources\Raw\loading_tertiary.json" />
+	  <None Remove="Resources\Raw\loading_white.json" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -89,6 +90,7 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -141,6 +143,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\CellPhones\PhonesListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Expenses\AddExpensePopup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Expenses\AddExpensesPage.xaml">

@@ -1,14 +1,20 @@
+using MonitorDrive.ViewModels;
+
 namespace MonitorDrive.Pages.Auth.FirstConfig;
 
 public partial class ProfileSettingsFirstConfig : ContentPage
 {
-	public ProfileSettingsFirstConfig()
+    private readonly UserViewModel user;
+    public ProfileSettingsFirstConfig(UserViewModel user)
 	{
 		InitializeComponent();
+        this.user = user;
 	}
 
     private async void OnConfirmCliked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new PhoneDetailsFirstConfig());
+        await Navigation.PushAsync(new PhoneDetailsFirstConfig(user));
+
+        Navigation.RemovePage(this);
     }
 }

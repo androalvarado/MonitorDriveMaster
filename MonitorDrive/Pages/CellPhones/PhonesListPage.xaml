@@ -14,7 +14,7 @@
                 FontFamily="InterB24"
                 FontSize="30"
                 HorizontalOptions="Center"
-                Text="Your Cars List"
+                Text="Your Phones List"
                 TextColor="{StaticResource Tertiary}"
                 VerticalOptions="Center" />
         </StackLayout>
