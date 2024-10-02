@@ -218,6 +218,7 @@
                                         Grid.Row="4"
                                         Grid.Column="1"
                                         Padding="5"
+                                        CornerRadius="20"
                                         BackgroundColor="{StaticResource Tertiary}"
                                         BorderColor="{StaticResource Tertiary}"
                                         WidthRequest="130">
@@ -255,6 +256,7 @@
                                         Grid.Row="7"
                                         Grid.Column="1"
                                         Padding="5"
+                                        CornerRadius="20"
                                         BackgroundColor="{StaticResource Tertiary}"
                                         BorderColor="{StaticResource Tertiary}"
                                         WidthRequest="75">
@@ -446,7 +448,7 @@
                         Padding="0"
                         BackgroundColor="{StaticResource Tertiary}"
                         BorderColor="Transparent"
-                        CornerRadius="10"
+                        CornerRadius="30"
                         HasShadow="True"
                         HeightRequest="50"
                         HorizontalOptions="Center"

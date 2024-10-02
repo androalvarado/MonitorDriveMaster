@@ -79,19 +79,19 @@
                 BackgroundColor="{StaticResource Tertiary}"
                 BorderColor="Transparent"
                 Clicked="OnCircularButtonTapped"
-                CornerRadius="20"
+                CornerRadius="30"
                 FontFamily="InterSB"
                 FontSize="18"
                 HeightRequest="50"
                 HorizontalOptions="Center"
+                ImageSource="{FontImage FontFamily=Icons,
+                                        Glyph='&#xE804;',
+                                        Size=22,
+                                        Color=White}"
                 Text="Add Trip"
                 TextColor="{StaticResource CardBG}"
                 VerticalOptions="Center"
-                WidthRequest="150"
-                ImageSource="{FontImage FontFamily=Icons,
-                        Glyph='&#xE804;',
-                        Size=22,
-                        Color=White}">
+                WidthRequest="150">
                 <Button.Shadow>
                     <Shadow
                         Brush="Black"

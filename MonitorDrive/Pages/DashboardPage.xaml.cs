@@ -51,10 +51,12 @@ public partial class DashboardPage : ContentPage
         await AddInfoButton.ScaleTo(0.9, 50, Easing.Linear);
         await AddInfoButton.ScaleTo(1, 50, Easing.Linear);
 
-        await Navigation.PushAsync(new AddDayWorkInfoPage());
-
         AddInfoButton.IsVisible = !AddInfoButton.IsVisible;
         AddTripLoadingButton.IsVisible = !AddTripLoadingButton.IsVisible;
+
+        await Navigation.PushAsync(new AddDayWorkInfoPage());
+
+        
     }
 
     private async void OnAddExpensiveButtonClicked(object sender, EventArgs e)
