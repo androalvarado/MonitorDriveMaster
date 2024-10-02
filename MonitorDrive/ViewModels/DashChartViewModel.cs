@@ -53,9 +53,10 @@ namespace MonitorDrive.ViewModels;
 
     public Axis[] XAxes { get; set; } =
     {
-            new Axis { MinLimit = -0.5,
+            new Axis {Name = "weeks",
+                MinLimit = -0.5,
                 MaxLimit = 7,
-            Labels = ["-6", "-5", "-4", "-3","-2","-1","0"] }
+            Labels = ["-6", "-5", "-4", "-3","-2","-1","0"] }            
     };
 }
 

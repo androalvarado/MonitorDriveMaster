@@ -59,7 +59,7 @@
                     <Label
                         Margin="0,0,0,5"
                         FontFamily="InterB18"
-                        Text="Cost"
+                        Text="Phone Cost"
                         TextColor="{StaticResource Tertiary}" />
                     <Frame
                         Grid.Row="1"
@@ -85,7 +85,7 @@
                         Grid.Column="1"
                         Margin="0,0,0,5"
                         FontFamily="InterB18"
-                        Text="Select Currency"
+                        Text="Line Bill"
                         TextColor="{StaticResource Tertiary}" />
                     <Frame
                         Grid.Row="1"

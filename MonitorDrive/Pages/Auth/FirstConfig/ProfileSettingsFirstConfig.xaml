@@ -37,16 +37,12 @@
                     BorderColor="{StaticResource Tertiary}"
                     CornerRadius="20"
                     HasShadow="True">
-                    <Entry
-                        x:Name="CountryEntry"
-                        Margin="0"
+                    <Picker
+                        x:Name="pickerPaises"
+                        Title="Select your Country"
                         FontFamily="InterSB"
-                        HeightRequest="50"
-                        Placeholder="United States"
-                        PlaceholderColor="{StaticResource FontOP}"
-                        Text="{Binding FullName}"
-                        TextColor="{StaticResource Gray400}"
-                        VerticalOptions="Center" />
+                        SelectedIndexChanged="OnPickerSelectedIndexChanged"
+                        TextColor="{StaticResource FontOP}" />
                 </Frame>
 
                 <!--  Language y Currency Entry  -->

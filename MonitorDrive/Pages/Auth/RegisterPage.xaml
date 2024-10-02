@@ -11,7 +11,7 @@
             <!--  Título  -->
             <Label
                 FontFamily="InterSB"
-                FontSize="40"
+                FontSize="35"
                 HorizontalOptions="Start"
                 Text="Create&#10;New Account."
                 TextColor="{StaticResource Tertiary}"
@@ -23,11 +23,11 @@
                 HorizontalOptions="Start">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="If there is one/" TextColor="{StaticResource FontOP}" />
+                        <Span Text="If there is one/" TextColor="{StaticResource Primary}" />
                         <Span
                             FontFamily="InterSB"
                             Text=" Login"
-                            TextColor="{StaticResource Primary}">
+                            TextColor="{StaticResource PrimaryDark}">
                             <Span.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="GoToLogin" />
                             </Span.GestureRecognizers>
@@ -38,12 +38,11 @@
 
             <!--  Formulario  -->
             <Frame
-                Margin="0,0,0,0"
-                BackgroundColor="#FFFFFF"
+                BackgroundColor="{StaticResource CardBG}"
                 BorderColor="#ffffff"
                 CornerRadius="20"
                 HasShadow="True">
-                <StackLayout Spacing="20">
+                <StackLayout Spacing="15">
 
                     <!--  Full Name Entry  -->
                     <Label
@@ -161,7 +160,6 @@
                     </Border>
                 </StackLayout>
             </Frame>
-
 
             <!--  Pie de página  -->
             <Label

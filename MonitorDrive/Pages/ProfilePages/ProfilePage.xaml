@@ -69,31 +69,33 @@
                                 FontFamily="InterB24"
                                 HorizontalOptions="Center"
                                 Text="Stars"
-                                TextColor="#FFFFFF" />
+                                TextColor="{StaticResource CardBG}" />
                             <Label
                                 Grid.Row="1"
                                 FontFamily="InterR"
                                 HorizontalOptions="Center"
                                 Text="5"
-                                TextColor="#FFFFFF" />
+                                TextColor="{StaticResource CardBG}" />
                             <BoxView
                                 Grid.RowSpan="2"
                                 Grid.Column="1"
                                 Margin="10,0"
                                 HeightRequest="45"
                                 WidthRequest="2"
-                                Color="#FFFFFF" />
+                                Color="{StaticResource CardBG}" />
                             <Label
                                 Grid.Column="2"
                                 FontFamily="InterB24"
                                 HorizontalOptions="Center"
-                                Text="Goals" />
+                                Text="Goals"
+                                TextColor="{StaticResource CardBG}" />
                             <Label
                                 Grid.Row="1"
                                 Grid.Column="2"
                                 FontFamily="InterR"
                                 HorizontalOptions="Center"
-                                Text="37" />
+                                Text="37"
+                                TextColor="{StaticResource CardBG}" />
                         </Grid>
                     </Grid>
                 </Frame>
@@ -218,9 +220,9 @@
                                         Grid.Row="4"
                                         Grid.Column="1"
                                         Padding="5"
-                                        CornerRadius="20"
                                         BackgroundColor="{StaticResource Tertiary}"
                                         BorderColor="{StaticResource Tertiary}"
+                                        CornerRadius="20"
                                         WidthRequest="130">
                                         <Frame.GestureRecognizers>
                                             <TapGestureRecognizer Tapped="OnPhonesLabelTapped" />
@@ -256,9 +258,9 @@
                                         Grid.Row="7"
                                         Grid.Column="1"
                                         Padding="5"
-                                        CornerRadius="20"
                                         BackgroundColor="{StaticResource Tertiary}"
                                         BorderColor="{StaticResource Tertiary}"
+                                        CornerRadius="20"
                                         WidthRequest="75">
                                         <Frame.GestureRecognizers>
                                             <TapGestureRecognizer Tapped="OnCarsTapped" />
