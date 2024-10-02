@@ -9,7 +9,7 @@
 
     <Grid
         Margin="10"
-        BackgroundColor="{StaticResource CardBG}"
+        BackgroundColor="{StaticResource Gray90}"
         RowDefinitions=".2*,.7*,.2*">
         <!--  Titulo de la Pagina  -->
         <StackLayout>
@@ -51,9 +51,11 @@
                         <Entry
                             x:Name="MaintenanceValueEntry"
                             Margin="0"
+                            FontFamily="InterSB"
                             HeightRequest="60"
                             Placeholder="$ 00.00"
                             PlaceholderColor="{StaticResource FontOP}"
+                            TextColor="{StaticResource Primary}"
                             VerticalOptions="Center" />
                     </Frame>
                 </StackLayout>
@@ -83,9 +85,11 @@
                         <Entry
                             x:Name="MaintenanceMilesEntry"
                             Margin="0"
+                            FontFamily="InterSB"
                             HeightRequest="60"
-                            Placeholder="000.00"
+                            Placeholder="00000"
                             PlaceholderColor="{StaticResource FontOP}"
+                            TextColor="{StaticResource Primary}"
                             VerticalOptions="Center" />
                     </Frame>
                 </StackLayout>

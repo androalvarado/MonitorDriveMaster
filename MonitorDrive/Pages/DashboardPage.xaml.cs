@@ -44,19 +44,18 @@ public partial class DashboardPage : ContentPage
 
     private async void OnAddInfoButtonClicked(object sender, EventArgs e)
     {
-        AddInfoButton.IsVisible = false;
-        AddTripLoadingButton.IsVisible = true;
-
         // Animación de escala al tocar el botón
         await AddInfoButton.ScaleTo(0.9, 50, Easing.Linear);
         await AddInfoButton.ScaleTo(1, 50, Easing.Linear);
 
-        AddInfoButton.IsVisible = !AddInfoButton.IsVisible;
-        AddTripLoadingButton.IsVisible = !AddTripLoadingButton.IsVisible;
+        AddInfoButton.IsVisible = false;
+        AddTripLoadingButton.IsVisible = true;        
 
         await Navigation.PushAsync(new AddDayWorkInfoPage());
 
-        
+        AddInfoButton.IsVisible = !AddInfoButton.IsVisible;
+        AddTripLoadingButton.IsVisible = !AddTripLoadingButton.IsVisible;
+
     }
 
     private async void OnAddExpensiveButtonClicked(object sender, EventArgs e)

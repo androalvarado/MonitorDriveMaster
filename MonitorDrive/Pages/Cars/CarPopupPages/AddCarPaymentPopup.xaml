@@ -8,7 +8,7 @@
     CanBeDismissedByTappingOutsideOfPopup="False">
     <Grid
         Margin="10"
-        BackgroundColor="{StaticResource CardBG}"
+        BackgroundColor="{StaticResource Gray90}"
         RowDefinitions=".2*,.8*,.2*">
         <!--  Titulo de la Pagina  -->
         <StackLayout>
@@ -50,9 +50,11 @@
                         <Entry
                             x:Name="ExtraExpenseCostEntry"
                             Margin="0"
+                            FontFamily="InterSB"
                             HeightRequest="60"
                             Placeholder="$ 00.00"
                             PlaceholderColor="{StaticResource FontOP}"
+                            TextColor="{StaticResource Primary}"
                             VerticalOptions="Center" />
                     </Frame>
                 </StackLayout>
@@ -80,11 +82,13 @@
                         HasShadow="True"
                         HeightRequest="50">
                         <Entry
-                            x:Name="EstraExpenseMountTopayEntry"
+                            x:Name="EstraExpenseMountToPayEntry"
                             Margin="0"
+                            FontFamily="InterSB"
                             HeightRequest="60"
                             Placeholder="Time in week"
                             PlaceholderColor="{StaticResource FontOP}"
+                            TextColor="{StaticResource Primary}"
                             VerticalOptions="Center" />
                     </Frame>
                 </StackLayout>
@@ -101,7 +105,7 @@
                     <Label
                         Margin="0,0,0,-10"
                         FontFamily="InterB18"
-                        Text="Category"
+                        Text="Select Category"
                         TextColor="{StaticResource Tertiary}" />
                     <Frame
                         Margin="0,0,5,0"
@@ -111,13 +115,21 @@
                         CornerRadius="20"
                         HasShadow="True"
                         HeightRequest="50">
-                        <Entry
-                            x:Name="ExtraExpenseCategoryEntry"
-                            Margin="0"
-                            HeightRequest="60"
-                            Placeholder="Insert Category"
-                            PlaceholderColor="{StaticResource FontOP}"
-                            VerticalOptions="Center" />
+                        <Picker
+                            x:Name="pickerUnidades"
+                            Title="Paymnet Category"
+                            FontFamily="InterSB"
+                            SelectedIndexChanged="OnPaymnetCategoryPickerSelectedIndexChanged"
+                            TextColor="{StaticResource Primary}"
+                            TitleColor="{StaticResource FontOP}">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Rented</x:String>
+                                    <x:String>Purchase</x:String>
+                                    <x:String>Financed</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
                     </Frame>
                 </StackLayout>
             </Grid>

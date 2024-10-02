@@ -13,16 +13,16 @@ public partial class MonitorMasterPage : ContentPage
         InitializeComponent();
         Videos = new ObservableCollection<Video>
         {
-            new Video { Titulo = "Introducing Professional Master Monitor #1", Duracion = "3:45", Url = "https://www.youtube.com/embed/S6qDLtZPLb4" },
-            new Video { Titulo = "Introducing Professional Master Monitor #2", Duracion = "4:20", Url = "https://www.youtube.com/embed/_XT5ANgERLc" },
-            new Video { Titulo = "Introducing Professional Master Monitor #3", Duracion = "2:20", Url = "https://www.youtube.com/embed/_XT5ANgERLc" },
-            new Video { Titulo = "Introducing Professional Master Monitor #4", Duracion = "4:70", Url = "https://www.youtube.com/embed/ACmbdiyk2Ak" },
-            new Video { Titulo = "Introducing Professional Master Monitor #5", Duracion = "6:20", Url = "https://www.youtube.com/embed/S6qDLtZPLb4" },
-            new Video { Titulo = "Introducing Professional Master Monitor #6", Duracion = "6:20", Url = "https://www.youtube.com/embed/_XT5ANgERLc" },
-            new Video { Titulo = "Introducing Professional Master Monitor #7", Duracion = "6:20", Url = "https://www.youtube.com/embed/_XT5ANgERLc" },
-            new Video { Titulo = "Introducing Professional Master Monitor #8", Duracion = "6:20", Url = "https://www.youtube.com/embed/_XT5ANgERLc" },
-            new Video { Titulo = "Introducing Professional Master Monitor #9", Duracion = "6:20", Url = "https://www.youtube.com/embed/_XT5ANgERLc" },
-            new Video { Titulo = "Introducing Professional Master Monitor #10", Duracion = "6:20", Url = "https://www.youtube.com/embed/_XT5ANgERLc" }
+            new() { Titulo = "#1 Market and Industry", Duracion = "3:45", Url = "https://www.youtube.com/embed/S6qDLtZPLb4" },
+            new() { Titulo = "#2 Driver Qualities", Duracion = "4:20", Url = "https://www.youtube.com/embed/_XT5ANgERLc" },
+            new() { Titulo = "#3 Types of Vehicles", Duracion = "2:20", Url = "https://www.youtube.com/embed/_XT5ANgERLc" },
+            new() { Titulo = "#4 Prepare the vehicle", Duracion = "4:70", Url = "https://www.youtube.com/embed/ACmbdiyk2Ak" },
+            new() { Titulo = "#5 Driving Techniques", Duracion = "6:20", Url = "https://www.youtube.com/embed/S6qDLtZPLb4" },
+            new() { Titulo = "#6 The Passengers", Duracion = "6:20", Url = "https://www.youtube.com/embed/_XT5ANgERLc" },
+            new() { Titulo = "#7 Tips", Duracion = "6:20", Url = "https://www.youtube.com/embed/_XT5ANgERLc" },
+            new() { Titulo = "#8 Trip Selection", Duracion = "6:20", Url = "https://www.youtube.com/embed/_XT5ANgERLc" },
+            new() { Titulo = "#9 The Estrategy", Duracion = "6:20", Url = "https://www.youtube.com/embed/_XT5ANgERLc" },
+            new() { Titulo = "#10 Review Results", Duracion = "6:20", Url = "https://www.youtube.com/embed/_XT5ANgERLc" }
             // Agrega más videos aquí
         };
 

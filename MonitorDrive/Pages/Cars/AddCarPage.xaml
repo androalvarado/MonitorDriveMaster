@@ -44,8 +44,10 @@
                         StrokeShape="RoundRectangle 20">
                         <Picker
                             Title="Type of Vehicle"
+                            FontFamily="InterSB"
                             SelectedIndexChanged="CarPickerSelectedIndexChanged"
-                            TextColor="{StaticResource FontOP}">
+                            TextColor="{StaticResource Primary}"
+                            TitleColor="{StaticResource FontOP}">
                             <Picker.ItemsSource>
                                 <x:Array Type="{x:Type x:String}">
                                     <x:String>Gasoline</x:String>
@@ -74,9 +76,11 @@
                             <Entry
                                 x:Name="BrandEntry"
                                 Margin="0"
+                                FontFamily="InterSB"
                                 HeightRequest="60"
                                 Placeholder="Car Brand"
                                 PlaceholderColor="{StaticResource FontOP}"
+                                TextColor="{StaticResource Primary}"
                                 VerticalOptions="Center" />
                         </Frame>
                     </StackLayout>
@@ -99,9 +103,11 @@
                             <Entry
                                 x:Name="ModelEntry"
                                 Margin="0"
+                                FontFamily="InterSB"
                                 HeightRequest="60"
                                 Placeholder="Car Model"
                                 PlaceholderColor="{StaticResource FontOP}"
+                                TextColor="{StaticResource Primary}"
                                 VerticalOptions="Center" />
                         </Frame>
                     </StackLayout>
@@ -126,9 +132,11 @@
                                 <Entry
                                     x:Name="MilesEntry"
                                     Margin="0"
+                                    FontFamily="InterSB"
                                     HeightRequest="60"
                                     Placeholder="000000"
                                     PlaceholderColor="{StaticResource FontOP}"
+                                    TextColor="{StaticResource Primary}"
                                     VerticalOptions="Center" />
                             </Frame>
                         </StackLayout>
@@ -153,10 +161,12 @@
                                 HeightRequest="50">
                                 <Entry
                                     x:Name="PercentUsageEntry"
+                                    FontFamily="InterSB"
                                     HeightRequest="60"
                                     IsPassword="True"
                                     Placeholder="00%"
                                     PlaceholderColor="{StaticResource FontOP}"
+                                    TextColor="{StaticResource Primary}"
                                     VerticalOptions="Center" />
                             </Frame>
                         </StackLayout>
@@ -181,10 +191,12 @@
                                 HeightRequest="50">
                                 <Entry
                                     x:Name="InsurancePaymentEntry"
+                                    FontFamily="InterSB"
                                     HeightRequest="60"
                                     IsPassword="True"
                                     Placeholder="$0.00"
                                     PlaceholderColor="{StaticResource FontOP}"
+                                    TextColor="{StaticResource Primary}"
                                     VerticalOptions="Center" />
                             </Frame>
                         </StackLayout>
@@ -207,10 +219,12 @@
                                 HeightRequest="50">
                                 <Entry
                                     x:Name="MPGEntry"
+                                    FontFamily="InterSB"
                                     HeightRequest="60"
                                     IsPassword="True"
                                     Placeholder="00.00"
                                     PlaceholderColor="{StaticResource FontOP}"
+                                    TextColor="{StaticResource Primary}"
                                     VerticalOptions="Center" />
                             </Frame>
                         </StackLayout>

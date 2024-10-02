@@ -24,11 +24,11 @@
             HorizontalOptions="Start">
             <Label.FormattedText>
                 <FormattedString>
-                    <Span Text="if you’re new/" TextColor="{StaticResource FontOP}" />
+                    <Span Text="if you’re new/" TextColor="{StaticResource Primary}" />
                     <Span
                         FontFamily="InterSB"
                         Text=" Create New"
-                        TextColor="{StaticResource Primary}">
+                        TextColor="{StaticResource PrimaryDark}">
                         <Span.GestureRecognizers>
                             <TapGestureRecognizer Tapped="GoToRegister" />
                         </Span.GestureRecognizers>

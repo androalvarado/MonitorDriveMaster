@@ -38,7 +38,7 @@
                         <Label
                             Margin="0,0,0,-10"
                             FontFamily="InterB18"
-                            Text="Category"
+                            Text="Select Category"
                             TextColor="{StaticResource Tertiary}" />
                         <Frame
                             Margin="0,0,5,0"
@@ -49,9 +49,11 @@
                             HasShadow="True"
                             HeightRequest="50">
                             <Picker
-                                Title="Select a category"
+                                Title="Category"
+                                FontFamily="InterSB"
                                 SelectedIndexChanged="OnCategorySelected"
-                                TextColor="{StaticResource FontOP}">
+                                TextColor="{StaticResource Primary}"
+                                TitleColor="{StaticResource FontOP}">
                                 <Picker.Items>
                                     <x:String>Gasoline</x:String>
                                     <x:String>Charge</x:String>
@@ -87,9 +89,11 @@
                                 <Entry
                                     x:Name="GasolineGalonsEntry"
                                     Margin="0"
+                                    FontFamily="InterSB"
                                     HeightRequest="60"
                                     Placeholder="00.00"
                                     PlaceholderColor="{StaticResource FontOP}"
+                                    TextColor="{StaticResource Primary}"
                                     VerticalOptions="Center" />
                             </Frame>
                         </StackLayout>
@@ -113,10 +117,12 @@
                                 HeightRequest="50">
                                 <Entry
                                     x:Name="GasolineBillEntry"
+                                    FontFamily="InterSB"
                                     HeightRequest="60"
                                     IsPassword="True"
                                     Placeholder="$ 0.00"
                                     PlaceholderColor="{StaticResource FontOP}"
+                                    TextColor="{StaticResource Primary}"
                                     VerticalOptions="Center" />
                             </Frame>
                         </StackLayout>
@@ -147,9 +153,11 @@
                                 <Entry
                                     x:Name="ChargeBillEntry"
                                     Margin="0"
+                                    FontFamily="InterSB"
                                     HeightRequest="60"
                                     Placeholder="$ 00.00"
                                     PlaceholderColor="{StaticResource FontOP}"
+                                    TextColor="{StaticResource Primary}"
                                     VerticalOptions="Center" />
                             </Frame>
                         </StackLayout>
@@ -173,10 +181,12 @@
                                 HeightRequest="50">
                                 <Entry
                                     x:Name="ChargeTimeEntry"
+                                    FontFamily="InterSB"
                                     HeightRequest="60"
                                     IsPassword="True"
                                     Placeholder="00:00:00"
                                     PlaceholderColor="{StaticResource FontOP}"
+                                    TextColor="{StaticResource Primary}"
                                     VerticalOptions="Center" />
                             </Frame>
                         </StackLayout>
@@ -205,10 +215,12 @@
                                 HeightRequest="50">
                                 <Entry
                                     x:Name="GroceryValueEntry"
+                                    FontFamily="InterSB"
                                     HeightRequest="60"
                                     IsPassword="True"
                                     Placeholder="$ 0.00"
                                     PlaceholderColor="{StaticResource FontOP}"
+                                    TextColor="{StaticResource Primary}"
                                     VerticalOptions="Center" />
                             </Frame>
                         </StackLayout>
@@ -231,9 +243,11 @@
                                 <Entry
                                     x:Name="GroceryWeekToPayEntry"
                                     Margin="0"
+                                    FontFamily="InterSB"
                                     HeightRequest="60"
                                     Placeholder="00"
                                     PlaceholderColor="{StaticResource FontOP}"
+                                    TextColor="{StaticResource Primary}"
                                     VerticalOptions="Center" />
                             </Frame>
                         </StackLayout>
@@ -264,10 +278,12 @@
                                 HeightRequest="50">
                                 <Entry
                                     x:Name="ExtraExpenseValueEntry"
+                                    FontFamily="InterSB"
                                     HeightRequest="60"
                                     IsPassword="True"
                                     Placeholder="$ 0.00"
                                     PlaceholderColor="{StaticResource FontOP}"
+                                    TextColor="{StaticResource Primary}"
                                     VerticalOptions="Center" />
                             </Frame>
                         </StackLayout>
@@ -290,9 +306,11 @@
                                 <Entry
                                     x:Name="ExtraExpenseWeekToPayEntry"
                                     Margin="0"
+                                    FontFamily="InterSB"
                                     HeightRequest="60"
                                     Placeholder="00"
                                     PlaceholderColor="{StaticResource FontOP}"
+                                    TextColor="{StaticResource Primary}"
                                     VerticalOptions="Center" />
                             </Frame>
                         </StackLayout>
@@ -318,9 +336,11 @@
                                 <Entry
                                     x:Name="ExtraExpenseCategoryEntry"
                                     Margin="0"
+                                    FontFamily="InterSB"
                                     HeightRequest="60"
                                     Placeholder="New Extra Expense Category"
                                     PlaceholderColor="{StaticResource FontOP}"
+                                    TextColor="{StaticResource Primary}"
                                     VerticalOptions="Center" />
                             </Frame>
                         </StackLayout>

@@ -135,9 +135,11 @@
                             <Picker
                                 x:Name="carPicker"
                                 Title="Select a Car"
+                                FontFamily="InterSB"
                                 HeightRequest="50"
                                 SelectedIndexChanged="OnPickerSelectedIndexChanged"
-                                TextColor="{StaticResource Tertiary}">
+                                TextColor="{StaticResource Primary}"
+                                TitleColor="{StaticResource FontOP}">
                                 <Picker.ItemsSource>
                                     <x:Array Type="{x:Type x:String}">
                                         <x:String>Auto 1</x:String>
@@ -160,9 +162,11 @@
                             StrokeShape="RoundRectangle 40">
                             <Entry
                                 x:Name="MilesStartedEntry"
+                                FontFamily="InterSB"
                                 HeightRequest="50"
                                 Keyboard="Numeric"
                                 Placeholder="000000.00"
+                                PlaceholderColor="{StaticResource FontOP}"
                                 TextColor="{StaticResource Primary}" />
                         </Border>
                     </VerticalStackLayout>
@@ -197,9 +201,11 @@
                             StrokeShape="RoundRectangle 40">
                             <Entry
                                 x:Name="MilesFinishedEntry"
+                                FontFamily="InterSB"
                                 HeightRequest="50"
                                 Keyboard="Numeric"
-                                Placeholder="000000.00"
+                                Placeholder="00000000"
+                                PlaceholderColor="{StaticResource FontOP}"
                                 TextColor="{StaticResource Primary}" />
                         </Border>
                     </VerticalStackLayout>
@@ -234,9 +240,11 @@
                             StrokeShape="RoundRectangle 40">
                             <Entry
                                 x:Name="totalEarnedEntry"
+                                FontFamily="InterSB"
                                 HeightRequest="50"
                                 Keyboard="Numeric"
                                 Placeholder="$ 00.00"
+                                PlaceholderColor="{StaticResource FontOP}"
                                 TextColor="{StaticResource Primary}" />
                         </Border>
                     </VerticalStackLayout>
@@ -251,9 +259,11 @@
                             StrokeShape="RoundRectangle 40">
                             <Entry
                                 x:Name="totalTipsEntry"
+                                FontFamily="InterSB"
                                 HeightRequest="50"
                                 Keyboard="Numeric"
                                 Placeholder="$ 00.00"
+                                PlaceholderColor="{StaticResource FontOP}"
                                 TextColor="{StaticResource Primary}" />
                         </Border>
                     </VerticalStackLayout>
@@ -270,9 +280,11 @@
                             StrokeShape="RoundRectangle 40">
                             <Entry
                                 x:Name="cantidadViajesEntry"
+                                FontFamily="InterSB"
                                 HeightRequest="50"
                                 Keyboard="Numeric"
                                 Placeholder="Travels completed"
+                                PlaceholderColor="{StaticResource FontOP}"
                                 TextColor="{StaticResource Primary}" />
                         </Border>
                     </VerticalStackLayout>

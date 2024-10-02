@@ -29,7 +29,7 @@
                 <Label
                     Margin="0,0,0,-15"
                     FontFamily="InterB18"
-                    Text="Country"
+                    Text="Select Country"
                     TextColor="{StaticResource Tertiary}" />
                 <Frame
                     Padding="10,0,0,0"
@@ -39,10 +39,11 @@
                     HasShadow="True">
                     <Picker
                         x:Name="pickerPaises"
-                        Title="Select your Country"
+                        Title="Country"
                         FontFamily="InterSB"
-                        SelectedIndexChanged="OnPickerSelectedIndexChanged"
-                        TextColor="{StaticResource FontOP}" />
+                        SelectedIndexChanged="OnCountryPickerSelectedIndexChanged"
+                        TextColor="{StaticResource Primary}"
+                        TitleColor="{StaticResource FontOP}" />
                 </Frame>
 
                 <!--  Language y Currency Entry  -->
@@ -64,16 +65,13 @@
                         BorderColor="{StaticResource Tertiary}"
                         CornerRadius="20"
                         HasShadow="True">
-                        <Entry
-                            x:Name="LanguajeEntry"
-                            Margin="0"
+                        <Picker
+                            x:Name="pickerIdiomas"
+                            Title="ENG"
                             FontFamily="InterSB"
-                            HeightRequest="50"
-                            Placeholder="ENG"
-                            PlaceholderColor="{StaticResource FontOP}"
-                            Text="{Binding Email}"
-                            TextColor="{StaticResource Gray400}"
-                            VerticalOptions="Center" />
+                            SelectedIndexChanged="OnPickerLanguageSelectedIndexChanged"
+                            TextColor="{StaticResource Primary}"
+                            TitleColor="{StaticResource FontOP}" />
                     </Frame>
 
                     <!--  Currency Entry  -->
@@ -91,16 +89,13 @@
                         BorderColor="{StaticResource Tertiary}"
                         CornerRadius="20"
                         HasShadow="True">
-                        <Entry
-                            x:Name="CurrencyEntry"
-                            Margin="0"
+                        <Picker
+                            x:Name="pickerMonedas"
+                            Title="USD"
                             FontFamily="InterSB"
-                            HeightRequest="50"
-                            Placeholder="USD"
-                            PlaceholderColor="{StaticResource FontOP}"
-                            Text="{Binding PhoneNumber}"
-                            TextColor="{StaticResource Gray400}"
-                            VerticalOptions="Center" />
+                            SelectedIndexChanged="OnPickerCurrencySelectedIndexChanged"
+                            TextColor="{StaticResource Primary}"
+                            TitleColor="{StaticResource FontOP}" />
                     </Frame>
                 </Grid>
 
@@ -122,16 +117,20 @@
                         BorderColor="{StaticResource Tertiary}"
                         CornerRadius="20"
                         HasShadow="True">
-                        <Entry
-                            x:Name="MilesOrKmEntry"
-                            Margin="0"
+                        <Picker
+                            x:Name="pickerUnidades"
+                            Title="Miles"
                             FontFamily="InterSB"
-                            HeightRequest="50"
-                            Placeholder="Miles"
-                            PlaceholderColor="{StaticResource FontOP}"
-                            Text="{Binding Email}"
-                            TextColor="{StaticResource Gray400}"
-                            VerticalOptions="Center" />
+                            SelectedIndexChanged="OnMilesPickerSelectedIndexChanged"
+                            TextColor="{StaticResource Primary}"
+                            TitleColor="{StaticResource FontOP}">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Miles</x:String>
+                                    <x:String>Kilometers</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
                     </Frame>
 
                     <!--  Gallons o Liters Entry  -->
@@ -149,16 +148,20 @@
                         BorderColor="{StaticResource Tertiary}"
                         CornerRadius="20"
                         HasShadow="True">
-                        <Entry
-                            x:Name="GallonsOrLitersEntry"
-                            Margin="0"
+                        <Picker
+                            x:Name="pickerCapacity"
+                            Title="Gallons"
                             FontFamily="InterSB"
-                            HeightRequest="50"
-                            Placeholder="Gallons"
-                            PlaceholderColor="{StaticResource FontOP}"
-                            Text="{Binding PhoneNumber}"
-                            TextColor="{StaticResource Gray400}"
-                            VerticalOptions="Center" />
+                            SelectedIndexChanged="OnGallonsPickerSelectedIndexChanged"
+                            TextColor="{StaticResource Primary}"
+                            TitleColor="{StaticResource FontOP}">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Gallons</x:String>
+                                    <x:String>Liters</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
                     </Frame>
                 </Grid>
                 <BoxView BackgroundColor="{StaticResource FontOP}" HeightRequest="2" />
@@ -183,7 +186,7 @@
                         Placeholder="Goals"
                         PlaceholderColor="{StaticResource FontOP}"
                         Text="{Binding FullName}"
-                        TextColor="{StaticResource Gray400}"
+                        TextColor="{StaticResource Primary}"
                         VerticalOptions="Center" />
                 </Frame>
             </StackLayout>

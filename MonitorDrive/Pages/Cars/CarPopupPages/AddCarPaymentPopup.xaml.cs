@@ -18,4 +18,10 @@ public partial class AddCarPaymentPopup : Popup
     {
         Close();
     }
+
+    private void OnPaymnetCategoryPickerSelectedIndexChanged(object sender, EventArgs e)
+    {
+        var picker = (Picker)sender;
+        _ = picker.SelectedItem.ToString();
+    }
 }

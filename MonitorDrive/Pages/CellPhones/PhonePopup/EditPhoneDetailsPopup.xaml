@@ -9,7 +9,7 @@
 
     <Grid
         Margin="10"
-        BackgroundColor="{StaticResource CardBG}"
+        BackgroundColor="{StaticResource Gray90}"
         RowDefinitions=".1*,.7*,.1*">
         <!--  Titulo de la Pagina  -->
         <StackLayout>
@@ -53,9 +53,11 @@
                         <Entry
                             x:Name="PhoneModelEntry"
                             Margin="0"
+                            FontFamily="InterSB"
                             HeightRequest="60"
                             Placeholder="Phone Model"
                             PlaceholderColor="{StaticResource FontOP}"
+                            TextColor="{StaticResource Primary}"
                             VerticalOptions="Center" />
                     </Frame>
                 </StackLayout>
@@ -86,9 +88,11 @@
                         <Entry
                             x:Name="PhoneValueEntry"
                             Margin="0"
+                            FontFamily="InterSB"
                             HeightRequest="60"
                             Placeholder="Phone Value"
                             PlaceholderColor="{StaticResource FontOP}"
+                            TextColor="{StaticResource Primary}"
                             VerticalOptions="Center" />
                     </Frame>
                 </StackLayout>
@@ -119,9 +123,11 @@
                         <Entry
                             x:Name="PhoneLineBillEntry"
                             Margin="0"
+                            FontFamily="InterSB"
                             HeightRequest="60"
                             Placeholder="Line Bill"
                             PlaceholderColor="{StaticResource FontOP}"
+                            TextColor="{StaticResource Primary}"
                             VerticalOptions="Center" />
                     </Frame>
                 </StackLayout>
@@ -152,9 +158,11 @@
                         <Entry
                             x:Name="PhonePercentOfUseEntry"
                             Margin="0"
+                            FontFamily="InterSB"
                             HeightRequest="60"
                             Placeholder="Percent of Use"
                             PlaceholderColor="{StaticResource FontOP}"
+                            TextColor="{StaticResource Primary}"
                             VerticalOptions="Center" />
                     </Frame>
                 </StackLayout>
