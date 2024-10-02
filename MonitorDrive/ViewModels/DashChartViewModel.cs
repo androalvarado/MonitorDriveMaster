@@ -48,15 +48,21 @@ namespace MonitorDrive.ViewModels;
 
     public Axis[] YAxes { get; set; } =
     {
-            new Axis { MinLimit = 0, MaxLimit = 100 }
+            new Axis { 
+                MinLimit = 0, 
+                MaxLimit = 100,
+                TextSize = 10,}
     };
 
     public Axis[] XAxes { get; set; } =
     {
-            new Axis {Name = "weeks",
+            new Axis {
+                Name = "weeks",
+                NameTextSize = 15,
                 MinLimit = -0.5,
                 MaxLimit = 7,
-            Labels = ["-6", "-5", "-4", "-3","-2","-1","0"] }            
+                TextSize = 10,
+                Labels = ["-6", "-5", "-4", "-3","-2","-1","0"] }            
     };
 }
 
