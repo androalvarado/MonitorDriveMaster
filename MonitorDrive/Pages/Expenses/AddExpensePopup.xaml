@@ -65,44 +65,16 @@
                     </StackLayout>
 
                     <!--  Gasoline Formulario  -->
-                    <!--  Gallons and Bill Entry  -->
+                    <!--  Bill Entry  -->
                     <Grid
                         x:Name="GasolineGrid"
                         ColumnDefinitions="*,*"
                         ColumnSpacing="20"
-                        IsVisible="False"
-                        RowSpacing="20">
-                        <!--  Miles Entry  -->
-                        <StackLayout Spacing="10">
-                            <Label
-                                Margin="0,0,0,-10"
-                                FontFamily="InterB18"
-                                Text="Gallons"
-                                TextColor="{StaticResource Tertiary}" />
-                            <Frame
-                                Padding="10,0,0,0"
-                                BackgroundColor="Transparent"
-                                BorderColor="{StaticResource Tertiary}"
-                                CornerRadius="20"
-                                HasShadow="True"
-                                HeightRequest="50">
-                                <Entry
-                                    x:Name="GasolineGalonsEntry"
-                                    Margin="0"
-                                    FontFamily="InterSB"
-                                    HeightRequest="60"
-                                    Placeholder="00.00"
-                                    PlaceholderColor="{StaticResource FontOP}"
-                                    TextColor="{StaticResource Primary}"
-                                    VerticalOptions="Center" />
-                            </Frame>
-                        </StackLayout>
+                        IsVisible="False">
 
-                        <!--  Maintenance Value Entry  -->
-                        <StackLayout
-                            Grid.Column="1"
-                            Margin="0,0,5,0"
-                            Spacing="10">
+                        <!--  Gasoline Bill Entry  -->
+
+                        <StackLayout Margin="0,0,5,0" Spacing="10">
                             <Label
                                 Margin="0,0,0,-10"
                                 FontFamily="InterB18"
@@ -120,6 +92,7 @@
                                     FontFamily="InterSB"
                                     HeightRequest="60"
                                     IsPassword="True"
+                                    Keyboard="Numeric"
                                     Placeholder="$ 0.00"
                                     PlaceholderColor="{StaticResource FontOP}"
                                     TextColor="{StaticResource Primary}"
@@ -161,35 +134,6 @@
                                     VerticalOptions="Center" />
                             </Frame>
                         </StackLayout>
-
-                        <!--  Maintenance Time Entry  -->
-                        <StackLayout
-                            Grid.Column="1"
-                            Margin="0,0,5,0"
-                            Spacing="10">
-                            <Label
-                                Margin="0,0,0,-10"
-                                FontFamily="InterB18"
-                                Text="Time"
-                                TextColor="{StaticResource Tertiary}" />
-                            <Frame
-                                Padding="10,0,0,0"
-                                BackgroundColor="Transparent"
-                                BorderColor="{StaticResource Tertiary}"
-                                CornerRadius="20"
-                                HasShadow="True"
-                                HeightRequest="50">
-                                <Entry
-                                    x:Name="ChargeTimeEntry"
-                                    FontFamily="InterSB"
-                                    HeightRequest="60"
-                                    IsPassword="True"
-                                    Placeholder="00:00:00"
-                                    PlaceholderColor="{StaticResource FontOP}"
-                                    TextColor="{StaticResource Primary}"
-                                    VerticalOptions="Center" />
-                            </Frame>
-                        </StackLayout>
                     </Grid>
 
                     <!--  Grocery Formulario  -->
@@ -204,7 +148,7 @@
                             <Label
                                 Margin="0,0,0,-10"
                                 FontFamily="InterB18"
-                                Text="Cost"
+                                Text="Value"
                                 TextColor="{StaticResource Tertiary}" />
                             <Frame
                                 Padding="10,0,0,0"
@@ -214,6 +158,7 @@
                                 HasShadow="True"
                                 HeightRequest="50">
                                 <Entry
+                                    Keyboard="Numeric"
                                     x:Name="GroceryValueEntry"
                                     FontFamily="InterSB"
                                     HeightRequest="60"
@@ -267,7 +212,7 @@
                             <Label
                                 Margin="0,0,0,-10"
                                 FontFamily="InterB18"
-                                Text="Cost"
+                                Text="Value"
                                 TextColor="{StaticResource Tertiary}" />
                             <Frame
                                 Padding="10,0,0,0"

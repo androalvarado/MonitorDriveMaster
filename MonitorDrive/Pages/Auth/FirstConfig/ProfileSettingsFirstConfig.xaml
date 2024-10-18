@@ -183,6 +183,7 @@
                         Margin="0"
                         FontFamily="InterSB"
                         HeightRequest="50"
+                        Keyboard="Numeric"
                         Placeholder="Goals"
                         PlaceholderColor="{StaticResource FontOP}"
                         Text="{Binding FullName}"

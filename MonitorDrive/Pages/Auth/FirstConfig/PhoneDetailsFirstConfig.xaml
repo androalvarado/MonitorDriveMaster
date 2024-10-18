@@ -59,7 +59,7 @@
                     <Label
                         Margin="0,0,0,5"
                         FontFamily="InterB18"
-                        Text="Phone Cost"
+                        Text="Phone Value"
                         TextColor="{StaticResource Tertiary}" />
                     <Frame
                         Grid.Row="1"
@@ -73,6 +73,7 @@
                             Margin="0"
                             FontFamily="InterSB"
                             HeightRequest="50"
+                            Keyboard="Numeric"
                             Placeholder="$ 0.00"
                             PlaceholderColor="{StaticResource FontOP}"
                             Text="{Binding Email}"
@@ -100,6 +101,7 @@
                             Margin="0"
                             FontFamily="InterSB"
                             HeightRequest="50"
+                            Keyboard="Numeric"
                             Placeholder="$ 0.00"
                             PlaceholderColor="{StaticResource FontOP}"
                             Text="{Binding PhoneNumber}"
@@ -125,6 +127,7 @@
                         Margin="0"
                         FontFamily="InterSB"
                         HeightRequest="50"
+                        Keyboard="Numeric"
                         Placeholder="00%"
                         PlaceholderColor="{StaticResource FontOP}"
                         Text="{Binding FullName}"

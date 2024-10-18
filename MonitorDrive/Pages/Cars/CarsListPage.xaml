@@ -20,7 +20,7 @@
                 FontFamily="InterB24"
                 FontSize="30"
                 HorizontalOptions="Center"
-                Text="Your Vehicles List"
+                Text="Vehicles"
                 TextColor="{StaticResource Tertiary}"
                 VerticalOptions="Center" />
         </StackLayout>

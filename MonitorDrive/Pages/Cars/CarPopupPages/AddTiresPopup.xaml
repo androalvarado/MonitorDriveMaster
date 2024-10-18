@@ -38,7 +38,7 @@
                     <Label
                         Margin="0,0,0,-10"
                         FontFamily="InterB18"
-                        Text="Cost"
+                        Text="Value"
                         TextColor="{StaticResource Tertiary}" />
                     <Frame
                         Margin="0,0,5,0"
@@ -53,6 +53,7 @@
                             Margin="0"
                             FontFamily="InterSB"
                             HeightRequest="60"
+                            Keyboard="Numeric"
                             Placeholder="$ 00.00"
                             PlaceholderColor="{StaticResource FontOP}"
                             TextColor="{StaticResource Primary}"
@@ -72,7 +73,7 @@
                     <Label
                         Margin="0,0,0,-10"
                         FontFamily="InterB18"
-                        Text="Miles"
+                        Text="Assembly Value"
                         TextColor="{StaticResource Tertiary}" />
                     <Frame
                         Margin="0,0,5,0"
@@ -83,11 +84,12 @@
                         HasShadow="True"
                         HeightRequest="50">
                         <Entry
-                            x:Name="TiresMilesEntry"
+                            x:Name="TiresAssemblyCostEntry"
                             Margin="0"
                             FontFamily="InterSB"
                             HeightRequest="60"
-                            Placeholder="000.00"
+                            Keyboard="Numeric"
+                            Placeholder="$ 00.00"
                             PlaceholderColor="{StaticResource FontOP}"
                             TextColor="{StaticResource Primary}"
                             VerticalOptions="Center" />
@@ -106,7 +108,7 @@
                     <Label
                         Margin="0,0,0,-10"
                         FontFamily="InterB18"
-                        Text="Assembly Cost"
+                        Text="Duration"
                         TextColor="{StaticResource Tertiary}" />
                     <Frame
                         Margin="0,0,5,0"
@@ -117,11 +119,12 @@
                         HasShadow="True"
                         HeightRequest="50">
                         <Entry
-                            x:Name="TiresAssemblyCostEntry"
+                            x:Name="TiresDurationEntry"
                             Margin="0"
                             FontFamily="InterSB"
                             HeightRequest="60"
-                            Placeholder="$ 00.00"
+                            Keyboard="Numeric"
+                            Placeholder="000.00"
                             PlaceholderColor="{StaticResource FontOP}"
                             TextColor="{StaticResource Primary}"
                             VerticalOptions="Center" />

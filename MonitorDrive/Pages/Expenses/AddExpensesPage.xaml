@@ -192,7 +192,7 @@
                             <Label
                                 Margin="0,0,0,-10"
                                 FontFamily="InterB18"
-                                Text="Cost"
+                                Text="Value"
                                 TextColor="{StaticResource Tertiary}" />
                             <Frame
                                 Padding="10,0,0,0"
@@ -251,7 +251,7 @@
                             <Label
                                 Margin="0,0,0,-10"
                                 FontFamily="InterB18"
-                                Text="Cost"
+                                Text="Value"
                                 TextColor="{StaticResource Tertiary}" />
                             <Frame
                                 Padding="10,0,0,0"

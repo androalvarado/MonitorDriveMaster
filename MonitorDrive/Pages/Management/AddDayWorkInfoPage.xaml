@@ -251,7 +251,7 @@
                     <VerticalStackLayout Grid.Row="3" Grid.Column="1">
                         <Label
                             FontFamily="InterSB"
-                            Text="Total Tips"
+                            Text="Happy Customers"
                             TextColor="{StaticResource Tertiary}" />
                         <Border
                             Padding="10,0,0,0"
@@ -272,7 +272,7 @@
                     <VerticalStackLayout Grid.Row="4" Grid.ColumnSpan="2">
                         <Label
                             FontFamily="InterSB"
-                            Text="Total of Travels"
+                            Text="Total of Trips"
                             TextColor="{StaticResource Tertiary}" />
                         <Border
                             Padding="10,0,0,0"
@@ -895,7 +895,7 @@
                         <Label
                             FontFamily="InterSB"
                             FontSize="16"
-                            Text="Total Tips:"
+                            Text="Gratuity:"
                             TextColor="{StaticResource Tertiary}" />
                         <Label
                             Grid.Column="1"
@@ -919,7 +919,7 @@
                         <Label
                             FontFamily="InterSB"
                             FontSize="16"
-                            Text="Total Travels:"
+                            Text="Total Trips:"
                             TextColor="{StaticResource Tertiary}" />
                         <Label
                             Grid.Column="1"

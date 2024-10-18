@@ -76,7 +76,7 @@
             HasShadow="True"
             HeightRequest="320"
             IsVisible="True">
-            <Grid RowDefinitions=".15*,.1*,.1*,.1*,.1*,.1*,.4*">
+            <Grid RowDefinitions=".15*,.1*,.1*,.1*,.4*">
                 <Grid
                     Margin="20,0,0,0"
                     ColumnDefinitions=".5*,.4*, .33*"
@@ -125,13 +125,13 @@
                     <Label
                         FontFamily="InterSB"
                         FontSize="16"
-                        Text="MPG"
+                        Text="Usage (%)"
                         TextColor="{StaticResource Tertiary}" />
                     <Label
                         Grid.Column="1"
                         FontFamily="InterSB"
                         FontSize="16"
-                        Text="{Binding Mpg}"
+                        Text="{Binding UsagePercentage}"
                         TextColor="{StaticResource Gray400}" />
                 </Grid>
 
@@ -145,53 +145,28 @@
 
                 <Grid
                     Grid.Row="4"
-                    Margin="20,0,0,0"
-                    ColumnDefinitions=".4*,.4*">
-                    <Label
-                        FontFamily="InterSB"
-                        FontSize="16"
-                        Text="Usage (%)"
-                        TextColor="{StaticResource Tertiary}" />
-                    <Label
-                        Grid.Column="1"
-                        FontFamily="InterSB"
-                        FontSize="16"
-                        Text="{Binding UsagePercentage}"
-                        TextColor="{StaticResource Gray400}" />
-                </Grid>
-
-                <BoxView
-                    Grid.Row="5"
-                    HeightRequest="1"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    WidthRequest="350"
-                    Color="{StaticResource FontOP}" />
-
-                <Grid
-                    Grid.Row="6"
                     Margin="10,10,10,10"
                     ColumnDefinitions=".7*,.7*"
-                    ColumnSpacing="20"
+                    ColumnSpacing="30"
                     RowDefinitions="*,*"
-                    RowSpacing="20">
+                    RowSpacing="30">
                     <Border
                         Grid.ColumnSpan="2"
-                        HeightRequest="40"
+                        HeightRequest="50"
                         HorizontalOptions="Center"
                         StrokeShape="RoundRectangle 20"
-                        WidthRequest="120">
+                        WidthRequest="150">
                         <Button
                             BackgroundColor="{StaticResource Tertiary}"
                             Clicked="OnMaintenancesButtonClicked"
                             FontFamily="InterB24"
-                            FontSize="12"
+                            FontSize="16"
                             Text="Maintenance"
                             TextColor="White" />
                     </Border>
                     <Border
                         Grid.Row="1"
-                        HeightRequest="40"
+                        HeightRequest="50"
                         HorizontalOptions="End"
                         StrokeShape="RoundRectangle 20"
                         WidthRequest="100">
@@ -199,14 +174,14 @@
                             BackgroundColor="{StaticResource Tertiary}"
                             Clicked="OnExtraDetailsCliked"
                             FontFamily="InterB24"
-                            FontSize="12"
+                            FontSize="16"
                             Text="Extra"
                             TextColor="White" />
                     </Border>
                     <Border
                         Grid.Row="1"
                         Grid.Column="1"
-                        HeightRequest="40"
+                        HeightRequest="50"
                         HorizontalOptions="Start"
                         StrokeShape="RoundRectangle 20"
                         WidthRequest="100">
@@ -214,7 +189,7 @@
                             BackgroundColor="{StaticResource Tertiary}"
                             Clicked="OnTiresDetailsCliked"
                             FontFamily="InterB24"
-                            FontSize="12"
+                            FontSize="16"
                             Text="Tires"
                             TextColor="White" />
                     </Border>

@@ -159,20 +159,17 @@
                 WidthRequest="350">
                 <HorizontalStackLayout
                     Grid.Column="1"
-                    Margin="20,0,0,0"
                     HeightRequest="60"
                     HorizontalOptions="Center"
-                    Spacing="60"
+                    Spacing="50"
                     VerticalOptions="Center">
-                    <Border
-                        HeightRequest="40"
-                        StrokeShape="RoundRectangle 80"
-                        WidthRequest="40">
-                        <Image
-                            HorizontalOptions="Start"
-                            Source="https://picsum.photos/200/200?random=1"
-                            VerticalOptions="Center" />
-                    </Border>
+                    <Label
+                        FontFamily="InterR"
+                        FontSize="18"
+                        HorizontalTextAlignment="Center"
+                        Text="Average"
+                        TextColor="{StaticResource Gray500}"
+                        VerticalTextAlignment="Center" />
                     <Label
                         x:Name="labelIndicator"
                         Grid.Column="2"
@@ -278,7 +275,7 @@
                                             Size=22,
                                             Color=White}"
                     IsVisible="True"
-                    Text=" Add Trip"
+                    Text="Journal"
                     TextColor="White"
                     WidthRequest="150">
                     <Button.Shadow>

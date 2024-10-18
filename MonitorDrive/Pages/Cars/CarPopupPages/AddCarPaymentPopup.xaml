@@ -33,75 +33,8 @@
             HeightRequest="350"
             VerticalOptions="Start">
             <Grid RowDefinitions=".3*,.1*,.3*, .1*, .3*" RowSpacing="10">
+
                 <StackLayout Spacing="10">
-                    <Label
-                        Margin="0,0,0,-10"
-                        FontFamily="InterB18"
-                        Text="Cost"
-                        TextColor="{StaticResource Tertiary}" />
-                    <Frame
-                        Margin="0,0,5,0"
-                        Padding="10,0,0,0"
-                        BackgroundColor="Transparent"
-                        BorderColor="{StaticResource Tertiary}"
-                        CornerRadius="20"
-                        HasShadow="True"
-                        HeightRequest="50">
-                        <Entry
-                            x:Name="ExtraExpenseCostEntry"
-                            Margin="0"
-                            FontFamily="InterSB"
-                            HeightRequest="60"
-                            Placeholder="$ 00.00"
-                            PlaceholderColor="{StaticResource FontOP}"
-                            TextColor="{StaticResource Primary}"
-                            VerticalOptions="Center" />
-                    </Frame>
-                </StackLayout>
-
-                <BoxView
-                    Grid.Row="1"
-                    HeightRequest="1"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    WidthRequest="350"
-                    Color="{StaticResource FontOP}" />
-
-                <StackLayout Grid.Row="2" Spacing="10">
-                    <Label
-                        Margin="0,0,0,-10"
-                        FontFamily="InterB18"
-                        Text="Mount to Pay"
-                        TextColor="{StaticResource Tertiary}" />
-                    <Frame
-                        Margin="0,0,5,0"
-                        Padding="10,0,0,0"
-                        BackgroundColor="Transparent"
-                        BorderColor="{StaticResource Tertiary}"
-                        CornerRadius="20"
-                        HasShadow="True"
-                        HeightRequest="50">
-                        <Entry
-                            x:Name="EstraExpenseMountToPayEntry"
-                            Margin="0"
-                            FontFamily="InterSB"
-                            HeightRequest="60"
-                            Placeholder="Time in week"
-                            PlaceholderColor="{StaticResource FontOP}"
-                            TextColor="{StaticResource Primary}"
-                            VerticalOptions="Center" />
-                    </Frame>
-                </StackLayout>
-
-                <BoxView
-                    Grid.Row="3"
-                    HeightRequest="1"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    WidthRequest="350"
-                    Color="{StaticResource FontOP}" />
-
-                <StackLayout Grid.Row="4" Spacing="10">
                     <Label
                         Margin="0,0,0,-10"
                         FontFamily="InterB18"
@@ -130,6 +63,77 @@
                                 </x:Array>
                             </Picker.ItemsSource>
                         </Picker>
+                    </Frame>
+                </StackLayout>
+
+                <BoxView
+                    Grid.Row="1"
+                    HeightRequest="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    Color="{StaticResource FontOP}" />
+
+
+                <StackLayout Grid.Row="2" Spacing="10">
+                    <Label
+                        Margin="0,0,0,-10"
+                        FontFamily="InterB18"
+                        Text="Value"
+                        TextColor="{StaticResource Tertiary}" />
+                    <Frame
+                        Margin="0,0,5,0"
+                        Padding="10,0,0,0"
+                        BackgroundColor="Transparent"
+                        BorderColor="{StaticResource Tertiary}"
+                        CornerRadius="20"
+                        HasShadow="True"
+                        HeightRequest="50">
+                        <Entry
+                            x:Name="ExtraExpenseCostEntry"
+                            Margin="0"
+                            FontFamily="InterSB"
+                            HeightRequest="60"
+                            Keyboard="Numeric"
+                            Placeholder="$ 00.00"
+                            PlaceholderColor="{StaticResource FontOP}"
+                            TextColor="{StaticResource Primary}"
+                            VerticalOptions="Center" />
+                    </Frame>
+                </StackLayout>
+
+                <BoxView
+                    Grid.Row="3"
+                    HeightRequest="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="350"
+                    Color="{StaticResource FontOP}" />
+
+                <StackLayout Grid.Row="4" Spacing="10">
+                    <Label
+                        Margin="0,0,0,-10"
+                        FontFamily="InterB18"
+                        Text="Mount to Pay"
+                        TextColor="{StaticResource Tertiary}" />
+                    <Frame
+                        Margin="0,0,5,0"
+                        Padding="10,0,0,0"
+                        BackgroundColor="Transparent"
+                        BorderColor="{StaticResource Tertiary}"
+                        CornerRadius="20"
+                        HasShadow="True"
+                        HeightRequest="50">
+                        <Entry
+                            x:Name="EstraExpenseMountToPayEntry"
+                            Margin="0"
+                            FontFamily="InterSB"
+                            HeightRequest="60"
+                            Keyboard="Numeric"
+                            Placeholder="Time in week"
+                            PlaceholderColor="{StaticResource FontOP}"
+                            TextColor="{StaticResource Primary}"
+                            VerticalOptions="Center" />
                     </Frame>
                 </StackLayout>
             </Grid>

@@ -50,7 +50,7 @@
                             TitleColor="{StaticResource FontOP}">
                             <Picker.ItemsSource>
                                 <x:Array Type="{x:Type x:String}">
-                                    <x:String>Gasoline</x:String>
+                                    <x:String>Combustion</x:String>
                                     <x:String>Electric</x:String>
                                     <x:String>Hybrid</x:String>
                                 </x:Array>
@@ -134,6 +134,7 @@
                                     Margin="0"
                                     FontFamily="InterSB"
                                     HeightRequest="60"
+                                    Keyboard="Numeric"
                                     Placeholder="000000"
                                     PlaceholderColor="{StaticResource FontOP}"
                                     TextColor="{StaticResource Primary}"
@@ -163,7 +164,7 @@
                                     x:Name="PercentUsageEntry"
                                     FontFamily="InterSB"
                                     HeightRequest="60"
-                                    IsPassword="True"
+                                    Keyboard="Numeric"
                                     Placeholder="00%"
                                     PlaceholderColor="{StaticResource FontOP}"
                                     TextColor="{StaticResource Primary}"
@@ -172,8 +173,8 @@
                         </StackLayout>
                     </Grid>
 
-                    <!--  Insurance and MPG Entry  -->
-                    <Grid ColumnDefinitions="*,*" ColumnSpacing="20">
+                    <!--  InsuranceEntry  -->
+                    <Grid ColumnDefinitions="*" ColumnSpacing="20">
                         <!--  Insurance payment  -->
                         <StackLayout Spacing="10">
                             <Label
@@ -193,66 +194,14 @@
                                     x:Name="InsurancePaymentEntry"
                                     FontFamily="InterSB"
                                     HeightRequest="60"
-                                    IsPassword="True"
+                                    Keyboard="Numeric"
                                     Placeholder="$0.00"
                                     PlaceholderColor="{StaticResource FontOP}"
                                     TextColor="{StaticResource Primary}"
                                     VerticalOptions="Center" />
                             </Frame>
                         </StackLayout>
-
-
-                        <!--  MPG  -->
-                        <StackLayout Grid.Column="1" Spacing="10">
-                            <Label
-                                Margin="0,0,0,-10"
-                                FontFamily="InterB18"
-                                Text="MPG or Autonomy"
-                                TextColor="{StaticResource Tertiary}" />
-                            <Frame
-                                Margin="0,0,5,0"
-                                Padding="10,0,0,0"
-                                BackgroundColor="Transparent"
-                                BorderColor="{StaticResource Tertiary}"
-                                CornerRadius="20"
-                                HasShadow="True"
-                                HeightRequest="50">
-                                <Entry
-                                    x:Name="MPGEntry"
-                                    FontFamily="InterSB"
-                                    HeightRequest="60"
-                                    IsPassword="True"
-                                    Placeholder="00.00"
-                                    PlaceholderColor="{StaticResource FontOP}"
-                                    TextColor="{StaticResource Primary}"
-                                    VerticalOptions="Center" />
-                            </Frame>
-                        </StackLayout>
                     </Grid>
-                    <!--  Control de imagen para la foto del auto  -->
-                    <!--
-                    <Frame
-                        Margin="0,0,5,0"
-                        Padding="5"
-                        BackgroundColor="{StaticResource CardBG}"
-                        BorderColor="LightGray"
-                        CornerRadius="10">
-                        <Image
-                            x:Name="imgAuto"
-                            Aspect="AspectFill"
-                            HeightRequest="100"
-                            Source="audi_a3_car"
-                            WidthRequest="200" />
-                    </Frame>
-
-                    <Button
-                        BackgroundColor="{StaticResource Tertiary}"
-                        Clicked="OnSelectPhotoClicked"
-                        CornerRadius="20"
-                        FontFamily="InterSB"
-                        Text="Upload"
-                        TextColor="White"
-                        WidthRequest="100" />-->
                 </StackLayout>
             </ScrollView>
 

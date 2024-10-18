@@ -57,7 +57,7 @@
                     <Label
                         FontFamily="InterSB"
                         FontSize="16"
-                        Text="Cost"
+                        Text="Value"
                         TextColor="{StaticResource Tertiary}" />
                     <Label
                         Grid.Column="1"
@@ -153,7 +153,7 @@
                     <Label
                         FontFamily="InterSB"
                         FontSize="16"
-                        Text="Cost"
+                        Text="Value"
                         TextColor="{StaticResource Tertiary}" />
                     <Label
                         Grid.Column="1"

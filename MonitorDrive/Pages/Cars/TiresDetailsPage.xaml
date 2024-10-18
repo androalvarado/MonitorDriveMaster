@@ -76,7 +76,7 @@
                     <Label
                         FontFamily="InterSB"
                         FontSize="16"
-                        Text="Cost"
+                        Text="Value"
                         TextColor="Black" />
                     <Label
                         Grid.Column="1"
@@ -101,7 +101,7 @@
                     <Label
                         FontFamily="InterSB"
                         FontSize="16"
-                        Text="Assembly Cost"
+                        Text="Assembly Value"
                         TextColor="Black" />
                     <Label
                         Grid.Column="1"
