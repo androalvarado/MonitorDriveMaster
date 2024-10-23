@@ -111,11 +111,30 @@
                 </Grid>
 
                 <!--  Percent Usage Entry  -->
-                <Label
-                    Margin="0,0,0,-10"
-                    FontFamily="InterB18"
-                    Text="Usage (%)"
-                    TextColor="{StaticResource Tertiary}" />
+                <HorizontalStackLayout
+                    Margin="0,0,0,-15"
+                    Spacing="5"
+                    VerticalOptions="Center">
+                    <Label
+                        FontFamily="InterB18"
+                        Text="Usage"
+                        TextColor="{StaticResource Tertiary}"
+                        VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label
+                        FontFamily="Icons"
+                        FontSize="14"
+                        Text="&#xF086;"
+                        TextColor="PaleVioletRed"
+                        VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </HorizontalStackLayout>
                 <Frame
                     Padding="10,0,0,0"
                     BackgroundColor="Transparent"

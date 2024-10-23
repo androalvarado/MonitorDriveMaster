@@ -26,7 +26,7 @@
             BorderColor="{StaticResource CardBG}"
             CornerRadius="20"
             HasShadow="True"
-            HeightRequest="200">
+            HeightRequest="210">
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnPhoneTapped" />
             </Frame.GestureRecognizers>

@@ -22,7 +22,7 @@
                 VerticalOptions="Center" />
         </StackLayout>
 
-        <!--  Formulario para adicionar Tires  -->
+        <!--  Formulario para adicionar Paymnet  -->
         <Frame
             Grid.Row="1"
             Margin="15,5,15,15"
@@ -34,6 +34,7 @@
             VerticalOptions="Start">
             <Grid RowDefinitions=".3*,.1*,.3*, .1*, .3*" RowSpacing="10">
 
+                <!--  Select Category  -->
                 <StackLayout Spacing="10">
                     <Label
                         Margin="0,0,0,-10"
@@ -74,7 +75,7 @@
                     WidthRequest="350"
                     Color="{StaticResource FontOP}" />
 
-
+                <!--  Value  -->
                 <StackLayout Grid.Row="2" Spacing="10">
                     <Label
                         Margin="0,0,0,-10"
@@ -110,6 +111,7 @@
                     WidthRequest="350"
                     Color="{StaticResource FontOP}" />
 
+                <!--  Mount to Pay  -->
                 <StackLayout Grid.Row="4" Spacing="10">
                     <Label
                         Margin="0,0,0,-10"
@@ -124,16 +126,23 @@
                         CornerRadius="20"
                         HasShadow="True"
                         HeightRequest="50">
-                        <Entry
-                            x:Name="EstraExpenseMountToPayEntry"
+                        <Picker
+                            x:Name="EstraExpenseMountToPayPicker"
+                            Title="Time in week"
                             Margin="0"
                             FontFamily="InterSB"
                             HeightRequest="60"
-                            Keyboard="Numeric"
-                            Placeholder="Time in week"
-                            PlaceholderColor="{StaticResource FontOP}"
                             TextColor="{StaticResource Primary}"
-                            VerticalOptions="Center" />
+                            TitleColor="{StaticResource FontOP}"
+                            VerticalOptions="Center">
+                            <Picker.Shadow>
+                                <Shadow
+                                    Brush="{StaticResource Primary}"
+                                    Opacity="0.2"
+                                    Radius="4"
+                                    Offset="2,2" />
+                            </Picker.Shadow>
+                        </Picker>
                     </Frame>
                 </StackLayout>
             </Grid>

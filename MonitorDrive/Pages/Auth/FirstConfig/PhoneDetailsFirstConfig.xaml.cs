@@ -19,4 +19,9 @@ public partial class PhoneDetailsFirstConfig : ContentPage
         // Eliminar la página anterior de la pila de navegación
         Navigation.RemovePage(this);
     }
+
+    private async void OnLabelTapped(object sender, TappedEventArgs e)
+    {
+        await DisplayAlert("Usage (%)", "Define the % of use in Uber", "OK");
+    }
 }

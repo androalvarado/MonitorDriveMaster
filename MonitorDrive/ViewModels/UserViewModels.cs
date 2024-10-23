@@ -35,7 +35,7 @@ namespace MonitorDrive.ViewModels
         [ObservableProperty]
         private ObservableCollection<string> selectedVehicles;
 
-        public ObservableCollection<string> Countries { get; } = new ObservableCollection<string> { "Estados Unidos", "México", "Argentina", "Colombia", "Chile" };
+        public ObservableCollection<string> Countries { get; } = new ObservableCollection<string> { "United States", "México", "Argentina", "Colombia", "Chile" };
         public ObservableCollection<string> Currencies { get; } = new ObservableCollection<string> { "EUR", "USD", "MXN", "ARS", "COP", "CLP" };
         public ObservableCollection<string> AvailableVehicles { get; } = new ObservableCollection<string>
         {
@@ -45,7 +45,7 @@ namespace MonitorDrive.ViewModels
 
         public UserViewModel()
         {
-            SelectedVehicles = new ObservableCollection<string>();
+            SelectedVehicles = [];
         }
 
         [RelayCommand]
@@ -92,7 +92,7 @@ namespace MonitorDrive.ViewModels
         public async Task SaveChanges()
         {
             // Simulando guardar cambios
-            await Task.Delay(1000); // Simulando un retraso en la red
+            //await Task.Delay(1000); // Simulando un retraso en la red
         }
     }
 

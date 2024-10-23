@@ -158,11 +158,11 @@
                                 HasShadow="True"
                                 HeightRequest="50">
                                 <Entry
-                                    Keyboard="Numeric"
                                     x:Name="GroceryValueEntry"
                                     FontFamily="InterSB"
                                     HeightRequest="60"
                                     IsPassword="True"
+                                    Keyboard="Numeric"
                                     Placeholder="$ 0.00"
                                     PlaceholderColor="{StaticResource FontOP}"
                                     TextColor="{StaticResource Primary}"
@@ -170,32 +170,6 @@
                             </Frame>
                         </StackLayout>
 
-                        <!--  WeekToPay Entry  -->
-                        <StackLayout Grid.Column="1" Spacing="10">
-                            <Label
-                                Margin="0,0,0,-10"
-                                FontFamily="InterB18"
-                                Text="Week To Pay"
-                                TextColor="{StaticResource Tertiary}" />
-                            <Frame
-                                Margin="0,0,5,0"
-                                Padding="10,0,0,0"
-                                BackgroundColor="Transparent"
-                                BorderColor="{StaticResource Tertiary}"
-                                CornerRadius="20"
-                                HasShadow="True"
-                                HeightRequest="50">
-                                <Entry
-                                    x:Name="GroceryWeekToPayEntry"
-                                    Margin="0"
-                                    FontFamily="InterSB"
-                                    HeightRequest="60"
-                                    Placeholder="00"
-                                    PlaceholderColor="{StaticResource FontOP}"
-                                    TextColor="{StaticResource Primary}"
-                                    VerticalOptions="Center" />
-                            </Frame>
-                        </StackLayout>
                     </Grid>
 
                     <!--  ExtraExpense Formulario  -->

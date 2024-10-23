@@ -31,4 +31,9 @@ public partial class AddCarPage : ContentPage
         // Hacer algo con la opción seleccionada (por ejemplo, mostrar un mensaje)
         //DisplayAlert("Carro seleccionado", $"Has seleccionado un carro {selectedCarType}", "OK");
     }
+
+    private async void OnLabelTapped(object sender, TappedEventArgs e)
+    {
+        await DisplayAlert("Usage (%)", "Define the % of use in Uber", "OK");
+    }
 }

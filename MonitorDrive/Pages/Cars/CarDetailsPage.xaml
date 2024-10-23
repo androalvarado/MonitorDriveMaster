@@ -122,11 +122,28 @@
                     Grid.Row="2"
                     Margin="20,0,0,0"
                     ColumnDefinitions=".4*,.4*">
-                    <Label
-                        FontFamily="InterSB"
-                        FontSize="16"
-                        Text="Usage (%)"
-                        TextColor="{StaticResource Tertiary}" />
+                    <HorizontalStackLayout Spacing="5" VerticalOptions="Center">
+                        <Label
+                            FontFamily="InterSB"
+                            FontSize="16"
+                            Text="Usage"
+                            TextColor="{StaticResource Tertiary}"
+                            VerticalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnLabelTapped" />
+                            </Label.GestureRecognizers>
+                         </Label>
+                        <Label
+                            FontFamily="Icons"
+                            FontSize="14"
+                            Text="&#xF086;"
+                            TextColor="PaleVioletRed"
+                            VerticalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnLabelTapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </HorizontalStackLayout>
                     <Label
                         Grid.Column="1"
                         FontFamily="InterSB"

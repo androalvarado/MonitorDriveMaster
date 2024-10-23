@@ -10,7 +10,7 @@
     <Grid
         Margin="10"
         BackgroundColor="{StaticResource Gray90}"
-        RowDefinitions=".1*,.7*,.1*">
+        RowDefinitions=".1*,.8*,.1*">
         <!--  Titulo de la Pagina  -->
         <StackLayout>
             <Label
@@ -26,12 +26,12 @@
         <!--  Formulario para adicionar Tires  -->
         <Frame
             Grid.Row="1"
-            Margin="15,5,15,15"
+            Margin="15,5,15,10"
             BackgroundColor="{StaticResource CardBG}"
             BorderColor="{StaticResource CardBG}"
             CornerRadius="20"
             HasShadow="True"
-            HeightRequest="450"
+            HeightRequest="470"
             VerticalOptions="Start">
             <Grid RowDefinitions=".2*,.05*,.2*, .05*, .2*, .05*,.2*" RowSpacing="10">
 
@@ -142,11 +142,22 @@
 
                 <!--  Phone % de Use Entry  -->
                 <StackLayout Grid.Row="6" Spacing="10">
-                    <Label
+                    <HorizontalStackLayout
                         Margin="0,0,0,-10"
-                        FontFamily="InterB18"
-                        Text="Percent of Usage (%)"
-                        TextColor="{StaticResource Tertiary}" />
+                        Spacing="5"
+                        VerticalOptions="Center">
+                        <Label
+                            FontFamily="InterB18"
+                            Text="Usage"
+                            TextColor="{StaticResource Tertiary}"
+                            VerticalOptions="Center" />
+                        <Label
+                            FontFamily="Icons"
+                            FontSize="14"
+                            Text="&#xF086;"
+                            TextColor="PaleVioletRed"
+                            VerticalOptions="Center" />
+                    </HorizontalStackLayout>
                     <Frame
                         Margin="0,0,5,0"
                         Padding="10,0,0,0"
@@ -160,7 +171,7 @@
                             Margin="0"
                             FontFamily="InterSB"
                             HeightRequest="60"
-                            Placeholder="Percent of Use"
+                            Placeholder="Percent of use in UBER App"
                             PlaceholderColor="{StaticResource FontOP}"
                             TextColor="{StaticResource Primary}"
                             VerticalOptions="Center" />
@@ -172,7 +183,7 @@
         <!--  Botones continuar y regresar  -->
         <Grid
             Grid.Row="2"
-            Margin="20,20,20,20"
+            Margin="20,0,20,20"
             BackgroundColor="Transparent"
             ColumnDefinitions="*,*"
             ColumnSpacing="80"

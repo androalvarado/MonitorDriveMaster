@@ -43,4 +43,9 @@ public partial class CarDetailsPage : ContentPage
     {
         await this.ShowPopupAsync(new AddCarPaymentPopup());
     }
+
+    private async void OnLabelTapped(object sender, TappedEventArgs e)
+    {
+        await DisplayAlert("Usage (%)", "Define the % of use in Uber", "OK");
+    }
 }

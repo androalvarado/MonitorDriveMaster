@@ -148,11 +148,29 @@
                             Grid.Column="1"
                             Margin="0,0,5,0"
                             Spacing="10">
-                            <Label
-                                Margin="0,0,0,-10"
-                                FontFamily="InterB18"
-                                Text="Usage (%)"
-                                TextColor="{StaticResource Tertiary}" />
+                            <HorizontalStackLayout Margin="0,-1,0,0" Spacing="5">
+                                <Label
+                                    Margin="0,0,0,-10"
+                                    FontFamily="InterB18"
+                                    Text="Usage"
+                                    TextColor="{StaticResource Tertiary}"
+                                    VerticalOptions="Center">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnLabelTapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <Label
+                                    Margin="0,0,0,-10"
+                                    FontFamily="Icons"
+                                    FontSize="14"
+                                    Text="&#xF086;"
+                                    TextColor="PaleVioletRed"
+                                    VerticalOptions="Center">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnLabelTapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </HorizontalStackLayout>
                             <Frame
                                 Padding="10,0,0,0"
                                 BackgroundColor="Transparent"
