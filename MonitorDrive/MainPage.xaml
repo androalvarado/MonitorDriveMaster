@@ -7,15 +7,38 @@
     Shell.FlyoutBehavior="Disabled"
     Shell.NavBarIsVisible="False">
 
-    <Grid RowDefinitions=".5*,.5*">
+    <Grid RowDefinitions=".2*,.2*,.5*">
 
         <Image
             Margin="20,0,20,20"
-            HeightRequest="200"
+            HeightRequest="170"
             Source="brain_logo.png" />
 
+        <VerticalStackLayout Grid.Row="1" Margin="20">
+            <Label
+                FontFamily="InterB24"
+                FontSize="26"
+                HorizontalOptions="Center"
+                Text="&quot;Measure to Master&quot;"
+                TextColor="White" />
+            <Label
+                Margin="0,10,0,0"
+                FontFamily="InterB24"
+                FontSize="26"
+                HorizontalOptions="Center"
+                Text="&quot;Medir para Mejorar&quot;"
+                TextColor="White" />
+            <Label
+                Margin="0,10,20,0"
+                FontFamily="InterSB"
+                FontSize="10"
+                HorizontalOptions="EndAndExpand"
+                Text="Monitor Drive"
+                TextColor="White" />
+        </VerticalStackLayout>
+
         <Border
-            Grid.Row="1"
+            Grid.Row="2"
             BackgroundColor="#FFFFFF"
             StrokeShape="RoundRectangle 20,20,0,0">
             <Grid RowDefinitions=".4*,.4*,.2*">
